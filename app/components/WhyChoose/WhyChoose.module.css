@@ -1,0 +1,129 @@
+.section {
+  padding: clamp(48px, 7vw, 96px) clamp(20px, 5vw, 96px);
+  background: #fbf8ee;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 auto 3rem;
+  max-width: 20em;
+  color: var(--pg-text);
+  text-align: center;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: clamp(24px, 3vw, 48px);
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.6vw, 22px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  gap: 14px;
+  padding: 18px 22px;
+  border: 1px solid #d9dccf;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--pg-green-dark);
+  color: #ffffff;
+}
+
+.cardTitle {
+  margin: 0 0 0.4rem;
+  color: var(--pg-text);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.cardText {
+  margin: 0;
+  color: var(--pg-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.imageTop {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.mediaRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.imageSmall {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+
+@media (max-width: 61.99em) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 35.99em) {
+  .card {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+}
