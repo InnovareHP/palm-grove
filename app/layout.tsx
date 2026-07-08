@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Poppins, Mulish } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const poppins = Poppins({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
-const mulish = Mulish({
-  subsets: ["latin"],
-  variable: "--font-mulish",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -33,7 +27,7 @@ export default function RootLayout({
     <html
       lang="en"
       {...mantineHtmlProps}
-      className={`${poppins.variable} ${mulish.variable}`}
+      className={montserrat.variable}
     >
       <head>
         <ColorSchemeScript defaultColorScheme="light" />

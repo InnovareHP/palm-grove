@@ -18,9 +18,9 @@ export const theme = createTheme({
   primaryColor: "palmGreen",
   primaryShade: { light: 7, dark: 7 },
   colors: { palmGreen },
-  fontFamily: "var(--font-mulish), system-ui, sans-serif",
+  fontFamily: "var(--font-montserrat), system-ui, sans-serif",
   headings: {
-    fontFamily: "var(--font-poppins), system-ui, sans-serif",
+    fontFamily: "var(--font-montserrat), system-ui, sans-serif",
     fontWeight: "600",
   },
   defaultRadius: "md",

@@ -13,7 +13,7 @@
   max-width: 20em;
   color: var(--pg-text);
   text-align: center;
-  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 600;
   font-size: clamp(1.9rem, 3.4vw, 2.9rem);
   line-height: 1.15;
@@ -60,7 +60,7 @@
 .cardTitle {
   margin: 0 0 0.4rem;
   color: var(--pg-text);
-  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 600;
   font-size: 1.15rem;
 }
