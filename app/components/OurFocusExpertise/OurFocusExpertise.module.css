@@ -1,0 +1,50 @@
+.section {
+  background: #ffffff;
+  padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 96px);
+}
+
+.card {
+  max-width: 860px;
+  margin: 0 auto;
+  background-color: #fffcf7;
+  border: 1.5px solid var(--pg-green-dark);
+  border-radius: 14px;
+  padding: clamp(36px, 5vw, 60px) clamp(32px, 6vw, 72px);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  color: var(--pg-green-dark);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.body {
+  margin: 0 auto 1.4rem;
+  max-width: 680px;
+  color: var(--pg-text);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.7;
+}
+
+.body:last-of-type {
+  margin-bottom: 0;
+}
+
+.actions {
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 47.99em) {
+  .card {
+    padding: 32px 20px 36px;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+  }
+}

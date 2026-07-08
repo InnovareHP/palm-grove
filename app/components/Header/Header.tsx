@@ -60,7 +60,7 @@ export function Header() {
         position="right"
         size="80%"
         title="Menu"
-        hiddenFrom="md"
+        hiddenFrom="xl"
       >
         <Stack gap="md">
           {NAV_LINKS.map((link) => (

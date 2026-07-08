@@ -19,6 +19,7 @@ body {
   margin: 0;
   color: var(--pg-text);
   background: #ffffff;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

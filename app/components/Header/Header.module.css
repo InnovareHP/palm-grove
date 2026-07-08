@@ -14,37 +14,36 @@
   gap: 24px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 8px clamp(20px, 5vw, 96px);
+  padding: 8px clamp(20px, 4vw, 72px);
 }
 
 .logoLink {
   display: inline-flex;
   flex: 0 0 auto;
-  margin-left: clamp(0px, 6vw, 160px);
 }
 
 .logo {
-  height: 97px;
+  height: clamp(72px, 7vw, 97px);
   width: auto;
   display: block;
 }
 
+/* Desktop nav — single row, no wrapping */
 .desktopNav {
   display: flex;
   flex: 1;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  column-gap: 30px;
-  row-gap: 4px;
+  gap: clamp(12px, 1.6vw, 26px);
 }
 
 .link {
   color: #3f4a3c;
-  font-size: 14px;
+  font-size: clamp(12.5px, 1.05vw, 14px);
   font-weight: 500;
+  white-space: nowrap;
   line-height: 1.2;
-  text-align: center;
   transition: color 0.15s ease;
 }
 
@@ -56,6 +55,7 @@
   display: none;
 }
 
+/* ── Drawer (mobile / tablet) ───────────────────────────── */
 .drawerLink {
   color: #3f4a3c;
   font-size: 16px;
@@ -67,27 +67,8 @@
   color: var(--mantine-color-palmGreen-7);
 }
 
-/* Tighten desktop nav so 8 links fit before collapsing */
+/* ── Tablet  (< 1200 px) — collapse to burger ───────────── */
 @media (max-width: 74.99em) {
-  .desktopNav {
-    column-gap: 18px;
-  }
-
-  .link {
-    font-size: 13px;
-  }
-
-  .logoLink {
-    margin-left: 0;
-  }
-
-  .logo {
-    height: 84px;
-  }
-}
-
-/* Tablet + mobile: burger menu */
-@media (max-width: 61.99em) {
   .desktopNav {
     display: none;
   }
@@ -95,16 +76,9 @@
   .burger {
     display: block;
   }
-
-  .logoLink {
-    margin-left: 0;
-  }
-
-  .logo {
-    height: 72px;
-  }
 }
 
+/* ── Mobile  (< 576 px) ─────────────────────────────────── */
 @media (max-width: 35.99em) {
   .inner {
     gap: 12px;

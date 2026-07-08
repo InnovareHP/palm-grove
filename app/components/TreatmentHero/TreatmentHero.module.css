@@ -1,0 +1,94 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panels {
+  display: flex;
+  align-items: stretch;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fbf8ee;
+  padding: clamp(36px, 5vw, 72px) clamp(20px, 6vw, 96px);
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--pg-green-dark);
+  color: #ffffff;
+  padding: 8px 22px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  margin: 0 0 1rem;
+  color: var(--pg-green-dark);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 34em;
+  color: var(--pg-text);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  line-height: 1.7;
+}
+
+/* Image fills the right panel, cropping to whatever height the text needs */
+.imageWrapper {
+  flex: 0 0 42%;
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.greenLine {
+  height: 6px;
+  background-color: var(--pg-green-dark);
+  flex-shrink: 0;
+}
+
+@media (max-width: 47.99em) {
+  .panels {
+    flex-direction: column-reverse;
+  }
+
+  .imageWrapper {
+    flex: unset;
+    width: 100%;
+    min-height: unset;
+    aspect-ratio: 16 / 10;
+  }
+
+  .content {
+    padding: 32px 20px 40px;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+}
