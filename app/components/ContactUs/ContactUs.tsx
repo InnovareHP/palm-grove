@@ -66,7 +66,7 @@ export function ContactUs() {
               return (
                 <li key={detail.label} className={classes.item}>
                   <span className={classes.icon}>
-                    <Icon size={22} stroke={1.6} />
+                    <Icon size={24} stroke={1.8} />
                   </span>
                   <div>
                     <p className={classes.label}>{detail.label}</p>

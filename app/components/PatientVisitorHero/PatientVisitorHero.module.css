@@ -80,7 +80,19 @@
     background: rgba(255, 255, 255, 0.5);
   }
 
+  /* The overlaid text outgrows the short image on phones, so let the
+     content size the hero and stretch the photo behind it instead */
+  .bg {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+    /* Anchor right so the couple in the photo stays in frame */
+    object-position: 100% center;
+  }
+
   .inner {
+    position: relative;
     padding: 36px 20px 32px;
   }
 

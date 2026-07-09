@@ -30,7 +30,7 @@
 .imgBottomRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 8px;
 }
 
 .imgSmallWrapper {
@@ -38,6 +38,12 @@
   border-radius: 14px;
   overflow: hidden;
   aspect-ratio: 1 / 1;
+}
+
+/* Zoom past the whitish edges baked into these photos so the pair
+   reads as sitting close together */
+.imgSmallWrapper .img {
+  transform: scale(1.18);
 }
 
 .img {
@@ -359,10 +365,6 @@
     max-width: none;
     aspect-ratio: 4 / 3;
     order: -1;
-  }
-
-  .imgTopWrapper {
-    aspect-ratio: 16 / 9;
   }
 
   .imgSmallWrapper {

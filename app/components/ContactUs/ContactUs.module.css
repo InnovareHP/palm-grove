@@ -21,7 +21,7 @@
 .subtitle {
   margin: 0 auto 3.5rem;
   max-width: 40em;
-  color: var(--pg-text-muted);
+  color: var(--pg-text);
   text-align: center;
   font-size: clamp(1rem, 1.4vw, 1.25rem);
 }
@@ -69,8 +69,8 @@
   width: 52px;
   height: 52px;
   border-radius: 999px;
-  border: 1px solid #cbd8c4;
-  background: #eef4ea;
+  border: 1.5px solid var(--pg-green-dark);
+  background: #dfe5d3;
   color: var(--pg-green-dark);
 }
 
@@ -84,12 +84,12 @@
 
 .value {
   margin: 0;
-  color: var(--pg-text-muted);
+  color: var(--pg-text);
   font-size: 1rem;
 }
 
 .link {
-  color: var(--pg-green-dark);
+  color: var(--pg-text);
   font-size: 1rem;
   text-decoration: underline;
 }
