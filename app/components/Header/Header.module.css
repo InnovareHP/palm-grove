@@ -1,7 +1,9 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 200;
+  /* Below Mantine's drawer/modal layer (200) so the mobile menu
+     covers the header, but above all page content */
+  z-index: 150;
   background: var(--pg-header-bg);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 2px 12px rgba(44, 53, 43, 0.06);

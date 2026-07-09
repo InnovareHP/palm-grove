@@ -1,0 +1,22 @@
+.section {
+  background: #ffffff;
+  padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 96px);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 0.9rem;
+  color: var(--pg-text);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  letter-spacing: -0.5px;
+}
+
+.text {
+  margin: 0 auto;
+  max-width: 40em;
+  color: var(--pg-text);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  line-height: 1.6;
+}

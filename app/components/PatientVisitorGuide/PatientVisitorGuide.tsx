@@ -689,13 +689,18 @@ export function PatientVisitorGuide() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const ActiveDetail = activeId ? DETAIL_SECTIONS[activeId] : undefined;
 
+  const showSection = (id: string | null) => {
+    setActiveId(id);
+    window.scrollTo(0, 0);
+  };
+
   if (ActiveDetail) {
     return (
       <section className={`${classes.section} ${classes.sectionDetail}`}>
         <button
           type="button"
           className={classes.backButton}
-          onClick={() => setActiveId(null)}
+          onClick={() => showSection(null)}
         >
           ← Back to Patient &amp; Visitor Guide
         </button>
@@ -747,7 +752,7 @@ export function PatientVisitorGuide() {
               key={item.id}
               type="button"
               className={classes.card}
-              onClick={() => setActiveId(item.id)}
+              onClick={() => showSection(item.id)}
             >
               <h3 className={classes.cardTitle}>{item.title}</h3>
               <p className={classes.cardDesc}>{item.description}</p>

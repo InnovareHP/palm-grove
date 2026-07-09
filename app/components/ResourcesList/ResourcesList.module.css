@@ -1,0 +1,82 @@
+.section {
+  background: #fbf8ee;
+  padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 96px);
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 1rem;
+  color: var(--pg-green-dark);
+  text-align: center;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 0 auto clamp(2.25rem, 3.5vw, 3rem);
+  max-width: 52em;
+  color: var(--pg-text);
+  text-align: center;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.6;
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: stretch;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d9dccf;
+  border-radius: 8px;
+  padding: clamp(24px, 3vw, 34px) clamp(22px, 3vw, 32px);
+}
+
+.cardTitle {
+  margin: 0 0 1.1rem;
+  color: var(--pg-green-dark);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.6vw, 1.3rem);
+  line-height: 1.4;
+}
+
+.detail {
+  margin: 0 0 0.35rem;
+  color: var(--pg-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.detail:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  color: var(--pg-text);
+  font-weight: 600;
+}
+
+.link {
+  color: var(--pg-green-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 47.99em) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -52,8 +52,9 @@
     min-height: 520px;
   }
 
+  /* Anchor to the right edge so the person in the photo stays visible */
   .bg {
-    object-position: 75% center;
+    object-position: 100% center;
   }
 
   .inner {
@@ -62,6 +63,10 @@
 
   .content {
     margin-left: 0;
+  }
+
+  .actions {
+    justify-content: center;
   }
 
   .title {

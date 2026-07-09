@@ -1,7 +1,7 @@
 :root {
-  --pg-green-dark: #356a30;
-  --pg-text: #2c352b;
-  --pg-text-muted: #5a6b66;
+  --pg-green-dark: #3c6026;
+  --pg-text: #343a34;
+  --pg-text-muted: #343a34;
   --pg-header-bg: #e7e6db;
 }
 
@@ -12,7 +12,9 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* clip, not hidden: hidden creates a scroll container, which breaks
+     the sticky header */
+  overflow-x: clip;
 }
 
 body {
@@ -27,4 +29,22 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Scale Mantine buttons down on smaller screens — the fixed
+   size="lg"/"md" props are desktop sizes */
+@media (max-width: 61.99em) {
+  .mantine-Button-root {
+    --button-height: 44px;
+    --button-padding-x: 20px;
+    --button-fz: 15px;
+  }
+}
+
+@media (max-width: 35.99em) {
+  .mantine-Button-root {
+    --button-height: 40px;
+    --button-padding-x: 18px;
+    --button-fz: 14px;
+  }
 }
