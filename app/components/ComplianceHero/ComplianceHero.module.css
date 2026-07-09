@@ -1,0 +1,28 @@
+.hero {
+  background: #3f5626;
+  padding: clamp(40px, 5vw, 72px) clamp(20px, 5vw, 96px);
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 1.1rem;
+  color: #ffffff;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 40em;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
+}

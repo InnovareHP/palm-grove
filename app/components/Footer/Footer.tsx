@@ -38,19 +38,17 @@ const contacts: Contact[] = [
 ];
 
 const patientResources = [
-  { label: "Language Assistance Services", href: "/language-assistance" },
-  { label: "HIPAA Privacy Practices", href: "/hipaa-privacy-practices" },
+  { label: "HIPAA Privacy Practices", href: "/compliance" },
   { label: "Price Transparency", href: "/price-transparency" },
-  { label: "Terms of Use", href: "/terms-of-use" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Use", href: "/compliance" },
   { label: "Brochure", href: "/brochure" },
 ];
 
 const policies = [
-  { label: "Medical Disclaimer", href: "/medical-disclaimer" },
+  { label: "Medical Disclaimer", href: "/compliance" },
   {
     label: "Notice of Nondiscrimination",
-    href: "/notice-of-nondiscrimination",
+    href: "/compliance",
   },
 ];
 
