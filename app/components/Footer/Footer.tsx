@@ -9,7 +9,7 @@ import {
   type IconProps,
 } from "@tabler/icons-react";
 import type { ComponentType } from "react";
-import logo from "@/public/palm-grove-logo.svg";
+import logo from "@/public/Logo/palm-grove-logo.png";
 import classes from "./Footer.module.css";
 
 type Contact = {
@@ -92,7 +92,7 @@ export function Footer() {
           <h3 className={classes.columnTitle}>Patient Resources</h3>
           <ul className={classes.links}>
             {patientResources.map((link) => (
-              <li key={link.href}>
+              <li key={link.label}>
                 <Link href={link.href} className={classes.link}>
                   {link.label}
                 </Link>
@@ -105,7 +105,7 @@ export function Footer() {
           <h3 className={classes.columnTitle}>Policies &amp; Notices</h3>
           <ul className={classes.links}>
             {policies.map((link) => (
-              <li key={link.href}>
+              <li key={link.label}>
                 <Link href={link.href} className={classes.link}>
                   {link.label}
                 </Link>
