@@ -697,14 +697,18 @@ export function PatientVisitorGuide() {
   if (ActiveDetail) {
     return (
       <section className={`${classes.section} ${classes.sectionDetail}`}>
-        <button
-          type="button"
-          className={classes.backButton}
-          onClick={() => showSection(null)}
-        >
-          ← Back to Patient &amp; Visitor Guide
-        </button>
-        <ActiveDetail />
+        <div className={classes.detailWrap}>
+          <button
+            type="button"
+            className={classes.backButton}
+            onClick={() => showSection(null)}
+            aria-label="Back to Patient & Visitor Guide"
+            title="Back to Patient & Visitor Guide"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <ActiveDetail />
+        </div>
       </section>
     );
   }

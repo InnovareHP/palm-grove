@@ -101,22 +101,54 @@
   background: #fffcf7;
 }
 
-.backButton {
-  display: block;
+/* Anchors the absolutely positioned back arrow to the detail column.
+   The shared vars below drive both the title and the arrow's offset, so the
+   two stay on the same line at every viewport width. flow-root stops the
+   detail's top margin collapsing through the wrapper, which would otherwise
+   shift the title up but not the arrow. */
+.detailWrap {
+  --detail-top: clamp(20px, 3vw, 32px);
+  /* Inline padding of the detail column — also the arrow's left offset, so the
+     arrow lines up with the body text below it. */
+  --detail-pad: clamp(50px, 5.5vw, 62px);
+  --detail-title-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  --detail-title-lh: 1.25;
+
+  position: relative;
+  display: flow-root;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+/* Round arrow button sitting to the left of the detail title */
+.backButton {
+  position: absolute;
+  left: var(--detail-pad);
+  /* Centre of the title's first line: detail top margin + half a line box */
+  top: calc(
+    var(--detail-top) + var(--detail-title-size) * var(--detail-title-lh) / 2
+  );
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: clamp(38px, 3.6vw, 46px);
+  height: clamp(38px, 3.6vw, 46px);
   padding: 0;
-  border: none;
-  background: none;
+  border: 1px solid var(--pg-green-dark);
+  border-radius: 50%;
+  background: #ffffff;
   color: var(--pg-green-dark);
-  font: inherit;
-  font-weight: 600;
-  font-size: clamp(0.85rem, 0.95vw, 0.93rem);
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1;
   cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .backButton:hover {
-  text-decoration: underline;
+  background: var(--pg-green-dark);
+  color: #ffffff;
 }
 
 .backButton:focus-visible {
@@ -126,7 +158,11 @@
 
 .detail {
   max-width: 1100px;
-  margin: clamp(20px, 3vw, 32px) auto 0;
+  margin: var(--detail-top, clamp(20px, 3vw, 32px)) auto 0;
+}
+
+.detailWrap > .detail {
+  padding-inline: var(--detail-pad);
 }
 
 .detailTitle {
@@ -135,8 +171,8 @@
   color: var(--pg-green-dark);
   font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 700;
-  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
-  line-height: 1.25;
+  font-size: var(--detail-title-size, clamp(1.5rem, 2.6vw, 2.1rem));
+  line-height: var(--detail-title-lh, 1.25);
 }
 
 .detailGrid {

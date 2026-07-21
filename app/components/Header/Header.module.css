@@ -13,10 +13,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: clamp(16px, 2.5vw, 40px);
   max-width: 1400px;
   margin: 0 auto;
-  padding: 8px clamp(20px, 4vw, 72px);
+  padding: 8px clamp(16px, 3vw, 56px);
 }
 
 .logoLink {
@@ -25,9 +25,12 @@
 }
 
 .logo {
-  height: clamp(72px, 7vw, 97px);
+  /* Fluid height; negative block margin keeps the header row from growing
+     with the logo, so the bar height stays constant. */
+  height: clamp(72px, 8vw, 116px);
   width: auto;
   display: block;
+  margin-block: -10px;
 }
 
 /* Desktop nav — single row, no wrapping */
@@ -36,16 +39,17 @@
   flex: 1;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
-  gap: clamp(12px, 1.6vw, 26px);
+  justify-content: flex-end;
+  column-gap: clamp(12px, 1.7vw, 30px);
 }
 
 .link {
   color: #3f4a3c;
-  font-size: clamp(12.5px, 1.05vw, 14px);
+  font-size: clamp(12px, 1.05vw, 14px);
   font-weight: 500;
   white-space: nowrap;
   line-height: 1.2;
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
 
@@ -69,8 +73,19 @@
   color: var(--mantine-color-palmGreen-7);
 }
 
-/* ── Tablet  (< 1200 px) — collapse to burger ───────────── */
+/* Laptop: trim padding so the 8 links keep fitting on one row */
 @media (max-width: 74.99em) {
+  .inner {
+    padding-inline: 20px;
+  }
+
+  .logo {
+    margin-block: -9px;
+  }
+}
+
+/* Tablet + mobile: burger menu */
+@media (max-width: 61.99em) {
   .desktopNav {
     display: none;
   }
@@ -78,9 +93,13 @@
   .burger {
     display: block;
   }
+
+  .logo {
+    height: 86px;
+    margin-block: -7px;
+  }
 }
 
-/* ── Mobile  (< 576 px) ─────────────────────────────────── */
 @media (max-width: 35.99em) {
   .inner {
     gap: 12px;
@@ -88,6 +107,7 @@
   }
 
   .logo {
-    height: 60px;
+    height: 72px;
+    margin-block: -6px;
   }
 }
