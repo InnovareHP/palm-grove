@@ -1,97 +1,66 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  IconDeviceLandlinePhone,
-  IconMail,
-  IconMapPin,
-  IconPhone,
-  IconPrinter,
-  type IconProps,
-} from "@tabler/icons-react";
-import type { ComponentType } from "react";
-import logo from "@/public/Logo/palm-grove-logo.png";
+import logo from "@/public/figma/home/logo-footer.png";
 import classes from "./Footer.module.css";
 
-type Contact = {
-  id: string;
-  icon: ComponentType<IconProps>;
-  value: string;
-  href?: string;
-};
+const exploreLinks = [
+  { label: "Our Focus", href: "/our-focus" },
+  { label: "Treatment & Services", href: "/treatment-services" },
+  { label: "Patient & Visitor Guide", href: "/patient-visitor-guide" },
+  { label: "About Us", href: "/about" },
+];
 
-const contacts: Contact[] = [
+const resourceLinks = [
+  { label: "Referral Process", href: "/referral-process" },
+  { label: "Mental Health Resources", href: "/resources" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Admissions", href: "/referral-process" },
+];
+
+const contacts = [
+  { label: "Main", value: "(904) 000-0000", href: "tel:+19040000000" },
   {
-    id: "address",
-    icon: IconMapPin,
-    value: "150 Village Crossing Court, St. Augustine, Florida 32084",
+    label: "24/7 Intake & Referral",
+    value: "(800) 000-0000",
+    href: "tel:+18000000000",
   },
-  { id: "fax", icon: IconPrinter, value: "+1 XXX XXX XXX" },
-  { id: "hotline", icon: IconDeviceLandlinePhone, value: "+1 XXX XXX XXX" },
-  { id: "main-local", icon: IconPhone, value: "+1 XXX XXX XXX" },
-  { id: "main-toll-free", icon: IconPhone, value: "+1 XXX XXX XXX" },
+  { label: "Fax", value: "(904) 000-0001" },
   {
-    id: "email",
-    icon: IconMail,
-    value: "youremail@domain.com",
-    href: "mailto:youremail@domain.com",
+    label: "Email",
+    value: "info@palmgrovecenter.com",
+    href: "mailto:info@palmgrovecenter.com",
   },
 ];
 
-const patientResources = [
-  { label: "HIPAA Privacy Practices", href: "/compliance" },
+const legalLinks = [
+  { label: "Notice of nondiscrimination", href: "/compliance" },
+  { label: "Privacy Practices (HIPAA)", href: "/compliance" },
   { label: "Price Transparency", href: "/price-transparency" },
-  { label: "Terms of Use", href: "/compliance" },
-  { label: "Brochure", href: "/brochure" },
-];
-
-const policies = [
-  { label: "Medical Disclaimer", href: "/compliance" },
-  {
-    label: "Notice of Nondiscrimination",
-    href: "/compliance",
-  },
 ];
 
 export function Footer() {
   return (
     <footer className={classes.footer}>
-      <div className={classes.inner}>
-        <div className={classes.brand}>
+      <div className={`pgContainer ${classes.inner}`}>
+        <div>
           <Image
             src={logo}
             alt="Palm Grove Health Center"
             className={classes.logo}
           />
           <p className={classes.tagline}>
-            Compassionate psychiatric care for older adults and their families.
+            Compassionate psychiatric and behavioral health care for older
+            adults and their families in St. Augustine, Florida
           </p>
-          <ul className={classes.contacts}>
-            {contacts.map((contact) => {
-              const Icon = contact.icon;
-              return (
-                <li key={contact.id} className={classes.contactItem}>
-                  <Icon
-                    size={16}
-                    stroke={1.6}
-                    className={classes.contactIcon}
-                  />
-                  {contact.href ? (
-                    <a className={classes.contactLink} href={contact.href}>
-                      {contact.value}
-                    </a>
-                  ) : (
-                    <span>{contact.value}</span>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
+          <p className={classes.address}>
+            150 Village Crossing Court, St. Augustine, Florida 32084
+          </p>
         </div>
 
-        <nav className={classes.column} aria-label="Patient Resources">
-          <h3 className={classes.columnTitle}>Patient Resources</h3>
+        <nav aria-label="Explore">
+          <h2 className={classes.columnTitle}>Explore</h2>
           <ul className={classes.links}>
-            {patientResources.map((link) => (
+            {exploreLinks.map((link) => (
               <li key={link.label}>
                 <Link href={link.href} className={classes.link}>
                   {link.label}
@@ -101,10 +70,10 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav className={classes.column} aria-label="Policies & Notices">
-          <h3 className={classes.columnTitle}>Policies &amp; Notices</h3>
+        <nav aria-label="Resources">
+          <h2 className={classes.columnTitle}>Resources</h2>
           <ul className={classes.links}>
-            {policies.map((link) => (
+            {resourceLinks.map((link) => (
               <li key={link.label}>
                 <Link href={link.href} className={classes.link}>
                   {link.label}
@@ -113,6 +82,41 @@ export function Footer() {
             ))}
           </ul>
         </nav>
+
+        <div>
+          <h2 className={classes.columnTitle}>Get in touch</h2>
+          <ul className={classes.contactList}>
+            {contacts.map((contact) => (
+              <li key={contact.label}>
+                <span className={classes.contactLabel}>{contact.label}</span>
+                {contact.href ? (
+                  <a className={classes.contactValue} href={contact.href}>
+                    {contact.value}
+                  </a>
+                ) : (
+                  <span className={classes.contactValue}>{contact.value}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className={classes.legal}>
+        <div className={`pgContainer ${classes.legalInner}`}>
+          <p>© 2026 Palm Grove Health Center. All rights reserved.</p>
+          <div className={classes.legalLinks}>
+            {legalLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={classes.legalLink}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );

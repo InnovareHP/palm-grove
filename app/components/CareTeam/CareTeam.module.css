@@ -1,57 +1,42 @@
-.section {
-  padding: clamp(48px, 7vw, 96px) clamp(20px, 5vw, 96px);
-  background: #e3ece7;
-}
-
 .inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   align-items: center;
-  gap: clamp(32px, 5vw, 80px);
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: clamp(32px, 4vw, 56px);
 }
 
 .media {
-  display: flex;
+  position: relative;
+  aspect-ratio: 500 / 615;
+  border-radius: var(--pg-radius);
+  overflow: hidden;
+  box-shadow: var(--pg-shadow-media);
 }
 
 .image {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
   object-fit: cover;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 16px;
+  max-width: 560px;
 }
 
-.title {
-  margin: 0 0 1.2rem;
-  color: var(--pg-text);
-  font-family: var(--font-montserrat), system-ui, sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
-  line-height: 1.15;
-  letter-spacing: -0.5px;
+.actions {
+  margin-top: 8px;
 }
 
-.text {
-  margin: 0 0 2rem;
-  color: var(--pg-text-muted);
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  line-height: 1.6;
-}
-
-.cta {
-  margin: 0;
-}
-
-@media (max-width: 47.99em) {
+@media (max-width: 61.99em) {
   .inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Explicit height, not aspect-ratio + max-height — that pair shrinks the
+     box width to preserve the ratio and the photo stops short of the edge. */
+  .media {
+    aspect-ratio: auto;
+    height: clamp(240px, 48vw, 380px);
   }
 }

@@ -1,8 +1,49 @@
 :root {
+  /* Brand palette — sampled from the Figma design system frame */
+  --pg-green: #3c6026;
+  /* Legacy alias kept for the compliance / price-transparency modules */
   --pg-green-dark: #3c6026;
+  --pg-green-deep: #234735;
+  --pg-green-darkest: #203e2f;
+  --pg-heading: #415241;
+  --pg-eyebrow-muted: #566e56;
   --pg-text: #343a34;
-  --pg-text-muted: #343a34;
-  --pg-header-bg: #e7e6db;
+  --pg-sage: #e3e7da;
+  --pg-cream: #fffcf7;
+  --pg-offwhite: #fcfdf8;
+  --pg-sand: #e7ddcb;
+  --pg-sea-glass: #bfd3cf;
+  --pg-mist: #dce8e7;
+  --pg-border: #eef1ee;
+
+  /* Section backgrounds */
+  --pg-gradient-dark: linear-gradient(
+    -73.78deg,
+    #5d785a 2.15%,
+    #475c49 50.53%,
+    #37483a 98.9%
+  );
+  --pg-gradient-glass: linear-gradient(
+    102.16deg,
+    rgba(255, 255, 255, 0.3) 1.49%,
+    rgba(227, 231, 218, 0.21) 62.41%,
+    rgba(255, 255, 255, 0.15) 98.13%
+  );
+  --pg-gradient-mist: radial-gradient(
+    120% 90% at 37% 42%,
+    #dce8e7 0%,
+    #edf4ef 100%
+  );
+
+  --pg-shadow-card: 0 0 10px 0 rgba(52, 58, 52, 0.2);
+  --pg-shadow-media: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+
+  --pg-container: 1088px;
+  --pg-gutter: clamp(20px, 5vw, 96px);
+  --pg-radius: 10px;
+
+  --font-serif: var(--font-castoro), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
 }
 
 * {
@@ -21,7 +62,7 @@ body {
   margin: 0;
   color: var(--pg-text);
   background: #ffffff;
-  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -31,20 +72,153 @@ a {
   text-decoration: none;
 }
 
-/* Scale Mantine buttons down on smaller screens — the fixed
-   size="lg"/"md" props are desktop sizes */
-@media (max-width: 61.99em) {
-  .mantine-Button-root {
-    --button-height: 44px;
-    --button-padding-x: 20px;
-    --button-fz: 15px;
-  }
+img {
+  max-width: 100%;
 }
 
-@media (max-width: 35.99em) {
-  .mantine-Button-root {
-    --button-height: 40px;
-    --button-padding-x: 18px;
-    --button-fz: 14px;
-  }
+/* Long unbroken tokens (emails, phone strings) must never push the page wide */
+p,
+h1,
+h2,
+h3,
+li,
+a {
+  overflow-wrap: break-word;
+}
+
+/* ---------------------------------------------------------------------------
+   Shared layout + typography utilities.
+   Every page section is built from these so the eight pages stay consistent
+   with the Figma type scale without repeating the same rules per module.
+   --------------------------------------------------------------------------- */
+
+.pgSection {
+  padding-block: clamp(48px, 6vw, 82px);
+}
+
+/* Section background variants */
+.pgSectionTinted {
+  background: var(--pg-offwhite);
+}
+
+.pgSectionMist {
+  background: var(--pg-gradient-mist);
+}
+
+.pgSectionDark {
+  background: var(--pg-gradient-dark);
+  color: #ffffff;
+}
+
+.pgContainer {
+  width: 100%;
+  max-width: calc(var(--pg-container) + var(--pg-gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--pg-gutter);
+}
+
+.pgEyebrow {
+  margin: 0 0 8px;
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--pg-green);
+}
+
+.pgEyebrowMuted {
+  color: var(--pg-eyebrow-muted);
+}
+
+.pgEyebrowLight {
+  color: var(--pg-sage);
+}
+
+.pgTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(30px, 4.2vw, 50px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--pg-heading);
+}
+
+.pgTitleLight {
+  color: #ffffff;
+}
+
+.pgLead {
+  margin: 0;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.5;
+  color: var(--pg-text);
+}
+
+.pgLeadLight {
+  color: #ffffff;
+}
+
+.pgBody {
+  margin: 0;
+  font-size: clamp(15px, 1.2vw, 16px);
+  line-height: 1.45;
+  color: var(--pg-text);
+}
+
+.pgCardTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(18px, 1.6vw, 20px);
+  line-height: 1.5;
+  color: var(--pg-heading);
+}
+
+/* Centered section intro block (eyebrow + title + lead) */
+.pgIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  max-width: 850px;
+  margin-inline: auto;
+}
+
+.pgIntro .pgTitle {
+  max-width: 720px;
+}
+
+/* Card shell used by program / feature / resource grids */
+.pgCard {
+  background: #ffffff;
+  border: 1px solid var(--pg-sage);
+  border-radius: var(--pg-radius);
+  box-shadow: var(--pg-shadow-card);
+}
+
+/* Screen-reader-only text */
+.pgSrOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Keep in-page anchors clear of the sticky header */
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--pg-green);
+  outline-offset: 3px;
 }

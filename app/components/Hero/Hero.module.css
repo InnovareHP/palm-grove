@@ -1,75 +1,133 @@
 .hero {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  align-items: center;
-  min-height: 580px;
+  background: var(--pg-gradient-dark);
+  color: #ffffff;
   overflow: hidden;
 }
 
-.bg {
-  object-fit: cover;
-  object-position: 82% center;
-  z-index: -2;
-}
-
 .inner {
-  width: 100%;
-  margin: 0 auto;
-  padding: 64px clamp(20px, 5vw, 96px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 64px);
+  padding-block: clamp(44px, 5vw, 56px);
 }
 
 .content {
-  max-width: 860px;
-  margin-left: clamp(0px, 8vw, 160px);
+  max-width: 640px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--pg-sage);
 }
 
 .title {
-  margin: 0 0 1.1rem;
-  color: var(--pg-green-dark);
-  font-family: var(--font-montserrat), system-ui, sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.9rem, 3.4vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  margin: 0 0 20px;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4.2vw, 50px);
+  line-height: 1.28;
+  color: #ffffff;
 }
 
 .subtitle {
-  margin: 0 0 2rem;
-  max-width: 34em;
-  color: var(--pg-text-muted);
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
-  line-height: 1.55;
+  margin: 0 0 30px;
+  max-width: 600px;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.5;
+  color: #ffffff;
 }
 
 .actions {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-bottom: 30px;
 }
 
-@media (max-width: 47.99em) {
-  .hero {
-    align-items: flex-start;
-    min-height: 520px;
-  }
+/* Frosted intake card */
+.intake {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 431px;
+  padding: 18px 26px;
+  border: 1px solid var(--pg-sage);
+  border-radius: 20px;
+  background: var(--pg-gradient-glass);
+}
 
-  /* Anchor to the right edge so the person in the photo stays visible */
-  .bg {
-    object-position: 100% center;
-  }
+.intakeIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(227, 231, 218, 0.25);
+  color: #ffffff;
+}
 
+.intakeLabel {
+  margin: 0;
+  font-size: clamp(12px, 1.1vw, 16px);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--pg-sage);
+}
+
+.intakeNumber {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.3;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 451 / 492;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  /* The subject sits off to one side of the source photo; anchoring the
+     portrait crop to the right edge brings him to the middle of the frame. */
+  object-position: right center;
+}
+
+@media (max-width: 61.99em) {
   .inner {
-    padding: 36px 20px 56px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .content {
-    margin-left: 0;
+  /* Explicit height, not aspect-ratio + max-height — that pair shrinks the
+     box width to preserve the ratio and the photo stops short of the edge. */
+  .media {
+    order: -1;
+    aspect-ratio: auto;
+    height: clamp(220px, 45vw, 360px);
+  }
+}
+
+@media (max-width: 35.99em) {
+  .intake {
+    width: 100%;
+    padding: 14px 18px;
+    gap: 12px;
   }
 
-  .actions {
-    justify-content: center;
-  }
-
-  .title {
-    font-size: clamp(1.9rem, 8vw, 2.4rem);
+  .intakeIcon {
+    width: 42px;
+    height: 42px;
   }
 }

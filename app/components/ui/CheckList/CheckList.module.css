@@ -1,0 +1,41 @@
+.list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.icon {
+  flex: none;
+  width: 30px;
+  height: 30px;
+}
+
+.small .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.label {
+  margin: 0;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 30px;
+  color: var(--pg-text);
+}
+
+.small .label {
+  font-size: clamp(15px, 1.2vw, 16px);
+  line-height: 24px;
+}
+
+.light .label {
+  color: #ffffff;
+}

@@ -1,46 +1,40 @@
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@mantine/core";
-import { IconUserPlus } from "@tabler/icons-react";
-import partnerImg from "@/public/HomePage/PartneringSection/Rectangle 9 (3).png";
+import partneringImg from "@/public/figma/home/partnering.png";
+import { Button } from "../ui/Button/Button";
 import classes from "./Partnering.module.css";
 
 export function Partnering() {
   return (
-    <section className={classes.section}>
-      <div className={classes.inner}>
+    <section className={`pgSection ${classes.section}`}>
+      <div className={`pgContainer ${classes.inner}`}>
         <div className={classes.media}>
           <Image
-            src={partnerImg}
-            alt="Healthcare professionals reviewing a patient chart together"
+            src={partneringImg}
+            alt="Palm Grove Health Center clinical team"
             className={classes.image}
-            placeholder="blur"
-            sizes="(max-width: 47.99em) 100vw, 50vw"
+            fill
+            sizes="(max-width: 992px) 100vw, (max-width: 1280px) 42vw, 490px"
           />
         </div>
 
         <div className={classes.content}>
-          <h2 className={classes.title}>
-            Partnering with Healthcare Professionals
+          <p className="pgEyebrow pgEyebrowLight">Work with us</p>
+          <h2 className="pgTitle pgTitleLight">
+            Healthcare provider partnerships
           </h2>
-          <p className={classes.text}>
-            Palm Grove Health Center works closely with hospitals, emergency
-            departments, physicians, nursing facilities, assisted living
-            communities, case managers, and behavioral health providers to
-            support timely admissions and coordinated care.
+          <p className="pgLead pgLeadLight">
+            We partner with hospitals, physicians, skilled nursing facilities,
+            and case managers to ensure safe, seamless transitions of care. Our
+            admissions team is available 24 hours a day, 7 days a week.
           </p>
-          <Button
-            component={Link}
-            href="/refer"
-            size="lg"
-            color="palmGreen"
-            leftSection={<IconUserPlus size={20} />}
-            className={classes.cta}
-          >
-            Refer a Patient
-          </Button>
+          <div className={classes.actions}>
+            <Button href="/referral-process" variant="outline">
+              Start a Referral
+            </Button>
+            <Button href="/contact" variant="glass">
+              Submit a Partnership Request
+            </Button>
+          </div>
         </div>
       </div>
     </section>

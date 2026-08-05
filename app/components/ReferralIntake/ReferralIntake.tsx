@@ -1,30 +1,43 @@
-"use client";
-
-import { Button } from "@mantine/core";
-import { IconPhone } from "@tabler/icons-react";
+import { IconMail, IconPhone } from "@tabler/icons-react";
 import classes from "./ReferralIntake.module.css";
 
 export function ReferralIntake() {
   return (
-    <section className={classes.section}>
-      <div className={classes.card}>
-        <span className={classes.badge}>Referral Process</span>
-        <h2 className={classes.title}>Contact Our Intake Team</h2>
-        <p className={classes.text}>
-          Call our Intake Department to discuss the patient&apos;s needs and
-          begin the referral process. Our team is available to answer questions,
-          review clinical information, and guide you through the next steps.
-        </p>
-        <Button
-          component="a"
-          href="tel:+19045550100"
-          size="lg"
-          color="palmGreen"
-          leftSection={<IconPhone size={20} />}
-        >
-          Call Intake
-        </Button>
+    <div className={classes.wrap}>
+      <div className="pgContainer">
+        <div className={classes.bar}>
+          <div className={classes.item}>
+            <span className={classes.icon}>
+              <IconPhone size={24} stroke={1.6} />
+            </span>
+            <div>
+              <p className={classes.label}>24/7 Intake &amp; Referral Line</p>
+              <a className={classes.number} href="tel:+18000000000">
+                (800) 000-0000
+              </a>
+            </div>
+          </div>
+
+          <div className={classes.item}>
+            <span className={classes.icon}>
+              <IconMail size={24} stroke={1.6} />
+            </span>
+            <p className={classes.text}>
+              Fax referrals to{" "}
+              <a className={classes.strong} href="tel:+19040000001">
+                (904) 000-0001
+              </a>{" "}
+              or email{" "}
+              <a
+                className={classes.strong}
+                href="mailto:referrals@palmgrovehealthcenter.com"
+              >
+                referrals@palmgrovehealthcenter.com
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
