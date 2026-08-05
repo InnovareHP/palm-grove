@@ -1,0 +1,140 @@
+.hero {
+  position: relative;
+  background: linear-gradient(
+    -53.33deg,
+    #5d785a 1.59%,
+    #475c49 33.91%,
+    #37483a 66.23%
+  );
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  align-items: stretch;
+  min-height: 333px;
+}
+
+.media {
+  position: relative;
+  min-height: 260px;
+}
+
+.imageRight {
+  grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+}
+
+.imageRight .media {
+  order: 2;
+}
+
+/* Inset photo variant — a rounded card instead of a full-bleed column */
+.cardMedia .media {
+  min-height: 0;
+  align-self: center;
+  aspect-ratio: 380 / 246;
+  margin: clamp(24px, 3vw, 44px) 0 clamp(24px, 3vw, 44px) var(--pg-gutter);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: clamp(32px, 4vw, 56px) var(--pg-gutter) clamp(32px, 4vw, 56px)
+    clamp(28px, 4vw, 60px);
+  max-width: 700px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: clamp(13px, 1.2vw, 16px);
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--pg-sage);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4.2vw, 50px);
+  line-height: 1.28;
+  color: #ffffff;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  margin-top: 8px;
+}
+
+/* Centered variant — no photo, copy stacked in the middle of the band */
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  min-height: 333px;
+  padding-block: clamp(40px, 5vw, 56px);
+}
+
+.centered .title,
+.centered .subtitle {
+  max-width: 640px;
+}
+
+@media (max-width: 61.99em) {
+  .grid,
+  .imageRight {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  /* Height is set explicitly rather than via aspect-ratio + max-height: that
+     pair makes the box shrink its width to keep the ratio, so the photo stops
+     short of the column edge. */
+  .media {
+    aspect-ratio: auto;
+    height: clamp(200px, 40vw, 320px);
+    min-height: 0;
+  }
+
+  .imageRight .media {
+    order: 0;
+  }
+
+  .cardMedia .media {
+    margin: var(--pg-gutter) var(--pg-gutter) 0;
+    aspect-ratio: auto;
+    height: clamp(180px, 38vw, 300px);
+  }
+
+  .centered {
+    min-height: 0;
+  }
+
+  .content {
+    padding-inline: var(--pg-gutter);
+  }
+}

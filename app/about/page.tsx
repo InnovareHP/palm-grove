@@ -1,14 +1,17 @@
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
-import { AboutHero } from "@/app/components/AboutHero/AboutHero";
-import { AboutMissionVision } from "@/app/components/AboutMissionVision/AboutMissionVision";
-import { AboutFacility } from "@/app/components/AboutFacility/AboutFacility";
-import { AboutGallery } from "@/app/components/AboutGallery/AboutGallery";
+import { Button } from "@/app/components/ui/Button/Button";
+import { CtaBand } from "@/app/components/ui/CtaBand/CtaBand";
+import { MediaSplit } from "@/app/components/ui/MediaSplit/MediaSplit";
+import { PageHero } from "@/app/components/ui/PageHero/PageHero";
+import { AboutCareTeam } from "@/app/components/AboutCareTeam/AboutCareTeam";
+import { AboutCommitment } from "@/app/components/AboutCommitment/AboutCommitment";
+import whoWeAreImg from "@/public/figma/about/who-we-are.png";
 
 export const metadata = {
   title: "About Us — Palm Grove Health Center",
   description:
-    "Our mission, vision, and values reflect our commitment to delivering exceptional psychiatric care for older adults.",
+    "Palm Grove Health Center brings specialized, compassionate psychiatric care to the older adults of St. Augustine and the surrounding communities.",
 };
 
 export default function AboutPage() {
@@ -16,10 +19,37 @@ export default function AboutPage() {
     <>
       <Header />
       <main>
-        <AboutHero />
-        <AboutMissionVision />
-        <AboutFacility />
-        <AboutGallery />
+        <PageHero
+          title="About Us"
+          subtitle="Palm Grove Health Center brings specialized, compassionate psychiatric care to the older adults of St. Augustine and the surrounding communities."
+        />
+
+        <MediaSplit
+          eyebrow="Who we are"
+          title="A team devoted to senior mental health"
+          paragraphs={[
+            "Palm Grove Health Center was founded on a simple belief: older adults deserve mental health care as specialized and attentive as the care they receive for their physical health. Aging brings unique emotional and psychiatric challenges, and treating them well requires clinicians who truly understand later life.",
+            "From our home in St. Augustine, our interdisciplinary team delivers inpatient and intensive outpatient care grounded in dignity, evidence, and genuine compassion — for patients and for the families who love them.",
+          ]}
+          image={whoWeAreImg}
+          alt="Palm Grove clinicians conferring in the hallway"
+          mediaAspect="478 / 517"
+        />
+
+        <AboutCareTeam />
+        <AboutCommitment />
+
+        <CtaBand
+          title="Learn more about our care"
+          lead="Explore our programs or reach out to our team — we're here to help."
+        >
+          <Button href="/treatment-services" variant="outline">
+            Our Programs
+          </Button>
+          <Button href="/contact" variant="glass">
+            Contact Us
+          </Button>
+        </CtaBand>
       </main>
       <Footer />
     </>

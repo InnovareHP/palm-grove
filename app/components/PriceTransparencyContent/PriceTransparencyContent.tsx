@@ -64,13 +64,13 @@ export function PriceTransparencyContent() {
           <p className={classes.text}>
             Our pricing information includes standard charges for hospital
             services, as required by applicable regulations. These files are
-            intended to improve transparency and may not reflect your
-            individual financial responsibility or out-of-pocket costs.
+            intended to improve transparency and may not reflect your individual
+            financial responsibility or out-of-pocket costs.
           </p>
           <p className={classes.text}>
             For questions about coverage, insurance, or payment options, our
-            team is available to help you better understand your estimated
-            costs before treatment begins.
+            team is available to help you better understand your estimated costs
+            before treatment begins.
           </p>
           <p className={classes.text}>
             <strong className={classes.detailLabel}>Note:</strong> Standard
@@ -113,13 +113,13 @@ export function PriceTransparencyContent() {
             <div className={classes.rule} aria-hidden="true" />
           </div>
           <p className={classes.text}>
-            For questions regarding pricing, insurance verification, or
-            billing, please contact:
+            For questions regarding pricing, insurance verification, or billing,
+            please contact:
           </p>
           <div className={classes.contactBox}>
             <p className={classes.detailItem}>
-              <strong className={classes.detailLabel}>Phone:</strong> +1 XXX
-              XXX XXX
+              <strong className={classes.detailLabel}>Phone:</strong> +1 XXX XXX
+              XXX
             </p>
             <p className={classes.detailItem}>
               <strong className={classes.detailLabel}>Email:</strong>{" "}

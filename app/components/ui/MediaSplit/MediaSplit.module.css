@@ -1,0 +1,70 @@
+.section {
+  background: #ffffff;
+}
+
+.tinted {
+  background: var(--pg-offwhite);
+}
+
+.mist {
+  background: var(--pg-gradient-mist);
+}
+
+.dark {
+  background: var(--pg-gradient-dark);
+  color: #ffffff;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 56px);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: var(--pg-media-aspect, 514 / 517);
+  border-radius: var(--pg-radius);
+  overflow: hidden;
+  box-shadow: var(--pg-shadow-media);
+}
+
+.reverse .media {
+  order: 2;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 560px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  margin-top: 8px;
+}
+
+@media (max-width: 61.99em) {
+  .inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reverse .media {
+    order: 0;
+  }
+
+  /* Explicit height, not aspect-ratio + max-height — that pair shrinks the
+     box width to preserve the ratio and the photo stops short of the edge. */
+  .media {
+    aspect-ratio: auto;
+    height: clamp(240px, 48vw, 380px);
+  }
+}

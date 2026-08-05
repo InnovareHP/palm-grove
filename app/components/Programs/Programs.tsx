@@ -1,86 +1,100 @@
-"use client";
-
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import { Button } from "@mantine/core";
-import img1 from "@/public/HomePage/ProgramSection/Rectangle 11.png";
-import img2 from "@/public/HomePage/ProgramSection/Rectangle 12.png";
-import img3 from "@/public/HomePage/ProgramSection/Rectangle 13.png";
-import img4 from "@/public/HomePage/ProgramSection/Rectangle 14.png";
+import program1 from "@/public/figma/home/program-1.png";
+import program2 from "@/public/figma/home/program-2.png";
+import program3 from "@/public/figma/home/program-3.png";
+import program4 from "@/public/figma/home/program-4.png";
+import { Button } from "../ui/Button/Button";
 import classes from "./Programs.module.css";
 
 type Program = {
-  image: StaticImageData;
   title: string;
   description: string;
+  image: StaticImageData;
+  alt: string;
+  href: string;
 };
 
 const programs: Program[] = [
   {
-    image: img1,
-    title: "Inpatient Care",
+    title: "Geriatric Psychiatric Inpatient",
     description:
-      "Hospital-based treatment for seniors experiencing acute psychiatric symptoms requiring 24-hour care.",
+      "Crisis stabilization and comprehensive psychiatric care with 24-hour medical support for seniors in acute need.",
+    image: program1,
+    alt: "A nurse supporting an older adult patient",
+    href: "/treatment-services/inpatient-psychiatric-program",
   },
   {
-    image: img2,
-    title: "Outpatient Program",
+    title: "Intensive Outpatient (IOP)",
     description:
-      "Structured therapy several days each week for seniors who need continued support while living at home.",
+      "Structured daytime therapy and psychiatric monitoring while patients maintain independence and live at home.",
+    image: program2,
+    alt: "A therapist leading a small group session",
+    href: "/treatment-services/intensive-outpatient-program",
   },
   {
-    image: img3,
-    title: "Family Support",
+    title: "Family Support and Education",
     description:
-      "Education, communication, and care planning that keeps families involved throughout treatment.",
+      "Family education, caregiver support, and collaborative discharge planning for the best possible outcomes.",
+    image: program3,
+    alt: "A family meeting with a care team member",
+    href: "/patient-visitor-guide",
   },
   {
-    image: img4,
     title: "Continuum of Care",
     description:
-      "Coordinated transition planning with community and physicians to support long-term stability.",
+      "Seamless step-down programs and community coordination that support long-term stability and recovery.",
+    image: program4,
+    alt: "An older adult smiling with a caregiver",
+    href: "/treatment-services/multidisciplinary-care-team",
   },
 ];
 
 export function Programs() {
   return (
-    <section className={classes.section}>
-      <div className={classes.inner}>
-        <span className={classes.badge}>OUR PROGRAMS</span>
-        <h2 className={classes.title}>
-          Specialized Psychiatric Services for Older Adults
-        </h2>
-        <p className={classes.subtitle}>
-          Palm Grove Health Center provides personalized psychiatric care for
-          older adults, offering compassionate treatment, stabilization, and
-          support for lasting recovery.
-        </p>
+    <section className={`pgSection ${classes.section}`}>
+      <div className="pgContainer">
+        <div className="pgIntro">
+          <p className="pgEyebrow pgEyebrowMuted">Programs &amp; Services</p>
+          <h2 className="pgTitle">
+            Care built around the needs of older adults
+          </h2>
+          <p className="pgLead">
+            A full continuum of specialized behavioral health services — from
+            acute stabilization to structured outpatient support — delivered
+            with dignity and respect.
+          </p>
+        </div>
 
         <div className={classes.grid}>
           {programs.map((program) => (
-            <article key={program.title} className={classes.card}>
-              <Image
-                src={program.image}
-                alt={program.title}
-                className={classes.cardImage}
-                placeholder="blur"
-                sizes="(max-width: 47.99em) 100vw, 25vw"
-              />
-              <h3 className={classes.cardTitle}>{program.title}</h3>
-              <p className={classes.cardText}>{program.description}</p>
-            </article>
+            <Link
+              key={program.title}
+              href={program.href}
+              className={`pgCard ${classes.card}`}
+            >
+              <div className={classes.media}>
+                <Image
+                  src={program.image}
+                  alt={program.alt}
+                  className={classes.image}
+                  fill
+                  sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, (max-width: 1280px) 25vw, 270px"
+                />
+              </div>
+              <div className={classes.body}>
+                <h3 className={`pgCardTitle ${classes.title}`}>
+                  {program.title}
+                </h3>
+                <p className={classes.text}>{program.description}</p>
+              </div>
+            </Link>
           ))}
         </div>
 
-        <Button
-          component={Link}
-          href="/services"
-          size="lg"
-          color="palmGreen"
-          className={classes.cta}
-        >
-          Explore Our Services
-        </Button>
+        <div className={classes.actions}>
+          <Button href="/treatment-services">Learn More</Button>
+        </div>
       </div>
     </section>
   );

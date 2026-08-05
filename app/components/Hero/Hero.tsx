@@ -1,56 +1,67 @@
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
-import { Button, Group } from "@mantine/core";
-import { IconPhone, IconUserPlus } from "@tabler/icons-react";
-import heroImg from "@/public/HomePage/HeroSection/home-hero-1.png";
+import { IconArrowRight, IconPhone, IconUserCheck } from "@tabler/icons-react";
+import heroImg from "@/public/figma/home/hero.png";
+import { Button } from "../ui/Button/Button";
 import classes from "./Hero.module.css";
 
 export function Hero() {
   return (
     <section className={classes.hero}>
-      <Image
-        src={heroImg}
-        alt="Older adult walking along the beach at St. Augustine"
-        className={classes.bg}
-        placeholder="blur"
-        priority
-        fill
-        sizes="100vw"
-      />
-
-      <div className={classes.inner}>
+      <div className={`pgContainer ${classes.inner}`}>
         <div className={classes.content}>
+          <p className={classes.eyebrow}>
+            Geriatric Psychiatry • St. Augustine FL
+          </p>
           <h1 className={classes.title}>
-            Compassionate Psychiatric Care for Older Adults in St. Augustine
+            Compassionate psychiatric care for older adults
           </h1>
           <p className={classes.subtitle}>
-            Helping seniors and families find safety, stabilization, support,
-            and a path forward through specialized psychiatric care designed for
-            older adults.
+            Helping seniors and their families find safety, healing, and hope.
+            Palm Grove Health Center provides specialized inpatient and
+            intensive outpatient behavioral health care designed for the unique
+            needs of older adults.
           </p>
 
-          <Group gap="md" className={classes.actions}>
+          <div className={classes.actions}>
             <Button
-              component="a"
-              href="tel:+19045550100"
-              size="lg"
-              color="palmGreen"
-              leftSection={<IconPhone size={20} />}
-            >
-              Call Intake
-            </Button>
-            <Button
-              component={Link}
               href="/referral-process"
-              size="lg"
-              variant="default"
-              leftSection={<IconUserPlus size={20} />}
+              variant="outline"
+              leftIcon={<IconUserCheck size={20} stroke={1.8} />}
             >
               Refer a Patient
             </Button>
-          </Group>
+            <Button
+              href="/treatment-services"
+              variant="ghostLight"
+              rightIcon={<IconArrowRight size={20} stroke={1.8} />}
+            >
+              Explore Our Services
+            </Button>
+          </div>
+
+          <a className={classes.intake} href="tel:+18000000000">
+            <span className={classes.intakeIcon}>
+              <IconPhone size={24} stroke={1.6} />
+            </span>
+            <span>
+              <span className={classes.intakeLabel}>
+                24/7 Intake &amp; Referral Line
+              </span>
+              <span className={classes.intakeNumber}>(800) 000-0000</span>
+            </span>
+          </a>
+        </div>
+
+        <div className={classes.media}>
+          <Image
+            src={heroImg}
+            alt="An older adult walking on the beach in St. Augustine"
+            className={classes.image}
+            placeholder="blur"
+            priority
+            fill
+            sizes="(max-width: 992px) 100vw, (max-width: 1280px) 45vw, 500px"
+          />
         </div>
       </div>
     </section>

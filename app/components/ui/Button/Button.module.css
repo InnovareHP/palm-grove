@@ -1,0 +1,109 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 12.5px 26px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.55;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+/* Filled brand green — the primary call to action */
+.solid {
+  background: var(--pg-green);
+  color: #ffffff;
+}
+
+.solid:hover {
+  background: #34521f;
+}
+
+/* Filled brand green with a white keyline, used on the light nav bar */
+.solidBordered {
+  background: var(--pg-green);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.solidBordered:hover {
+  background: #34521f;
+}
+
+/* White pill with a green keyline */
+.outline {
+  background: #ffffff;
+  color: var(--pg-green);
+  border-color: var(--pg-green);
+}
+
+.outline:hover {
+  background: var(--pg-sage);
+}
+
+/* Text-only button that sits on the dark gradient sections */
+.ghostLight {
+  background: transparent;
+  color: #ffffff;
+  padding-inline: 15px;
+}
+
+.ghostLight:hover {
+  color: var(--pg-sage);
+}
+
+/* Frosted-glass button on the dark gradient sections */
+.glass {
+  background: var(--pg-gradient-glass);
+  border-color: var(--pg-sage);
+  color: #ffffff;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.block {
+  width: 100%;
+}
+
+@media (max-width: 47.99em) {
+  .button {
+    font-size: 15px;
+    padding: 11px 20px;
+    gap: 10px;
+  }
+}
+
+/* Long labels ("Submit a Partnership Request") outgrow a 320px viewport if
+   they are held on one line. */
+@media (max-width: 35.99em) {
+  .button {
+    white-space: normal;
+    text-align: center;
+  }
+}

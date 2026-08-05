@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
-import "@mantine/core/styles.css";
+import { Castoro, Montserrat } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -12,10 +9,17 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const castoro = Castoro({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-castoro",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Palm Grove Health Center — Psychiatric Care for Older Adults",
   description:
-    "Compassionate psychiatric care for older adults in St. Augustine. Helping seniors and families find safety, stabilization, support, and a path forward.",
+    "Compassionate psychiatric and behavioral health care for older adults and their families in St. Augustine, Florida.",
 };
 
 export default function RootLayout({
@@ -24,17 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      {...mantineHtmlProps}
-      className={montserrat.variable}
-    >
-      <head>
-        <ColorSchemeScript defaultColorScheme="light" />
-      </head>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+    <html lang="en" className={`${montserrat.variable} ${castoro.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

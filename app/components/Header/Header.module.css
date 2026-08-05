@@ -1,92 +1,257 @@
+/* ---- Crisis / contact strip above the nav ---- */
+.banner {
+  background: var(--pg-green-darkest);
+  color: #ffffff;
+}
+
+.bannerInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  min-height: 50px;
+  padding-block: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.bannerContacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+
+.bannerStrong {
+  font-weight: 600;
+}
+
+.bannerLink:hover {
+  text-decoration: underline;
+}
+
+/* ---- Main navigation ---- */
 .header {
   position: sticky;
   top: 0;
-  /* Below Mantine's drawer/modal layer (200) so the mobile menu
-     covers the header, but above all page content */
+  /* Below the mobile drawer (200) so the menu covers the header,
+     but above all page content */
   z-index: 150;
-  background: var(--pg-header-bg);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 2px 12px rgba(44, 53, 43, 0.06);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--pg-border);
 }
 
 .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(16px, 2.5vw, 40px);
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 8px clamp(16px, 3vw, 56px);
+  gap: clamp(12px, 2vw, 32px);
+  min-height: 112px;
+  padding-block: 18px;
 }
 
 .logoLink {
-  display: inline-flex;
   flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
 }
 
 .logo {
-  /* Fluid height; negative block margin keeps the header row from growing
-     with the logo, so the bar height stays constant. */
-  height: clamp(72px, 8vw, 116px);
+  height: clamp(52px, 5vw, 76px);
   width: auto;
   display: block;
-  margin-block: -10px;
 }
 
-/* Desktop nav — single row, no wrapping */
 .desktopNav {
   display: flex;
-  flex: 1;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-end;
-  column-gap: clamp(12px, 1.7vw, 30px);
+  column-gap: clamp(12px, 1.8vw, 30px);
+  margin-inline: auto;
 }
 
 .link {
-  color: #3f4a3c;
-  font-size: clamp(12px, 1.05vw, 14px);
-  font-weight: 500;
-  white-space: nowrap;
-  line-height: 1.2;
-  white-space: nowrap;
-  transition: color 0.15s ease;
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--pg-text);
+  text-align: center;
+  max-width: 96px;
+  transition: color 150ms ease;
 }
 
 .link:hover {
-  color: var(--mantine-color-palmGreen-7);
+  color: var(--pg-green);
 }
 
+.cta {
+  flex: 0 0 auto;
+}
+
+/* ---- Burger ---- */
 .burger {
   display: none;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--pg-text);
 }
 
-/* ── Drawer (mobile / tablet) ───────────────────────────── */
+.burgerBox {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 16px;
+}
+
+.burgerBox span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform 200ms ease,
+    opacity 150ms ease,
+    top 200ms ease;
+}
+
+.burgerBox span:nth-child(1) {
+  top: 0;
+}
+
+.burgerBox span:nth-child(2) {
+  top: 7px;
+}
+
+.burgerBox span:nth-child(3) {
+  top: 14px;
+}
+
+.burgerOpen .burgerBox span:nth-child(1) {
+  top: 7px;
+  transform: rotate(45deg);
+}
+
+.burgerOpen .burgerBox span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerOpen .burgerBox span:nth-child(3) {
+  top: 7px;
+  transform: rotate(-45deg);
+}
+
+/* ---- Mobile drawer ---- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(32, 62, 47, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  width: min(80%, 360px);
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 220ms ease;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.drawerTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--pg-heading);
+}
+
+.drawerClose {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--pg-text);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.drawerClose:hover {
+  color: var(--pg-green);
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+}
+
 .drawerLink {
-  color: #3f4a3c;
+  display: block;
   font-size: 16px;
-  font-weight: 500;
-  padding: 6px 0;
+  font-weight: 600;
+  color: var(--pg-text);
+  padding-block: 12px;
+  border-bottom: 1px solid var(--pg-border);
 }
 
 .drawerLink:hover {
-  color: var(--mantine-color-palmGreen-7);
+  color: var(--pg-green);
 }
 
-/* Laptop: trim padding so the 8 links keep fitting on one row */
-@media (max-width: 74.99em) {
-  .inner {
-    padding-inline: 20px;
-  }
+.drawerCta {
+  margin-top: 20px;
+}
 
-  .logo {
-    margin-block: -9px;
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .overlay,
+  .burgerBox span {
+    transition-duration: 0ms;
   }
 }
 
 /* Tablet + mobile: burger menu */
-@media (max-width: 61.99em) {
-  .desktopNav {
+@media (max-width: 74.99em) {
+  .desktopNav,
+  .cta {
     display: none;
   }
 
@@ -94,20 +259,21 @@
     display: block;
   }
 
-  .logo {
-    height: 86px;
-    margin-block: -7px;
+  .inner {
+    min-height: 88px;
+    padding-block: 14px;
   }
 }
 
-@media (max-width: 35.99em) {
-  .inner {
-    gap: 12px;
-    padding: 6px 16px;
+@media (max-width: 47.99em) {
+  .bannerInner {
+    font-size: 11px;
+    justify-content: center;
+    text-align: center;
   }
 
-  .logo {
-    height: 72px;
-    margin-block: -6px;
+  .bannerContacts {
+    gap: 4px 16px;
+    justify-content: center;
   }
 }

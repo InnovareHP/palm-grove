@@ -1,47 +1,41 @@
-import Image from "next/image";
-import sectionImg from "@/public/OurFocusPage/ConditionsSection/image 5.png";
+import { CheckCards } from "../ui/CheckCards/CheckCards";
 import classes from "./OurFocusConditions.module.css";
 
 const conditions = [
-  "Depression and mood disorders",
+  "Depression & mood disorders",
   "Anxiety disorders",
+  "Dementia-related behavioral changes",
   "Bipolar disorder",
-  "Psychotic disorders",
-  "Behavioral symptoms associated with dementia",
-  "Medication-related behavioral concerns",
-  "Grief, loss, and life transition challenges",
-  "Other psychiatric conditions requiring specialized geriatric care",
+  "Psychosis & thought disorders",
+  "Grief & adjustment difficulties",
+  "Agitation & aggression",
+  "Medication management concerns",
+  "Suicidal thoughts & safety concerns",
 ];
 
 export function OurFocusConditions() {
   return (
-    <section className={classes.section}>
-      <div className={classes.inner}>
-        <div className={classes.imageWrapper}>
-          <Image
-            src={sectionImg}
-            alt="Older adult sitting peacefully by the ocean"
-            className={classes.image}
-            placeholder="blur"
-            sizes="(max-width: 768px) 100vw, 42vw"
-          />
+    <section className="pgSection">
+      <div className="pgContainer">
+        <div className="pgIntro">
+          <p className="pgEyebrow">Conditions we treat</p>
+          <h2 className="pgTitle">
+            Specialized help for a range of conditions
+          </h2>
+          <p className="pgLead">
+            Our team assesses and treats the psychiatric and behavioral
+            conditions most common among older adults.
+          </p>
         </div>
 
-        <div className={classes.content}>
-          <h2 className={classes.title}>Conditions We Treat</h2>
-          <p className={classes.body}>
-            Our clinical team provides comprehensive assessment and treatment for
-            a wide range of psychiatric conditions affecting older adults,
-            including:
-          </p>
-          <ul className={classes.list}>
-            {conditions.map((condition) => (
-              <li key={condition} className={classes.listItem}>
-                {condition}
-              </li>
-            ))}
-          </ul>
+        <div className={classes.grid}>
+          <CheckCards items={conditions} />
         </div>
+
+        <p className={classes.note}>
+          This list is not exhaustive. Our admissions team can help determine
+          whether Palm Grove is the right fit for a specific situation.
+        </p>
       </div>
     </section>
   );

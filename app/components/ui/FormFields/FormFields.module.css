@@ -1,0 +1,116 @@
+/* Shared input styling for the referral and contact forms. */
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--pg-text);
+}
+
+.required {
+  color: #fa5252;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 6px 12px;
+  min-height: 41px;
+  background: var(--pg-border);
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--pg-text);
+}
+
+.textarea {
+  min-height: 88px;
+  padding-block: 15px;
+  resize: vertical;
+}
+
+.textareaTall {
+  min-height: 128px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #868e96;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: 2px solid var(--pg-green);
+  outline-offset: 1px;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12.5px 26px;
+  background: var(--pg-green);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.submit:hover {
+  background: #34521f;
+}
+
+.disclaimer {
+  margin: 14px 0 0;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: center;
+  color: var(--pg-green);
+}
+
+.status {
+  margin: 14px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  color: var(--pg-green);
+}
+
+@media (max-width: 35.99em) {
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
