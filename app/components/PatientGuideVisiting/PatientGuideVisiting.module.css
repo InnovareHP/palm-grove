@@ -36,9 +36,10 @@
 
 .row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 0 16px;
   padding-block: 14px;
   border-top: 1px solid #dfe6e0;
 }
@@ -54,6 +55,7 @@
 }
 
 .time {
+  margin-left: auto;
   font-size: 16px;
   font-weight: 600;
   line-height: 30px;

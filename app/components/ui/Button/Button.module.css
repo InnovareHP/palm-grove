@@ -91,18 +91,14 @@
   width: 100%;
 }
 
+/* Long labels ("Submit a Partnership Request") outgrow a phone viewport if
+   they are held on one line. */
 @media (max-width: 47.99em) {
   .button {
+    max-width: 100%;
     font-size: 15px;
     padding: 11px 20px;
     gap: 10px;
-  }
-}
-
-/* Long labels ("Submit a Partnership Request") outgrow a 320px viewport if
-   they are held on one line. */
-@media (max-width: 35.99em) {
-  .button {
     white-space: normal;
     text-align: center;
   }

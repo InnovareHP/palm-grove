@@ -37,6 +37,7 @@
 .select,
 .textarea {
   width: 100%;
+  max-width: 100%;
   padding: 6px 12px;
   min-height: 41px;
   background: var(--pg-border);
