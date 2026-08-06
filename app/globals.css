@@ -72,18 +72,36 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+svg,
+video,
+iframe {
   max-width: 100%;
 }
 
-/* Long unbroken tokens (emails, phone strings) must never push the page wide */
+/* Long unbroken tokens (emails, phone strings) must never push the page wide.
+   `anywhere` rather than `break-word`: only `anywhere` shrinks the element's
+   min-content size, which is what stops a flex/grid item from refusing to
+   narrow past a 34-character email address. */
 p,
 h1,
 h2,
 h3,
+h4,
 li,
-a {
-  overflow-wrap: break-word;
+a,
+span {
+  overflow-wrap: anywhere;
+}
+
+/* Flex and grid children default to min-width: auto, so one long child can
+   push a whole row wider than the viewport. Text containers opt out. */
+p,
+h1,
+h2,
+h3,
+h4 {
+  min-width: 0;
 }
 
 /* ---------------------------------------------------------------------------
@@ -213,9 +231,25 @@ a {
   border: 0;
 }
 
-/* Keep in-page anchors clear of the sticky header */
+/* Keep in-page anchors clear of the sticky header (112px desktop, 88px once
+   the burger bar kicks in) */
 section[id] {
-  scroll-margin-top: 120px;
+  scroll-margin-top: 130px;
+}
+
+@media (max-width: 74.99em) {
+  section[id] {
+    scroll-margin-top: 104px;
+  }
+}
+
+/* iOS zooms the page in when a focused control is under 16px */
+@media (max-width: 47.99em) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
 }
 
 :where(a, button):focus-visible {

@@ -85,3 +85,13 @@
   font-size: clamp(0.88rem, 1vw, 0.96rem);
   line-height: 1.7;
 }
+
+@media (max-width: 47.99em) {
+  .ruleHeading {
+    gap: 12px;
+  }
+
+  .introBox {
+    padding: 24px 20px;
+  }
+}

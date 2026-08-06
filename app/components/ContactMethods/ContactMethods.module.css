@@ -11,11 +11,17 @@
   display: flex;
   align-items: center;
   gap: 18px;
+  min-width: 0;
   min-height: 101px;
   padding: 20px 15px;
   background: var(--pg-offwhite);
   border: 1px solid var(--pg-border);
   border-radius: var(--pg-radius);
+}
+
+/* The email address is one long token — let the text column narrow */
+.item > div {
+  min-width: 0;
 }
 
 .icon {
@@ -46,7 +52,7 @@
   line-height: 30px;
   letter-spacing: 1.2px;
   color: var(--pg-text);
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 a.value:hover {
@@ -67,8 +73,26 @@ a.value:hover {
 }
 
 @media (max-width: 35.99em) {
+  .item {
+    align-items: flex-start;
+    gap: 14px;
+    min-height: 0;
+    padding: 18px 16px;
+  }
+
+  .icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .label {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
   .value {
     letter-spacing: 0.4px;
+    line-height: 26px;
   }
 
   .hint {
