@@ -18,7 +18,7 @@
 }
 
 .cardDark {
-  background: #37483a;
+  background: var(--pg-green-darkest);
 }
 
 .label {
@@ -28,11 +28,11 @@
   line-height: 30px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: #37483a;
+  color: var(--pg-green-darkest);
 }
 
 .cardDark .label {
-  color: var(--pg-sage);
+  color: var(--pg-on-dark-eyebrow);
 }
 
 .text {

@@ -2,12 +2,13 @@ import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
 import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { ResourcesAlert } from "@/app/components/ResourcesAlert/ResourcesAlert";
-import {
-  MentalHealthResources,
-  type CrisisResource,
-} from "@/app/components/MentalHealthResources/MentalHealthResources";
+import { MentalHealthResources } from "@/app/components/MentalHealthResources/MentalHealthResources";
+import type { CrisisResource } from "@/app/components/MentalHealthResources/MentalHealthResources.data";
 import { ResourcesCaregivers } from "@/app/components/ResourcesCaregivers/ResourcesCaregivers";
 import { ResourcesPromo } from "@/app/components/ResourcesPromo/ResourcesPromo";
+/* No dedicated Resources hero shot exists yet; this group photo carries the
+   "you are not doing this alone" tone of the page. */
+import heroImg from "@/public/figma/treatment/continuum.png";
 
 export const metadata = {
   title: "Mental Health Resources — Palm Grove Health Center",
@@ -62,6 +63,9 @@ export default function ResourcesPage() {
         <PageHero
           title="Mental Health Resources"
           subtitle="Support and information for patients, families, and caregivers — including crisis lines available around the clock."
+          image={heroImg}
+          alt="Older adults and family members together outdoors"
+          imagePosition="center top"
         />
         <ResourcesAlert />
         <MentalHealthResources

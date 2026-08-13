@@ -21,7 +21,7 @@
   height: 52px;
   padding: 15px;
   background: #ffffff;
-  border: 1.5px solid #dedede;
+  border: 1.5px solid var(--pg-border-input);
   border-radius: 20px;
   font-size: 16px;
   font-weight: 600;
@@ -34,8 +34,8 @@
 }
 
 .pill:hover {
-  border-color: var(--pg-green);
-  color: var(--pg-green);
+  border-color: var(--pg-green-hover);
+  color: var(--pg-green-hover);
 }
 
 .icon {

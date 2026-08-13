@@ -1,5 +1,8 @@
 import { IconMail, IconPhone } from "@tabler/icons-react";
+import { mailto, siteConfig } from "@/app/lib/site";
 import classes from "./ReferralIntake.module.css";
+
+const { phones, emails } = siteConfig;
 
 export function ReferralIntake() {
   return (
@@ -12,8 +15,8 @@ export function ReferralIntake() {
             </span>
             <div>
               <p className={classes.label}>24/7 Intake &amp; Referral Line</p>
-              <a className={classes.number} href="tel:+18000000000">
-                (800) 000-0000
+              <a className={classes.number} href={phones.intake.href}>
+                {phones.intake.display}
               </a>
             </div>
           </div>
@@ -24,15 +27,12 @@ export function ReferralIntake() {
             </span>
             <p className={classes.text}>
               Fax referrals to{" "}
-              <a className={classes.strong} href="tel:+19040000001">
-                (904) 000-0001
+              <a className={classes.strong} href={phones.fax.href}>
+                {phones.fax.display}
               </a>{" "}
               or email{" "}
-              <a
-                className={classes.strong}
-                href="mailto:referrals@palmgrovehealthcenter.com"
-              >
-                referrals@palmgrovehealthcenter.com
+              <a className={classes.strong} href={mailto(emails.referrals)}>
+                {emails.referrals}
               </a>
             </p>
           </div>

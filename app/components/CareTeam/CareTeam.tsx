@@ -13,7 +13,7 @@ export function CareTeam() {
             alt="A clinician comforting an older adult patient"
             className={classes.image}
             fill
-            sizes="(max-width: 992px) 100vw, (max-width: 1280px) 47vw, 520px"
+            sizes="(max-width: 640px) 100vw, (max-width: 992px) 620px, (max-width: 1280px) 47vw, 520px"
           />
         </div>
 

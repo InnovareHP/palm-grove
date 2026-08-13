@@ -1,6 +1,6 @@
 .footer {
-  background: var(--pg-green-deep);
-  color: #ffffff;
+  background: var(--pg-green-darkest);
+  color: var(--pg-on-dark-body);
 }
 
 .inner {
@@ -26,7 +26,7 @@
   font-size: 13px;
   font-weight: 500;
   line-height: 1.6;
-  color: #ffffff;
+  color: var(--pg-on-dark-body);
 }
 
 .address {
@@ -35,7 +35,7 @@
   font-size: 13px;
   font-weight: 500;
   line-height: 1.6;
-  color: #ffffff;
+  color: var(--pg-on-dark-soft);
 }
 
 .columnTitle {
@@ -45,7 +45,7 @@
   line-height: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--pg-sage);
+  color: var(--pg-on-dark-label);
 }
 
 .links {
@@ -61,12 +61,12 @@
   font-size: 13px;
   font-weight: 500;
   line-height: 22px;
-  color: #ffffff;
+  color: var(--pg-on-dark-pale);
   transition: color 150ms ease;
 }
 
 .link:hover {
-  color: var(--pg-sage);
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -84,7 +84,7 @@
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--pg-sage);
+  color: var(--pg-on-dark-label);
 }
 
 .contactValue {
@@ -102,7 +102,7 @@ a.contactValue:hover {
 
 /* ---- Bottom legal bar ---- */
 .legal {
-  background: var(--pg-green-darkest);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .legalInner {
@@ -116,16 +116,6 @@ a.contactValue:hover {
   font-size: 12px;
   font-weight: 500;
   color: #ffffff;
-}
-
-.legalLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 32px;
-}
-
-.legalLink:hover {
-  text-decoration: underline;
 }
 
 @media (max-width: 61.99em) {
@@ -142,9 +132,5 @@ a.contactValue:hover {
   .legalInner {
     justify-content: center;
     text-align: center;
-  }
-
-  .legalLinks {
-    justify-content: center;
   }
 }

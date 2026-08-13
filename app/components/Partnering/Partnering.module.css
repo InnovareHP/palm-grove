@@ -13,7 +13,6 @@
 .media {
   position: relative;
   aspect-ratio: 478 / 368;
-  border-radius: var(--pg-radius);
   overflow: hidden;
   box-shadow: var(--pg-shadow-media);
 }

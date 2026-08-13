@@ -40,7 +40,7 @@
 }
 
 .solid:hover {
-  background: #34521f;
+  background: var(--pg-green-hover);
 }
 
 /* Filled brand green with a white keyline, used on the light nav bar */
@@ -51,7 +51,7 @@
 }
 
 .solidBordered:hover {
-  background: #34521f;
+  background: var(--pg-green-hover);
 }
 
 /* White pill with a green keyline */
@@ -73,7 +73,7 @@
 }
 
 .ghostLight:hover {
-  color: var(--pg-sage);
+  color: var(--pg-on-dark-pale);
 }
 
 /* Frosted-glass button on the dark gradient sections */

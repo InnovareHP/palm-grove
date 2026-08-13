@@ -1,13 +1,20 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import fields from "../ui/FormFields/FormFields.module.css";
+import { siteConfig } from "@/app/lib/site";
+import {
+  FieldGrid,
+  FormStatus,
+  SubmitButton,
+  TextAreaField,
+  TextField,
+} from "../ui/FormFields/FormFields";
 import classes from "./ContactUs.module.css";
 
 const MAP_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6110.260822666423!2d-81.36018602287344!3d29.91820392453811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e428617387a88b%3A0x2146425e367e82fe!2s150%20Village%20Crossing%20Ct%2C%20St.%20Augustine%2C%20FL%2032084%2C%20USA!5e1!3m2!1sen!2sph!4v1783341279084!5m2!1sen!2sph";
 
-const CONTACT_EMAIL = "info@palmgrovehealthcenter.com";
+const CONTACT_EMAIL = siteConfig.emails.info;
 
 export function ContactUs() {
   const [sent, setSent] = useState(false);
@@ -37,10 +44,8 @@ export function ContactUs() {
       <div className={`pgContainer ${classes.inner}`}>
         <div className={classes.content}>
           <p className="pgEyebrow">Visit us</p>
-          <h2 className="pgTitle">Palm Grove Health Center</h2>
-          <p className={classes.address}>
-            150 Village Crossing Ct. St. Augustine, FL 32084
-          </p>
+          <h2 className="pgTitle">{siteConfig.name}</h2>
+          <p className={classes.address}>{siteConfig.address.short}</p>
 
           <div className={classes.map}>
             <iframe
@@ -73,69 +78,45 @@ export function ContactUs() {
           </p>
 
           <form onSubmit={handleSubmit}>
-            <div className={`${fields.fields} ${fields.single}`}>
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="contact-name">
-                  Name <span className={fields.required}>*</span>
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  className={fields.input}
-                  placeholder="Full Name"
-                  required
-                />
-              </div>
+            <FieldGrid single>
+              <TextField
+                id="contact-name"
+                name="name"
+                label="Name"
+                placeholder="Full Name"
+                required
+              />
+              <TextField
+                id="contact-phone"
+                name="phone"
+                type="tel"
+                label="Contact Number"
+                placeholder="+1 (000) 000-0000"
+                required
+              />
+              <TextField
+                id="contact-email"
+                name="email"
+                type="email"
+                label="Email"
+                placeholder="you@organization.com"
+              />
+              <TextAreaField
+                id="contact-message"
+                name="message"
+                label="How We Can Help"
+                placeholder="Tell us a little about what you need."
+                tall
+              />
+            </FieldGrid>
 
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="contact-phone">
-                  Contact Number <span className={fields.required}>*</span>
-                </label>
-                <input
-                  id="contact-phone"
-                  name="phone"
-                  type="tel"
-                  className={fields.input}
-                  placeholder="+1 (000) 000-0000"
-                  required
-                />
-              </div>
-
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="contact-email">
-                  Email
-                </label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  className={fields.input}
-                  placeholder="you@organization.com"
-                />
-              </div>
-
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="contact-message">
-                  How We Can Help
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  className={`${fields.textarea} ${fields.textareaTall}`}
-                  placeholder="Tell us a little about what you need."
-                />
-              </div>
-            </div>
-
-            <button type="submit" className={fields.submit}>
-              Send Message
-            </button>
+            <SubmitButton>Send Message</SubmitButton>
 
             {sent ? (
-              <p className={fields.status} aria-live="polite">
+              <FormStatus>
                 Your email client should now be open with your message. If it
                 did not open, email {CONTACT_EMAIL} directly.
-              </p>
+              </FormStatus>
             ) : null}
           </form>
         </div>
