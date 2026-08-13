@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { IconArrowRight, IconPhone, IconUserCheck } from "@tabler/icons-react";
+import { siteConfig } from "@/app/lib/site";
 import heroImg from "@/public/figma/home/hero.png";
 import { Button } from "../ui/Button/Button";
 import classes from "./Hero.module.css";
@@ -39,7 +40,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <a className={classes.intake} href="tel:+18000000000">
+          <a className={classes.intake} href={siteConfig.phones.intake.href}>
             <span className={classes.intakeIcon}>
               <IconPhone size={24} stroke={1.6} />
             </span>
@@ -47,7 +48,9 @@ export function Hero() {
               <span className={classes.intakeLabel}>
                 24/7 Intake &amp; Referral Line
               </span>
-              <span className={classes.intakeNumber}>(800) 000-0000</span>
+              <span className={classes.intakeNumber}>
+                {siteConfig.phones.intake.display}
+              </span>
             </span>
           </a>
         </div>
@@ -60,7 +63,7 @@ export function Hero() {
             placeholder="blur"
             priority
             fill
-            sizes="(max-width: 992px) 100vw, (max-width: 1280px) 45vw, 500px"
+            sizes="(max-width: 640px) 100vw, (max-width: 992px) 620px, (max-width: 1280px) 45vw, 500px"
           />
         </div>
       </div>

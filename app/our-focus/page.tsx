@@ -1,4 +1,5 @@
 import { IconPhone } from "@tabler/icons-react";
+import { siteConfig } from "@/app/lib/site";
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
 import { Button } from "@/app/components/ui/Button/Button";
@@ -39,6 +40,7 @@ export default function OurFocusPage() {
           ]}
           image={whoWeServeImg}
           alt="Two older adults walking together outdoors"
+          imagePosition="center top"
           reverse
           background="tinted"
         />
@@ -49,11 +51,11 @@ export default function OurFocusPage() {
           lead="Our admissions team is available 24/7 to talk through your situation."
         >
           <Button
-            href="tel:+18000000000"
+            href={siteConfig.phones.intake.href}
             variant="outline"
             leftIcon={<IconPhone size={20} stroke={1.8} />}
           >
-            Call (800) 000-0000
+            Call {siteConfig.phones.intake.display}
           </Button>
           <Button href="/treatment-services" variant="glass">
             See Our Programs

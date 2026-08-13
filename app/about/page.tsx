@@ -7,6 +7,9 @@ import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { AboutCareTeam } from "@/app/components/AboutCareTeam/AboutCareTeam";
 import { AboutCommitment } from "@/app/components/AboutCommitment/AboutCommitment";
 import whoWeAreImg from "@/public/figma/about/who-we-are.png";
+/* No dedicated About hero shot exists yet; this warm clinician-and-patient
+   photo reads differently from the team shot in the section below it. */
+import heroImg from "@/public/figma/home/care-team.png";
 
 export const metadata = {
   title: "About Us — Palm Grove Health Center",
@@ -22,6 +25,9 @@ export default function AboutPage() {
         <PageHero
           title="About Us"
           subtitle="Palm Grove Health Center brings specialized, compassionate psychiatric care to the older adults of St. Augustine and the surrounding communities."
+          image={heroImg}
+          alt="A Palm Grove clinician sitting with an older adult patient"
+          imagePosition="center top"
         />
 
         <MediaSplit
@@ -33,6 +39,7 @@ export default function AboutPage() {
           ]}
           image={whoWeAreImg}
           alt="Palm Grove clinicians conferring in the hallway"
+          imagePosition="center top"
           mediaAspect="478 / 517"
         />
 

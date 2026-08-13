@@ -1,3 +1,4 @@
+import { siteConfig } from "@/app/lib/site";
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
 import { Button } from "@/app/components/ui/Button/Button";
@@ -7,6 +8,9 @@ import { MediaSplit } from "@/app/components/ui/MediaSplit/MediaSplit";
 import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { TreatmentQuickNav } from "@/app/components/TreatmentQuickNav/TreatmentQuickNav";
 import { TreatmentApproach } from "@/app/components/TreatmentApproach/TreatmentApproach";
+/* No dedicated Treatment hero shot exists yet; this wide clinical photo suits
+   the banner crop and none of the program sections below reuse it. */
+import heroImg from "@/public/figma/home/program-1.png";
 import inpatientImg from "@/public/figma/treatment/inpatient.png";
 import iopImg from "@/public/figma/treatment/iop.png";
 import familySupportImg from "@/public/figma/treatment/family-support.png";
@@ -28,6 +32,8 @@ export default function TreatmentServicesPage() {
         <PageHero
           title="Treatment & Services"
           subtitle="A full continuum of behavioral health care for older adults — from around-the-clock inpatient stabilization to structured outpatient support and long-term coordination."
+          image={heroImg}
+          alt="A clinician helping an older adult walk with a frame"
         />
         <TreatmentQuickNav />
 
@@ -40,6 +46,7 @@ export default function TreatmentServicesPage() {
           ]}
           image={inpatientImg}
           alt="A nurse checking in with an older adult patient"
+          imagePosition="center top"
           mediaAspect={PROGRAM_ASPECT}
         >
           <CheckList
@@ -104,6 +111,7 @@ export default function TreatmentServicesPage() {
           ]}
           image={continuumImg}
           alt="Older adults with family members outdoors"
+          imagePosition="center top"
           reverse
           mediaAspect={PROGRAM_ASPECT}
         >
@@ -126,8 +134,8 @@ export default function TreatmentServicesPage() {
           <Button href="/referral-process" variant="outline">
             Refer a Patient
           </Button>
-          <Button href="tel:+18000000000" variant="glass">
-            Call (800) 000-0000
+          <Button href={siteConfig.phones.intake.href} variant="glass">
+            Call {siteConfig.phones.intake.display}
           </Button>
         </CtaBand>
       </main>

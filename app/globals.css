@@ -1,41 +1,74 @@
 :root {
-  /* Brand palette — sampled from the Figma design system frame */
-  --pg-green: #3c6026;
-  /* Legacy alias kept for the compliance / price-transparency modules */
-  --pg-green-dark: #3c6026;
-  --pg-green-deep: #234735;
-  --pg-green-darkest: #203e2f;
-  --pg-heading: #415241;
-  --pg-eyebrow-muted: #566e56;
-  --pg-text: #343a34;
-  --pg-sage: #e3e7da;
-  --pg-cream: #fffcf7;
-  --pg-offwhite: #fcfdf8;
-  --pg-sand: #e7ddcb;
-  --pg-sea-glass: #bfd3cf;
-  --pg-mist: #dce8e7;
-  --pg-border: #eef1ee;
+  /* Brand palette — public/figma/docs/Palm Grove website colors.pdf.
+     Greens: primary family. #4e7a5a is the action color, #2c4535 anchors
+     dark sections. */
+  --pg-green: #4e7a5a;
+  --pg-green-hover: #3f6b4d;
+  --pg-green-mid: #446b52;
+  --pg-green-deep: #35513e;
+  --pg-green-darkest: #2c4535;
+  --pg-green-muted: #6f9a78;
+  --pg-green-muted-soft: #8bab90;
+  /* Legacy alias kept for the program detail module */
+  --pg-green-dark: #4e7a5a;
+
+  /* Greens — light, for copy sitting on dark green backgrounds */
+  --pg-on-dark-label: #8ba691;
+  --pg-on-dark-body: #aebfb1;
+  --pg-on-dark-soft: #c3d3c6;
+  --pg-on-dark-eyebrow: #b9d0bf;
+  --pg-on-dark-pale: #dbe7dc;
+
+  /* Neutrals & backgrounds */
+  --pg-offwhite: #fbfcfa;
+  --pg-tint: #eef4ee;
+  --pg-border: #e6ece6;
+  --pg-border-medium: #dde7de;
+  --pg-border-input: #cdd8ce;
+  --pg-logo-white: #f5f8f3;
+
+  /* Text ramp — darkest body copy through muted captions */
+  --pg-text-darkest: #2b3a30;
+  --pg-heading: #33433a;
+  --pg-label: #3a4a3e;
+  --pg-text: #4f5f54;
+  --pg-eyebrow-muted: #5a6a5e;
+  --pg-text-muted: #7a8a7e;
+
+  /* Accent — warm amber. Phone indicators and crisis messaging only. */
+  --pg-amber: #c0894a;
+  --pg-amber-bg: #fff4ec;
+  --pg-amber-border: #f0dcc9;
+  --pg-amber-text: #7a4f22;
+  --pg-amber-text-strong: #5e3c18;
+
+  /* Aliases kept so existing modules keep resolving */
+  --pg-sage: var(--pg-border-medium);
+  --pg-cream: var(--pg-offwhite);
+  --pg-sand: var(--pg-amber-border);
+  --pg-sea-glass: var(--pg-border-input);
+  --pg-mist: var(--pg-tint);
 
   /* Section backgrounds */
   --pg-gradient-dark: linear-gradient(
     -73.78deg,
-    #5d785a 2.15%,
-    #475c49 50.53%,
-    #37483a 98.9%
+    #35513e 2.15%,
+    #446b52 50.53%,
+    #2c4535 98.9%
   );
   --pg-gradient-glass: linear-gradient(
     102.16deg,
     rgba(255, 255, 255, 0.3) 1.49%,
-    rgba(227, 231, 218, 0.21) 62.41%,
+    rgba(221, 231, 222, 0.21) 62.41%,
     rgba(255, 255, 255, 0.15) 98.13%
   );
   --pg-gradient-mist: radial-gradient(
     120% 90% at 37% 42%,
-    #dce8e7 0%,
-    #edf4ef 100%
+    #e6ece6 0%,
+    #eef4ee 100%
   );
 
-  --pg-shadow-card: 0 0 10px 0 rgba(52, 58, 52, 0.2);
+  --pg-shadow-card: 0 0 10px 0 rgba(43, 58, 48, 0.2);
   --pg-shadow-media: 0 0 30px 0 rgba(0, 0, 0, 0.1);
 
   --pg-container: 1088px;

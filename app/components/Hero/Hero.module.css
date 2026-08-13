@@ -23,7 +23,7 @@
   line-height: 30px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--pg-sage);
+  color: var(--pg-on-dark-eyebrow);
 }
 
 .title {
@@ -75,7 +75,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(227, 231, 218, 0.25);
+  background: rgba(221, 231, 222, 0.25);
   color: #ffffff;
 }
 
@@ -84,7 +84,7 @@
   font-size: clamp(12px, 1.1vw, 16px);
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--pg-sage);
+  color: var(--pg-on-dark-eyebrow);
 }
 
 .intakeNumber {
@@ -99,7 +99,6 @@
 .media {
   position: relative;
   aspect-ratio: 451 / 492;
-  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -115,16 +114,35 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* Explicit height, not aspect-ratio + max-height — that pair shrinks the
-     box width to preserve the ratio and the photo stops short of the edge. */
+  /* Stacked layout: the photo is sized by ratio, not by a fixed height, so the
+     crop keeps its shape at every width. The cap is max-WIDTH (centred), never
+     max-height — capping the height of a ratio box shrinks its width instead,
+     and the photo stops short of the column edge. Without the cap a 991px-wide
+     tablet gets a 2.5:1 letterbox slice of a portrait photo. */
   .media {
     order: -1;
-    aspect-ratio: auto;
-    height: clamp(220px, 45vw, 360px);
+    aspect-ratio: 3 / 2;
+    height: auto;
+    width: 100%;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  /* Landscape box on a portrait source: a centred crop cuts the tops of both
+     heads off. Both faces sit in the upper half of the photo, so anchor the
+     crop to the top and let the shirt/background go instead. */
+  .image {
+    object-position: center top;
   }
 }
 
 @media (max-width: 35.99em) {
+  /* Phones get a squarer box: 3:2 across a 375px screen is only 250px tall,
+     which crops a portrait photo harder than it does on a tablet. */
+  .media {
+    aspect-ratio: 4 / 3;
+  }
+
   .intake {
     width: 100%;
     padding: 14px 18px;

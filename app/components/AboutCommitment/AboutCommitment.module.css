@@ -13,7 +13,12 @@
   gap: 10px;
   padding-left: 24px;
   border-left: 5px solid transparent;
-  border-image: linear-gradient(180deg, #415241 0%, #3c6026 100%) 1;
+  border-image: linear-gradient(
+      180deg,
+      var(--pg-heading) 0%,
+      var(--pg-green) 100%
+    )
+    1;
 }
 
 .title {

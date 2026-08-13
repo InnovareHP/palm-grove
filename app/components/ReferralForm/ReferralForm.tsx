@@ -1,8 +1,17 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { siteConfig } from "@/app/lib/site";
 import { CheckList } from "../ui/CheckList/CheckList";
-import fields from "../ui/FormFields/FormFields.module.css";
+import {
+  FieldGrid,
+  FormDisclaimer,
+  FormStatus,
+  SelectField,
+  SubmitButton,
+  TextAreaField,
+  TextField,
+} from "../ui/FormFields/FormFields";
 import classes from "./ReferralForm.module.css";
 
 const referrers = [
@@ -21,7 +30,7 @@ const programs = [
   "Not sure yet",
 ];
 
-const REFERRAL_EMAIL = "referrals@palmgrovehealthcenter.com";
+const REFERRAL_EMAIL = siteConfig.emails.referrals;
 
 export function ReferralForm() {
   const [sent, setSent] = useState(false);
@@ -77,122 +86,72 @@ export function ReferralForm() {
           </p>
 
           <form onSubmit={handleSubmit}>
-            <div className={fields.fields}>
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="referral-name">
-                  Referring Contact Name{" "}
-                  <span className={fields.required}>*</span>
-                </label>
-                <input
-                  id="referral-name"
-                  name="name"
-                  className={fields.input}
-                  placeholder="Full Name"
-                  required
-                />
-              </div>
+            <FieldGrid>
+              <TextField
+                id="referral-name"
+                name="name"
+                label="Referring Contact Name"
+                placeholder="Full Name"
+                required
+              />
+              <TextField
+                id="referral-org"
+                name="organization"
+                label="Organization/Facility"
+                placeholder="Hospital, Facility Name"
+              />
+              <TextField
+                id="referral-phone"
+                name="phone"
+                type="tel"
+                label="Contact Number"
+                placeholder="+1 (000) 000-0000"
+                required
+              />
+              <TextField
+                id="referral-email"
+                name="email"
+                type="email"
+                label="Email"
+                placeholder="you@organization.com"
+              />
+              <TextField
+                id="referral-initials"
+                name="initials"
+                label="Patient Initials"
+                placeholder="e.g. J.D."
+                required
+              />
+              <SelectField
+                id="referral-program"
+                name="program"
+                label="Program of Interest"
+                options={programs}
+                defaultValue={programs[0]}
+                required
+              />
+              <TextAreaField
+                id="referral-notes"
+                name="notes"
+                label="Reason for Referral/Notes"
+                placeholder="Briefly describe the situation and any immediate concerns."
+                required
+              />
+            </FieldGrid>
 
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="referral-org">
-                  Organization/Facility
-                </label>
-                <input
-                  id="referral-org"
-                  name="organization"
-                  className={fields.input}
-                  placeholder="Hospital, Facility Name"
-                />
-              </div>
-
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="referral-phone">
-                  Contact Number <span className={fields.required}>*</span>
-                </label>
-                <input
-                  id="referral-phone"
-                  name="phone"
-                  type="tel"
-                  className={fields.input}
-                  placeholder="+1 (000) 000-0000"
-                  required
-                />
-              </div>
-
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="referral-email">
-                  Email
-                </label>
-                <input
-                  id="referral-email"
-                  name="email"
-                  type="email"
-                  className={fields.input}
-                  placeholder="you@organization.com"
-                />
-              </div>
-
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="referral-initials">
-                  Patient Initials <span className={fields.required}>*</span>
-                </label>
-                <input
-                  id="referral-initials"
-                  name="initials"
-                  className={fields.input}
-                  placeholder="e.g. J.D."
-                  required
-                />
-              </div>
-
-              <div className={fields.field}>
-                <label className={fields.label} htmlFor="referral-program">
-                  Program of Interest <span className={fields.required}>*</span>
-                </label>
-                <select
-                  id="referral-program"
-                  name="program"
-                  className={fields.select}
-                  required
-                  defaultValue={programs[0]}
-                >
-                  {programs.map((program) => (
-                    <option key={program} value={program}>
-                      {program}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className={`${fields.field} ${fields.full}`}>
-                <label className={fields.label} htmlFor="referral-notes">
-                  Reason for Referral/Notes{" "}
-                  <span className={fields.required}>*</span>
-                </label>
-                <textarea
-                  id="referral-notes"
-                  name="notes"
-                  className={fields.textarea}
-                  placeholder="Briefly describe the situation and any immediate concerns."
-                  required
-                />
-              </div>
-            </div>
-
-            <button type="submit" className={fields.submit}>
-              Submit Referral
-            </button>
+            <SubmitButton>Submit Referral</SubmitButton>
 
             {sent ? (
-              <p className={fields.status} aria-live="polite">
+              <FormStatus>
                 Your email client should now be open with the referral details.
                 If it did not open, email {REFERRAL_EMAIL} directly.
-              </p>
+              </FormStatus>
             ) : null}
 
-            <p className={fields.disclaimer}>
+            <FormDisclaimer>
               Please do not include full protected health information in this
               form. Our team will collect clinical details securely by phone.
-            </p>
+            </FormDisclaimer>
           </form>
         </div>
       </div>

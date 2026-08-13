@@ -1,0 +1,119 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(44, 69, 53, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  width: min(80%, 360px);
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  /* Hidden rather than merely off-screen: a translated panel is still painted
+     and hit-tested. Visibility flips instantly on open and only after the slide
+     finishes on close, so the exit animation still plays. */
+  visibility: hidden;
+  transition:
+    transform 220ms ease,
+    visibility 0s linear 220ms;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+  visibility: visible;
+  transition:
+    transform 220ms ease,
+    visibility 0s;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--pg-heading);
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--pg-text);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.close:hover {
+  color: var(--pg-green-hover);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The negative inline margin lets the active row's tint and rail run past the
+   drawer padding to the panel edge while the labels stay aligned with "Menu". */
+.link {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pg-text);
+  padding: 14px 20px;
+  margin-inline: -20px;
+  border-bottom: 1px solid var(--pg-border);
+}
+
+.link:hover {
+  color: var(--pg-green-hover);
+}
+
+/* Current page: colour alone is not enough of a signal, so it gets a rail and
+   a tint too. Driven off aria-current so the visual state cannot drift from
+   what a screen reader announces. */
+.link[aria-current="page"] {
+  color: var(--pg-green);
+  background: var(--pg-tint);
+  box-shadow: inset 4px 0 0 var(--pg-green);
+}
+
+.cta {
+  margin-top: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .overlay {
+    transition-duration: 0ms;
+  }
+}

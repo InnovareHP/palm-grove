@@ -2,9 +2,9 @@
   position: relative;
   background: linear-gradient(
     -53.33deg,
-    #5d785a 1.59%,
-    #475c49 33.91%,
-    #37483a 66.23%
+    #35513e 1.59%,
+    #446b52 33.91%,
+    #2c4535 66.23%
   );
   color: #ffffff;
   overflow: hidden;
@@ -30,13 +30,28 @@
   order: 2;
 }
 
-/* Inset photo variant — a rounded card instead of a full-bleed column */
+/* Inset photo variant — a boxed card instead of a full-bleed column.
+   The photo no longer bleeds, so the whole grid is constrained to the shared
+   container: the card's left edge then lines up with every section below it
+   instead of hugging the viewport. Width is capped so the card stops growing
+   on wide screens: the 40% column would otherwise be ~770px at 1920px, and the
+   aspect ratio turns that into a 500px-tall photo that dwarfs the headline. */
+.cardMedia {
+  width: 100%;
+  max-width: calc(var(--pg-container) + var(--pg-gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--pg-gutter);
+  column-gap: clamp(28px, 4vw, 60px);
+}
+
 .cardMedia .media {
   min-height: 0;
   align-self: center;
+  justify-self: start;
+  width: 100%;
+  max-width: 460px;
   aspect-ratio: 380 / 246;
-  margin: clamp(24px, 3vw, 44px) 0 clamp(24px, 3vw, 44px) var(--pg-gutter);
-  border-radius: 20px;
+  margin-block: clamp(24px, 3vw, 44px);
   overflow: hidden;
 }
 
@@ -61,7 +76,7 @@
   font-weight: 600;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--pg-sage);
+  color: var(--pg-on-dark-eyebrow);
 }
 
 .title {
@@ -85,6 +100,12 @@
   flex-wrap: wrap;
   gap: 12px 16px;
   margin-top: 8px;
+}
+
+/* Card variant: the grid supplies both the outer gutter and the column gap,
+   so the copy column only needs its vertical padding. */
+.cardMedia .content {
+  padding-inline: 0;
 }
 
 /* Centered variant — no photo, copy stacked in the middle of the band */
@@ -111,13 +132,22 @@
     min-height: 0;
   }
 
-  /* Height is set explicitly rather than via aspect-ratio + max-height: that
-     pair makes the box shrink its width to keep the ratio, so the photo stops
-     short of the column edge. */
+  /* Stacked layout: the photo is sized by ratio, not by a fixed height, so the
+     crop keeps its shape at every width. The cap is max-WIDTH (centred), never
+     max-height — capping the height of a ratio box shrinks its width instead,
+     and the photo stops short of the column edge. Without the cap a 991px-wide
+     tablet gets a 2.5:1 letterbox slice. */
+  /* `width: 100%` is load-bearing: auto inline margins cancel the grid item's
+     default stretch, and this box has no in-flow content to shrink-wrap (the
+     Image is `fill`, so it is absolutely positioned). Without it the box
+     collapses to 0x0 and the photo disappears. */
   .media {
-    aspect-ratio: auto;
-    height: clamp(200px, 40vw, 320px);
+    aspect-ratio: 3 / 2;
+    height: auto;
+    width: 100%;
     min-height: 0;
+    max-width: 620px;
+    margin-inline: auto;
   }
 
   .imageRight .media {
@@ -125,9 +155,8 @@
   }
 
   .cardMedia .media {
-    margin: var(--pg-gutter) var(--pg-gutter) 0;
-    aspect-ratio: auto;
-    height: clamp(180px, 38vw, 300px);
+    margin: var(--pg-gutter) auto 0;
+    max-width: 620px;
   }
 
   .centered {
@@ -136,5 +165,13 @@
 
   .content {
     padding-inline: var(--pg-gutter);
+  }
+}
+
+@media (max-width: 35.99em) {
+  /* Phones get a squarer box: 3:2 across a 375px screen is only 250px tall,
+     which crops a portrait photo harder than it does on a tablet. */
+  .media {
+    aspect-ratio: 4 / 3;
   }
 }

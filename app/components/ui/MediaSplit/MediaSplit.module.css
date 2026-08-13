@@ -25,7 +25,6 @@
 .media {
   position: relative;
   aspect-ratio: var(--pg-media-aspect, 514 / 517);
-  border-radius: var(--pg-radius);
   overflow: hidden;
   box-shadow: var(--pg-shadow-media);
 }
@@ -61,10 +60,28 @@
     order: 0;
   }
 
-  /* Explicit height, not aspect-ratio + max-height — that pair shrinks the
-     box width to preserve the ratio and the photo stops short of the edge. */
+  /* Stacked layout: the photo is sized by ratio, not by a fixed height, so the
+     crop keeps its shape at every width. The cap is max-WIDTH (centred), never
+     max-height — capping the height of a ratio box shrinks its width instead,
+     and the photo stops short of the column edge. Without the cap a 991px-wide
+     tablet gets a 2.5:1 letterbox slice of a portrait photo. */
+  /* `width: 100%` is load-bearing: auto inline margins cancel the grid item's
+     default stretch, and this box has no in-flow content to shrink-wrap (the
+     Image is `fill`, so it is absolutely positioned). Without it the box
+     collapses to 0x0 and the photo disappears. */
   .media {
-    aspect-ratio: auto;
-    height: clamp(240px, 48vw, 380px);
+    aspect-ratio: 3 / 2;
+    height: auto;
+    width: 100%;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 35.99em) {
+  /* Phones get a squarer box: 3:2 across a 375px screen is only 250px tall,
+     which crops a portrait photo harder than it does on a tablet. */
+  .media {
+    aspect-ratio: 4 / 3;
   }
 }

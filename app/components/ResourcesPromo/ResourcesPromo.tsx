@@ -1,4 +1,5 @@
 import { Button } from "../ui/Button/Button";
+import { mailto, siteConfig } from "@/app/lib/site";
 import classes from "./ResourcesPromo.module.css";
 
 export function ResourcesPromo() {
@@ -14,7 +15,10 @@ export function ResourcesPromo() {
             </p>
             <div className={classes.actions}>
               <Button
-                href="mailto:info@palmgrovecenter.com?subject=Palm%20Grove%20brochure%20request"
+                href={mailto(
+                  siteConfig.emails.info,
+                  "Palm Grove brochure request",
+                )}
                 variant="outline"
               >
                 Download Brochure

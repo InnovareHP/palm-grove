@@ -69,7 +69,11 @@ export function PageHero({
             placeholder="blur"
             priority
             fill
-            sizes="(max-width: 992px) 100vw, 40vw"
+            sizes={
+              imageVariant === "card"
+                ? "(max-width: 640px) 100vw, (max-width: 992px) 620px, 460px"
+                : "(max-width: 640px) 100vw, (max-width: 992px) 620px, 40vw"
+            }
           />
         </div>
 

@@ -17,6 +17,12 @@ type MediaSplitProps = {
   id?: string;
   /** CSS aspect-ratio for the photo, e.g. "478 / 539". */
   mediaAspect?: string;
+  /**
+   * CSS object-position for the photo, e.g. "center top". Worth setting on any
+   * portrait photo whose faces sit high in the frame: the mobile layout crops
+   * it to a landscape box, and the default centred crop takes the heads off.
+   */
+  imagePosition?: string;
 };
 
 /**
@@ -35,6 +41,7 @@ export function MediaSplit({
   children,
   id,
   mediaAspect,
+  imagePosition,
 }: MediaSplitProps) {
   const dark = background === "dark";
 
@@ -58,8 +65,12 @@ export function MediaSplit({
             src={image}
             alt={alt}
             className={classes.image}
+            style={
+              imagePosition ? { objectPosition: imagePosition } : undefined
+            }
             fill
-            sizes="(max-width: 992px) 100vw, (max-width: 1280px) 46vw, 520px"
+            quality={90}
+            sizes="(max-width: 640px) 100vw, (max-width: 992px) 620px, (max-width: 1280px) 46vw, 520px"
           />
         </div>
 

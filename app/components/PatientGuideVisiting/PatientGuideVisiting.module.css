@@ -41,7 +41,7 @@
   justify-content: space-between;
   gap: 0 16px;
   padding-block: 14px;
-  border-top: 1px solid #dfe6e0;
+  border-top: 1px solid var(--pg-border);
 }
 
 .row:first-child {
@@ -51,7 +51,7 @@
 .day {
   font-size: 16px;
   line-height: 30px;
-  color: #000000;
+  color: var(--pg-text-darkest);
 }
 
 .time {
