@@ -1,5 +1,5 @@
 import { Button } from "../ui/Button/Button";
-import { mailto, siteConfig } from "@/app/lib/site";
+import { siteConfig } from "@/app/lib/site";
 import classes from "./ResourcesPromo.module.css";
 
 export function ResourcesPromo() {
@@ -15,13 +15,16 @@ export function ResourcesPromo() {
             </p>
             <div className={classes.actions}>
               <Button
-                href={mailto(
-                  siteConfig.emails.info,
-                  "Palm Grove brochure request",
-                )}
+                href={siteConfig.brochure.pdf}
+                download={siteConfig.brochure.filename}
                 variant="outline"
               >
                 Download Brochure
+              </Button>
+              {/* Reading it should not cost a download: the brochure page
+                  shows both spreads on screen and offers the PDF again. */}
+              <Button href={siteConfig.brochure.page} variant="ghostLight">
+                Read It Online
               </Button>
             </div>
           </div>

@@ -37,6 +37,10 @@ export function Header() {
               src={logo}
               alt={siteConfig.name}
               className={classes.logo}
+              /* The export is 1600x1600 but the mark never renders wider than
+                 its 116px cap. Without `sizes` next/image assumes 100vw and
+                 ships a 1920w (or 3840w on a retina phone) copy of a logo. */
+              sizes="116px"
               priority
             />
           </Link>

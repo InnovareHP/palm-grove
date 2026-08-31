@@ -35,7 +35,13 @@ export function Footer() {
     <footer className={classes.footer}>
       <div className={`pgContainer ${classes.inner}`}>
         <div>
-          <Image src={logo} alt={siteConfig.name} className={classes.logo} />
+          {/* 48px tall at a 3:1 ratio — see the note on the header mark. */}
+          <Image
+            src={logo}
+            alt={siteConfig.name}
+            className={classes.logo}
+            sizes="144px"
+          />
           <p className={classes.tagline}>{siteConfig.tagline}</p>
           <p className={classes.address}>{address.full}</p>
         </div>

@@ -68,6 +68,15 @@
   font-weight: 600;
 }
 
+/* The fax number and referral address sit inline in a sentence, so their hit
+   box was only as tall as the type. Padding grows the target; the matching
+   negative margin keeps the line spacing where it was. */
+a.strong {
+  display: inline-block;
+  padding-block: 3px;
+  margin-block: -3px;
+}
+
 .strong:hover {
   text-decoration: underline;
 }
