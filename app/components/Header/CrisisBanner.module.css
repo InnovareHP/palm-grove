@@ -25,13 +25,25 @@
   font-weight: 600;
 }
 
+/* These sit inline in a sentence, so their hit box was only as tall as the
+   type — 14px, well under the 24px WCAG 2.5.8 asks for, on the one strip
+   someone in a crisis has to hit first time. The padding grows the target and
+   the matching negative margin keeps the sentence spacing untouched. */
+.link {
+  display: inline-block;
+  padding: 5px 6px;
+  margin: -5px -6px;
+}
+
 .link:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 47.99em) {
   .inner {
-    font-size: 11px;
+    /* 11px was unreadable for an audience of older adults; the strip already
+       wraps to two rows at this width, so the extra pixel costs nothing. */
+    font-size: 12px;
     justify-content: center;
     text-align: center;
   }

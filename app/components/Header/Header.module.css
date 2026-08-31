@@ -42,7 +42,10 @@
 
 .link {
   position: relative;
-  font-size: clamp(11px, 1vw, 13px);
+  /* Was clamp(11px, 1vw, 13px), which only reached 13px past ~1300px and left
+     the nav at 11px on tablets. The 96px max-width caps how wide a link can
+     get, so the larger type wraps rather than widening the row. */
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.35;
   color: var(--pg-text);

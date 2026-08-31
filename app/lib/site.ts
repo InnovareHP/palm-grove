@@ -64,6 +64,19 @@ export const siteConfig = {
     info: "info@palmgrovehealthcenter.com",
     referrals: "referrals@palmgrovehealthcenter.com",
   },
+
+  /**
+   * The brochure ships as a two-page letter-landscape PDF built from the Figma
+   * page exports in `public/figma/brochure/` — one file to view, print, or
+   * forward, instead of two loose PNGs.
+   */
+  brochure: {
+    pdf: "/palm-grove-brochure.pdf",
+    /** Filename the browser saves it under. */
+    filename: "Palm-Grove-Health-Center-Brochure.pdf",
+    /** Page that shows both spreads on screen, for reading without a download. */
+    page: "/brochure",
+  },
 } as const;
 
 /**
@@ -104,6 +117,7 @@ export const footerExploreLinks: NavLink[] = [
 export const footerResourceLinks: NavLink[] = [
   { label: "Referral Process", href: "/referral-process" },
   { label: "Mental Health Resources", href: "/resources" },
+  { label: "Brochure", href: siteConfig.brochure.page },
   { label: "Contact Us", href: "/contact" },
   { label: "Admissions", href: "/referral-process" },
 ];

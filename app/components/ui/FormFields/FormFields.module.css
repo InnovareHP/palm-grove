@@ -111,6 +111,17 @@
   color: var(--pg-green);
 }
 
+/* iOS Safari zooms the whole page whenever a focused field's type is under
+   16px, which yanks the layout mid-form. Touch widths get 16px; the desktop
+   scale is left alone. */
+@media (max-width: 61.99em) {
+  .input,
+  .select,
+  .textarea {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 35.99em) {
   .fields {
     grid-template-columns: minmax(0, 1fr);

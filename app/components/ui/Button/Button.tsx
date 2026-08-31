@@ -17,6 +17,10 @@ type ButtonProps = {
   rightIcon?: ReactNode;
   block?: boolean;
   className?: string;
+  /** Open in a new tab. Forced on for http(s) hrefs. */
+  newTab?: boolean;
+  /** Save the target instead of navigating; a string overrides the filename. */
+  download?: boolean | string;
   "aria-label"?: string;
 };
 
@@ -28,6 +32,8 @@ export function Button({
   rightIcon,
   block = false,
   className,
+  newTab = false,
+  download,
   ...rest
 }: ButtonProps) {
   const cn = [
@@ -47,10 +53,12 @@ export function Button({
     </>
   );
 
-  // tel:, mailto: and external targets can't go through the client router.
+  // tel:, mailto:, downloads, new tabs and external targets can't go through
+  // the client router.
   const isInternal = href.startsWith("/") || href.startsWith("#");
+  const opensNewTab = newTab || href.startsWith("http");
 
-  if (isInternal) {
+  if (isInternal && !opensNewTab && download === undefined) {
     return (
       <Link href={href} className={cn} {...rest}>
         {content}
@@ -62,9 +70,8 @@ export function Button({
     <a
       href={href}
       className={cn}
-      {...(href.startsWith("http")
-        ? { target: "_blank", rel: "noreferrer noopener" }
-        : {})}
+      {...(opensNewTab ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+      {...(download === undefined ? {} : { download })}
       {...rest}
     >
       {content}
