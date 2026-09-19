@@ -35,8 +35,6 @@ const REFERRAL_EMAIL = siteConfig.emails.referrals;
 export function ReferralForm() {
   const [sent, setSent] = useState(false);
 
-  // No backend is wired up, so the submission is handed to the visitor's mail
-  // client, pre-addressed to the intake inbox.
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);

@@ -7,8 +7,6 @@ import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { AboutCareTeam } from "@/app/components/AboutCareTeam/AboutCareTeam";
 import { AboutCommitment } from "@/app/components/AboutCommitment/AboutCommitment";
 import whoWeAreImg from "@/public/figma/about/who-we-are.png";
-/* No dedicated About hero shot exists yet; this warm clinician-and-patient
-   photo reads differently from the team shot in the section below it. */
 import heroImg from "@/public/figma/home/care-team.png";
 
 export const metadata = {

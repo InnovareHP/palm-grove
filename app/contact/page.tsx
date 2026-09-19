@@ -3,8 +3,6 @@ import { Footer } from "@/app/components/Footer/Footer";
 import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { ContactMethods } from "@/app/components/ContactMethods/ContactMethods";
 import { ContactUs } from "@/app/components/ContactUs/ContactUs";
-/* No dedicated Contact hero shot exists yet; this consultation photo matches
-   the "talk to our team" message and is not used anywhere else on the page. */
 import heroImg from "@/public/figma/home/program-4.png";
 
 export const metadata = {

@@ -26,9 +26,6 @@
   background: #ffffff;
   box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
   transform: translateX(100%);
-  /* Hidden rather than merely off-screen: a translated panel is still painted
-     and hit-tested. Visibility flips instantly on open and only after the slide
-     finishes on close, so the exit animation still plays. */
   visibility: hidden;
   transition:
     transform 220ms ease,
@@ -82,8 +79,6 @@
   flex-direction: column;
 }
 
-/* The negative inline margin lets the active row's tint and rail run past the
-   drawer padding to the panel edge while the labels stay aligned with "Menu". */
 .link {
   display: block;
   font-size: 16px;
@@ -98,9 +93,6 @@
   color: var(--pg-green-hover);
 }
 
-/* Current page: colour alone is not enough of a signal, so it gets a rail and
-   a tint too. Driven off aria-current so the visual state cannot drift from
-   what a screen reader announces. */
 .link[aria-current="page"] {
   color: var(--pg-green);
   background: var(--pg-tint);

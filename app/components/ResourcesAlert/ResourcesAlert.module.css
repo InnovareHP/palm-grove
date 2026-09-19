@@ -7,7 +7,6 @@
   align-items: center;
   gap: 20px;
   padding: 26px clamp(20px, 4vw, 60px);
-  /* Crisis messaging is the one place the warm amber accent is allowed */
   background: var(--pg-amber-bg);
   border: 1px solid var(--pg-amber-border);
   border-radius: 30px;

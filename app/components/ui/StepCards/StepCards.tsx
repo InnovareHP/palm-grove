@@ -10,7 +10,6 @@ type StepCardsProps = {
   tone?: "white" | "tinted";
 };
 
-/** Numbered 01–04 cards used by the "our approach" / "how it works" sections. */
 export function StepCards({ steps, tone = "white" }: StepCardsProps) {
   return (
     <ol

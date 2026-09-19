@@ -51,7 +51,6 @@
   margin-bottom: 30px;
 }
 
-/* Frosted intake card */
 .intake {
   display: inline-flex;
   align-items: center;
@@ -104,8 +103,6 @@
 
 .image {
   object-fit: cover;
-  /* The subject sits off to one side of the source photo; anchoring the
-     portrait crop to the right edge brings him to the middle of the frame. */
   object-position: right center;
 }
 
@@ -114,11 +111,6 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* Stacked layout: the photo is sized by ratio, not by a fixed height, so the
-     crop keeps its shape at every width. The cap is max-WIDTH (centred), never
-     max-height — capping the height of a ratio box shrinks its width instead,
-     and the photo stops short of the column edge. Without the cap a 991px-wide
-     tablet gets a 2.5:1 letterbox slice of a portrait photo. */
   .media {
     order: -1;
     aspect-ratio: 3 / 2;
@@ -128,17 +120,12 @@
     margin-inline: auto;
   }
 
-  /* Landscape box on a portrait source: a centred crop cuts the tops of both
-     heads off. Both faces sit in the upper half of the photo, so anchor the
-     crop to the top and let the shirt/background go instead. */
   .image {
     object-position: center top;
   }
 }
 
 @media (max-width: 35.99em) {
-  /* Phones get a squarer box: 3:2 across a 375px screen is only 250px tall,
-     which crops a portrait photo harder than it does on a tablet. */
   .media {
     aspect-ratio: 4 / 3;
   }
@@ -152,5 +139,12 @@
   .intakeIcon {
     width: 42px;
     height: 42px;
+  }
+}
+
+@media (max-width: 47.99em) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 }

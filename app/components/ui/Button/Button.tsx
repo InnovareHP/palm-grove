@@ -17,9 +17,7 @@ type ButtonProps = {
   rightIcon?: ReactNode;
   block?: boolean;
   className?: string;
-  /** Open in a new tab. Forced on for http(s) hrefs. */
   newTab?: boolean;
-  /** Save the target instead of navigating; a string overrides the filename. */
   download?: boolean | string;
   "aria-label"?: string;
 };
@@ -53,8 +51,6 @@ export function Button({
     </>
   );
 
-  // tel:, mailto:, downloads, new tabs and external targets can't go through
-  // the client router.
   const isInternal = href.startsWith("/") || href.startsWith("#");
   const opensNewTab = newTab || href.startsWith("http");
 

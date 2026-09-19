@@ -7,7 +7,6 @@ type CheckCardsProps = {
   columns?: 2 | 3;
 };
 
-/** Grid of tinted cards, each prefixed with the brand check badge. */
 export function CheckCards({ items, columns = 3 }: CheckCardsProps) {
   return (
     <ul className={`${classes.grid} ${columns === 2 ? classes.cols2 : ""}`}>

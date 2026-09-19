@@ -8,19 +8,11 @@ import classes from "./BrochureViewer.module.css";
 
 type BrochurePage = {
   image: StaticImageData;
-  /** Full-size view opened when the spread is tapped — the webp derivative
-   *  built by `pnpm brochure`, ~85% lighter than the PNG it comes from. */
   href: string;
   label: string;
   alt: string;
 };
 
-/**
- * The brochure is a two-sided letter-landscape tri-fold. Each side is one wide
- * spread, so at phone widths the type inside it is too small to read: the
- * spreads link out to the full-size export, where the browser's own pinch-zoom
- * takes over. The PDF stays the thing to download and print.
- */
 const PAGES: BrochurePage[] = [
   {
     image: page1Img,
@@ -69,9 +61,6 @@ export function BrochureViewer() {
           ))}
         </div>
 
-        {/* The spreads are images, so a screen reader gets the summary in their
-            alt text and nothing more. These two pages carry the same content as
-            running copy. */}
         <p className={classes.fallback}>
           Prefer to read it as text? Everything in the brochure also lives on{" "}
           <Link className={classes.fallbackLink} href="/treatment-services">

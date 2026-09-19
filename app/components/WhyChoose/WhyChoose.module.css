@@ -2,8 +2,6 @@
   background: var(--pg-gradient-mist);
 }
 
-/* The UA list padding has to go, or the cards sit 40px right of the centred
-   heading above them — every other card list in the app resets it too. */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

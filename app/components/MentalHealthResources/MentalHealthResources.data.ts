@@ -5,7 +5,6 @@ export type CrisisResource = {
   note?: string;
 };
 
-/** National lines, shown on the resources page and in the patient guide. */
 export const crisisResources: CrisisResource[] = [
   {
     title: "988 Suicide Crisis Lifeline",

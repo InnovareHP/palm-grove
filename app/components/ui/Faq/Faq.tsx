@@ -8,14 +8,9 @@ export type FaqItem = {
 
 type FaqProps = {
   items: FaqItem[];
-  /** Index of the entry that starts expanded. */
   defaultOpen?: number;
 };
 
-/**
- * Disclosure list built on <details>, so it works without client-side JS and
- * stays keyboard accessible.
- */
 export function Faq({ items, defaultOpen = 0 }: FaqProps) {
   return (
     <div className={classes.list}>

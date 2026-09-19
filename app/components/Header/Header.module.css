@@ -1,8 +1,6 @@
 .header {
   position: sticky;
   top: 0;
-  /* Below the mobile drawer (200) so the menu covers the header,
-     but above all page content */
   z-index: 150;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
@@ -24,8 +22,6 @@
   align-items: center;
 }
 
-/* Sized up across every breakpoint — the audience is older adults, so the
-   mark stays legible on phones as well as wide desktops. */
 .logo {
   height: clamp(84px, 7vw, 116px);
   width: auto;
@@ -42,9 +38,6 @@
 
 .link {
   position: relative;
-  /* Was clamp(11px, 1vw, 13px), which only reached 13px past ~1300px and left
-     the nav at 11px on tablets. The 96px max-width caps how wide a link can
-     get, so the larger type wraps rather than widening the row. */
   font-size: 13px;
   font-weight: 600;
   line-height: 1.35;
@@ -59,8 +52,6 @@
   color: var(--pg-green-hover);
 }
 
-/* Current page. Driven off aria-current so the visual state cannot drift from
-   what a screen reader announces. */
 .link[aria-current="page"] {
   color: var(--pg-green);
 }
@@ -79,7 +70,6 @@
   flex: 0 0 auto;
 }
 
-/* ---- Burger ---- */
 .burger {
   display: none;
   flex: 0 0 auto;
@@ -144,7 +134,6 @@
   }
 }
 
-/* Tablet + mobile: burger menu */
 @media (max-width: 74.99em) {
   .desktopNav,
   .cta {

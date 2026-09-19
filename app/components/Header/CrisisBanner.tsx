@@ -1,10 +1,6 @@
 import { siteConfig } from "@/app/lib/site";
 import classes from "./CrisisBanner.module.css";
 
-/**
- * Thin strip above the navigation carrying the national crisis lines and the
- * facility's own numbers. Server-rendered — it holds no state.
- */
 export function CrisisBanner() {
   const { crisis, phones } = siteConfig;
 
