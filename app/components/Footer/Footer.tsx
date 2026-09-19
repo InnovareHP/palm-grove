@@ -7,6 +7,7 @@ import {
   siteConfig,
 } from "@/app/lib/site";
 import logo from "@/public/figma/home/logo-footer.png";
+import { EmailText } from "../ui/EmailText/EmailText";
 import classes from "./Footer.module.css";
 
 const { phones, emails, address } = siteConfig;
@@ -25,7 +26,7 @@ const contacts = [
   { label: phones.fax.label, value: phones.fax.display },
   {
     label: "Email",
-    value: emails.info,
+    value: <EmailText address={emails.info} />,
     href: mailto(emails.info),
   },
 ];
@@ -35,7 +36,6 @@ export function Footer() {
     <footer className={classes.footer}>
       <div className={`pgContainer ${classes.inner}`}>
         <div>
-          {/* 48px tall at a 3:1 ratio — see the note on the header mark. */}
           <Image
             src={logo}
             alt={siteConfig.name}

@@ -8,8 +8,6 @@ import { MediaSplit } from "@/app/components/ui/MediaSplit/MediaSplit";
 import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { TreatmentQuickNav } from "@/app/components/TreatmentQuickNav/TreatmentQuickNav";
 import { TreatmentApproach } from "@/app/components/TreatmentApproach/TreatmentApproach";
-/* No dedicated Treatment hero shot exists yet; this wide clinical photo suits
-   the banner crop and none of the program sections below reuse it. */
 import heroImg from "@/public/figma/home/program-1.png";
 import inpatientImg from "@/public/figma/treatment/inpatient.png";
 import iopImg from "@/public/figma/treatment/iop.png";

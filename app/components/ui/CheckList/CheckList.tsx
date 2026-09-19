@@ -8,7 +8,6 @@ type CheckListProps = {
   tone?: "default" | "light";
 };
 
-/** Vertical bullet list using the brand check badge. */
 export function CheckList({
   items,
   size = "default",

@@ -6,8 +6,6 @@ import { MentalHealthResources } from "@/app/components/MentalHealthResources/Me
 import type { CrisisResource } from "@/app/components/MentalHealthResources/MentalHealthResources.data";
 import { ResourcesCaregivers } from "@/app/components/ResourcesCaregivers/ResourcesCaregivers";
 import { ResourcesPromo } from "@/app/components/ResourcesPromo/ResourcesPromo";
-/* No dedicated Resources hero shot exists yet; this group photo carries the
-   "you are not doing this alone" tone of the page. */
 import heroImg from "@/public/figma/treatment/continuum.png";
 
 export const metadata = {

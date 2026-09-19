@@ -19,7 +19,6 @@
   border-radius: var(--pg-radius);
 }
 
-/* The email address is one long token — let the text column narrow */
 .item > div {
   min-width: 0;
 }

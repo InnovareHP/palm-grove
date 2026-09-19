@@ -50,7 +50,6 @@
     padding: 16px 12px;
   }
 
-  /* "Intensive Outpatient" on one line is wider than a 320px viewport */
   .pill {
     flex: 1 1 auto;
     max-width: 100%;

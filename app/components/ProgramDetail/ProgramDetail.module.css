@@ -7,7 +7,6 @@
   display: block;
   max-width: 1100px;
   margin: 0 auto;
-  /* The type alone gave this a 16px-tall tap target. */
   padding-block: 5px;
   color: var(--pg-green-dark);
   font-weight: 600;

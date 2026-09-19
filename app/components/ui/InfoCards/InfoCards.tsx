@@ -10,7 +10,6 @@ type InfoCardsProps = {
   columns?: 2 | 3;
 };
 
-/** Grid of white cards with a serif heading and a short paragraph. */
 export function InfoCards({ items, columns = 3 }: InfoCardsProps) {
   return (
     <ul className={`${classes.grid} ${columns === 2 ? classes.cols2 : ""}`}>

@@ -25,7 +25,6 @@ const items = [
   },
 ];
 
-/** In-page jump links to each program block. */
 export function TreatmentQuickNav() {
   return (
     <div className={classes.wrap}>

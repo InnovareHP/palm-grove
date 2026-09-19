@@ -31,7 +31,10 @@ export function ReferralIntake() {
                 {phones.fax.display}
               </a>{" "}
               or email{" "}
-              <a className={classes.strong} href={mailto(emails.referrals)}>
+              <a
+                className={`${classes.strong} ${classes.email}`}
+                href={mailto(emails.referrals)}
+              >
                 {emails.referrals}
               </a>
             </p>

@@ -57,8 +57,6 @@
   gap: 6px;
 }
 
-/* inline-block + vertical padding so the tap target is 24px tall rather than
-   the 16px the type alone gave it. The 6px list gap keeps neighbours clear. */
 .link {
   display: inline-block;
   padding-block: 4px;
@@ -105,7 +103,6 @@ a.contactValue:hover {
   text-decoration: underline;
 }
 
-/* ---- Bottom legal bar ---- */
 .legal {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }

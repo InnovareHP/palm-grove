@@ -81,7 +81,6 @@
   font-weight: 400;
 }
 
-/* ---- Message card ---- */
 .card {
   padding: clamp(24px, 3vw, 40px);
   background: #ffffff;

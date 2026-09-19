@@ -8,27 +8,15 @@ type MediaSplitProps = {
   image: StaticImageData;
   alt: string;
   eyebrow?: string;
-  /** Puts the photo on the right instead of the left. */
   reverse?: boolean;
   background?: "white" | "tinted" | "mist" | "dark";
   actions?: ReactNode;
   children?: ReactNode;
-  /** Anchor target, for in-page jump links. */
   id?: string;
-  /** CSS aspect-ratio for the photo, e.g. "478 / 539". */
   mediaAspect?: string;
-  /**
-   * CSS object-position for the photo, e.g. "center top". Worth setting on any
-   * portrait photo whose faces sit high in the frame: the mobile layout crops
-   * it to a landscape box, and the default centred crop takes the heads off.
-   */
   imagePosition?: string;
 };
 
-/**
- * Two-column photo + copy block. The interior pages are built almost entirely
- * from this shape, so it lives in `ui` rather than being duplicated per page.
- */
 export function MediaSplit({
   title,
   paragraphs,

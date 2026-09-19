@@ -21,8 +21,6 @@ export function ResourcesPromo() {
               >
                 Download Brochure
               </Button>
-              {/* Reading it should not cost a download: the brochure page
-                  shows both spreads on screen and offers the PDF again. */}
               <Button href={siteConfig.brochure.page} variant="ghostLight">
                 Read It Online
               </Button>

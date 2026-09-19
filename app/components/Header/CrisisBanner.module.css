@@ -7,12 +7,17 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
   gap: 8px 24px;
   min-height: 50px;
   padding-block: 8px;
   font-size: 12px;
   line-height: 1.4;
+}
+
+.inner p {
+  margin: 0;
 }
 
 .contacts {
@@ -25,14 +30,15 @@
   font-weight: 600;
 }
 
-/* These sit inline in a sentence, so their hit box was only as tall as the
-   type — 14px, well under the 24px WCAG 2.5.8 asks for, on the one strip
-   someone in a crisis has to hit first time. The padding grows the target and
-   the matching negative margin keeps the sentence spacing untouched. */
 .link {
+  position: relative;
   display: inline-block;
-  padding: 5px 6px;
-  margin: -5px -6px;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
 }
 
 .link:hover {
@@ -41,11 +47,9 @@
 
 @media (max-width: 47.99em) {
   .inner {
-    /* 11px was unreadable for an audience of older adults; the strip already
-       wraps to two rows at this width, so the extra pixel costs nothing. */
-    font-size: 12px;
     justify-content: center;
     text-align: center;
+    row-gap: 10px;
   }
 
   .contacts {

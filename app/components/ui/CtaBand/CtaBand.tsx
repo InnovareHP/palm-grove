@@ -7,7 +7,6 @@ type CtaBandProps = {
   children?: ReactNode;
 };
 
-/** Full-width gradient call-to-action band used at the foot of interior pages. */
 export function CtaBand({ title, lead, children }: CtaBandProps) {
   return (
     <section className={`pgSection ${classes.band}`}>

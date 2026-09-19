@@ -5,24 +5,15 @@ import classes from "./PageHero.module.css";
 type PageHeroProps = {
   title: string;
   subtitle: string;
-  /** Omit for the centred, photo-less banner. */
   image?: StaticImageData;
   alt?: string;
   eyebrow?: string;
   actions?: ReactNode;
-  /** Places the photo on the right instead of the left. */
   imageRight?: boolean;
-  /** "card" insets the photo as a rounded card instead of bleeding to the edge. */
   imageVariant?: "bleed" | "card";
-  /** CSS object-position for the photo, e.g. "center top" to keep faces in frame. */
   imagePosition?: string;
 };
 
-/**
- * Interior page banner: full-bleed photo on the left, headline on the right,
- * sitting on the brand gradient. Shared by every page except Home. Without an
- * `image` it renders the centred variant used by Treatment & Services.
- */
 export function PageHero({
   title,
   subtitle,

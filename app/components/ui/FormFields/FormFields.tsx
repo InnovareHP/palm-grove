@@ -6,15 +6,8 @@ import type {
 } from "react";
 import classes from "./FormFields.module.css";
 
-/**
- * Form primitives shared by the referral and contact forms. Both forms used to
- * reach across folders for this stylesheet and hand-roll the same
- * label/input/required markup per field; the styling now travels with the
- * components that own it.
- */
 
 type FieldGridProps = {
-  /** Single-column layout, for the narrower contact form. */
   single?: boolean;
   children: ReactNode;
 };
@@ -31,7 +24,6 @@ type FieldShellProps = {
   id: string;
   label: string;
   required?: boolean;
-  /** Spans both columns of the grid. */
   full?: boolean;
   children: ReactNode;
 };
@@ -65,7 +57,6 @@ type TextAreaFieldProps = {
   id: string;
   label: string;
   full?: boolean;
-  /** Taller variant, for the free-text "notes" field. */
   tall?: boolean;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
@@ -124,9 +115,6 @@ export function FormDisclaimer({ children }: { children: ReactNode }) {
   return <p className={classes.disclaimer}>{children}</p>;
 }
 
-/** Confirmation line shown after a submission hands off to the mail client. */
 export function FormStatus({ children }: { children: ReactNode }) {
-  // <output> carries an implicit role="status", so screen readers announce the
-  // confirmation without an explicit ARIA role.
   return <output className={classes.status}>{children}</output>;
 }

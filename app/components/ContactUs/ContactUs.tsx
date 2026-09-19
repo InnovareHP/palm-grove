@@ -9,6 +9,7 @@ import {
   TextAreaField,
   TextField,
 } from "../ui/FormFields/FormFields";
+import { EmailText } from "../ui/EmailText/EmailText";
 import classes from "./ContactUs.module.css";
 
 const MAP_SRC =
@@ -19,8 +20,6 @@ const CONTACT_EMAIL = siteConfig.emails.info;
 export function ContactUs() {
   const [sent, setSent] = useState(false);
 
-  // No backend is wired up, so the message is handed to the visitor's mail
-  // client, pre-addressed to the main inbox.
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -115,7 +114,8 @@ export function ContactUs() {
             {sent ? (
               <FormStatus>
                 Your email client should now be open with your message. If it
-                did not open, email {CONTACT_EMAIL} directly.
+                did not open, email <EmailText address={CONTACT_EMAIL} />{" "}
+                directly.
               </FormStatus>
             ) : null}
           </form>

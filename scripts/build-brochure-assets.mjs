@@ -1,19 +1,3 @@
-/**
- * Builds the two shipped brochure assets from the Figma page exports in
- * `public/figma/brochure/`:
- *
- *   public/palm-grove-brochure.pdf   the download — one file to print or email
- *   public/figma/brochure/*.webp     the "open full size" targets behind each
- *                                    spread on /brochure, ~85% lighter than the
- *                                    PNGs they are made from
- *
- * Re-run after replacing a page export: `pnpm brochure`.
- *
- * The PDF is written by hand rather than with a PDF library: the pages are just
- * two full-bleed photos, so the file only needs a catalog, two pages, and two
- * DCTDecode (JPEG) images. That is ~40 lines of PDF and no extra dependency.
- * Output is byte-for-byte deterministic — no timestamps are embedded.
- */
 
 import { writeFile } from "node:fs/promises";
 import sharp from "sharp";
@@ -24,24 +8,16 @@ const SOURCES = [
 ];
 const PDF_OUT = "public/palm-grove-brochure.pdf";
 
-/** US Letter, landscape, in PostScript points. The exports are 2000x1545, so
- *  they land on this box within 0.03% — close enough that fitting them to the
- *  exact paper size beats carrying their rounding into the print shop. */
 const PAGE_WIDTH = 792;
 const PAGE_HEIGHT = 612;
 
-/** 4:4:4 rather than the usual 4:2:0: the spreads are mostly type, and chroma
- *  subsampling smears colored text at the stroke edges. */
 const JPEG = { quality: 92, chromaSubsampling: "4:4:4", mozjpeg: true };
-/** Near-lossless — these are read on screen at up to 2000px wide. */
 const WEBP = { quality: 94, effort: 6 };
 
 const encoder = new TextEncoder();
 const bytes = (value) =>
   typeof value === "string" ? encoder.encode(value) : value;
 
-/** Serializes numbered PDF objects into a file body, recording byte offsets for
- *  the cross-reference table that the trailer points at. */
 function buildPdf(objects, rootRef, infoRef) {
   const chunks = [bytes("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n")];
   const offsets = [];
@@ -80,8 +56,6 @@ const pages = await Promise.all(
   }),
 );
 
-// Object numbers: 1 catalog, 2 page tree, then page/content/image per spread,
-// and the document info dictionary last.
 const pageRefs = pages.map((_, index) => 3 + index * 3);
 const infoRef = 3 + pages.length * 3;
 

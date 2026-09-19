@@ -30,12 +30,6 @@
   order: 2;
 }
 
-/* Inset photo variant — a boxed card instead of a full-bleed column.
-   The photo no longer bleeds, so the whole grid is constrained to the shared
-   container: the card's left edge then lines up with every section below it
-   instead of hugging the viewport. Width is capped so the card stops growing
-   on wide screens: the 40% column would otherwise be ~770px at 1920px, and the
-   aspect ratio turns that into a 500px-tall photo that dwarfs the headline. */
 .cardMedia {
   width: 100%;
   max-width: calc(var(--pg-container) + var(--pg-gutter) * 2);
@@ -102,13 +96,10 @@
   margin-top: 8px;
 }
 
-/* Card variant: the grid supplies both the outer gutter and the column gap,
-   so the copy column only needs its vertical padding. */
 .cardMedia .content {
   padding-inline: 0;
 }
 
-/* Centered variant — no photo, copy stacked in the middle of the band */
 .centered {
   display: flex;
   flex-direction: column;
@@ -132,15 +123,6 @@
     min-height: 0;
   }
 
-  /* Stacked layout: the photo is sized by ratio, not by a fixed height, so the
-     crop keeps its shape at every width. The cap is max-WIDTH (centred), never
-     max-height — capping the height of a ratio box shrinks its width instead,
-     and the photo stops short of the column edge. Without the cap a 991px-wide
-     tablet gets a 2.5:1 letterbox slice. */
-  /* `width: 100%` is load-bearing: auto inline margins cancel the grid item's
-     default stretch, and this box has no in-flow content to shrink-wrap (the
-     Image is `fill`, so it is absolutely positioned). Without it the box
-     collapses to 0x0 and the photo disappears. */
   .media {
     aspect-ratio: 3 / 2;
     height: auto;
@@ -169,9 +151,14 @@
 }
 
 @media (max-width: 35.99em) {
-  /* Phones get a squarer box: 3:2 across a 375px screen is only 250px tall,
-     which crops a portrait photo harder than it does on a tablet. */
   .media {
     aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 47.99em) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
