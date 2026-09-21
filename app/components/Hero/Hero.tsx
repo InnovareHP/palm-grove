@@ -8,6 +8,18 @@ import classes from "./Hero.module.css";
 export function Hero() {
   return (
     <section className={classes.hero}>
+      <Image
+        src={heroImg}
+        alt=""
+        aria-hidden
+        className={classes.image}
+        placeholder="blur"
+        preload
+        fill
+        sizes="100vw"
+      />
+      <div className={classes.scrim} />
+
       <div className={`pgContainer ${classes.inner}`}>
         <div className={classes.content}>
           <p className={classes.eyebrow}>
@@ -42,7 +54,7 @@ export function Hero() {
 
           <a className={classes.intake} href={siteConfig.phones.intake.href}>
             <span className={classes.intakeIcon}>
-              <IconPhone size={24} stroke={1.6} />
+              <IconPhone size={25} stroke={1.6} />
             </span>
             <span>
               <span className={classes.intakeLabel}>
@@ -53,18 +65,6 @@ export function Hero() {
               </span>
             </span>
           </a>
-        </div>
-
-        <div className={classes.media}>
-          <Image
-            src={heroImg}
-            alt="An older adult walking on the beach in St. Augustine"
-            className={classes.image}
-            placeholder="blur"
-            priority
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 992px) 620px, (max-width: 1280px) 45vw, 500px"
-          />
         </div>
       </div>
     </section>
