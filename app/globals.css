@@ -8,6 +8,9 @@
   --pg-green-muted-soft: #8bab90;
   --pg-green-dark: #4e7a5a;
 
+  --pg-hero-scrim: #465a48;
+  --pg-hero-on-dark: #e3e7da;
+
   --pg-on-dark-label: #8ba691;
   --pg-on-dark-body: #aebfb1;
   --pg-on-dark-soft: #c3d3c6;
@@ -118,7 +121,6 @@ h3,
 h4 {
   min-width: 0;
 }
-
 
 .pgSection {
   padding-block: clamp(48px, 6vw, 82px);

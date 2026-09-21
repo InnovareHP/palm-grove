@@ -1,15 +1,47 @@
 .hero {
-  background: var(--pg-gradient-dark);
+  position: relative;
+  isolation: isolate;
+  min-height: 609px;
+  display: flex;
+  align-items: center;
+  background: var(--pg-hero-scrim);
   color: #ffffff;
   overflow: hidden;
 }
 
+.image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    var(--pg-hero-scrim) 0%,
+    var(--pg-hero-scrim) 21.84%,
+    rgba(70, 90, 72, 0.55) 44.25%,
+    rgba(69, 89, 71, 0) 72.48%
+  );
+}
+
 .inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  align-items: center;
-  gap: clamp(32px, 5vw, 64px);
-  padding-block: clamp(44px, 5vw, 56px);
+  padding-block: 50px;
+}
+
+/* At the design width and above the hero takes the photo's own ratio,
+   so the image is shown whole rather than filled to the box. */
+@media (min-width: 80em) {
+  .hero {
+    aspect-ratio: 2560 / 1218;
+  }
+
+  .image {
+    object-fit: contain;
+  }
 }
 
 .content {
@@ -17,17 +49,18 @@
 }
 
 .eyebrow {
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   font-size: clamp(13px, 1.2vw, 16px);
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--pg-on-dark-eyebrow);
+  color: var(--pg-hero-on-dark);
 }
 
 .title {
-  margin: 0 0 20px;
+  margin: 0 0 6px;
+  max-width: 627px;
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: clamp(32px, 4.2vw, 50px);
@@ -36,8 +69,8 @@
 }
 
 .subtitle {
-  margin: 0 0 30px;
-  max-width: 600px;
+  margin: 0 0 29px;
+  max-width: 612px;
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.5;
   color: #ffffff;
@@ -48,17 +81,17 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 12px 16px;
-  margin-bottom: 30px;
+  margin-bottom: 42px;
 }
 
 .intake {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   min-width: 0;
   max-width: min(431px, 100%);
-  padding: 18px 26px;
-  border: 1px solid var(--pg-sage);
+  padding: 25px 26px;
+  border: 1px solid var(--pg-hero-on-dark);
   border-radius: 20px;
   background: var(--pg-gradient-glass);
 }
@@ -74,71 +107,48 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(221, 231, 222, 0.25);
+  background: rgba(227, 231, 218, 0.25);
   color: #ffffff;
 }
 
 .intakeLabel {
   margin: 0;
   font-size: clamp(12px, 1.1vw, 16px);
+  line-height: 30px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--pg-on-dark-eyebrow);
+  color: var(--pg-hero-on-dark);
 }
 
 .intakeNumber {
   display: block;
   font-family: var(--font-serif);
   font-size: clamp(20px, 2vw, 24px);
-  line-height: 1.3;
+  line-height: 30px;
   letter-spacing: 1.2px;
   color: #ffffff;
 }
 
-.media {
-  position: relative;
-  aspect-ratio: 451 / 492;
-  overflow: hidden;
-}
-
-.image {
-  object-fit: cover;
-  object-position: right center;
-}
-
 @media (max-width: 61.99em) {
-  .inner {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .media {
-    order: -1;
-    aspect-ratio: 3 / 2;
-    height: auto;
-    width: 100%;
-    max-width: 620px;
-    margin-inline: auto;
+  .hero {
+    min-height: 0;
   }
 
   .image {
-    object-position: center top;
-  }
-}
-
-@media (max-width: 35.99em) {
-  .media {
-    aspect-ratio: 4 / 3;
+    object-position: center;
   }
 
-  .intake {
-    width: 100%;
-    padding: 14px 18px;
-    gap: 12px;
+  .scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(70, 90, 72, 0.82) 0%,
+      rgba(70, 90, 72, 0.94) 55%,
+      var(--pg-hero-scrim) 100%
+    );
   }
 
-  .intakeIcon {
-    width: 42px;
-    height: 42px;
+  .inner {
+    padding-block: clamp(44px, 6vw, 56px);
   }
 }
 
@@ -146,5 +156,18 @@
   .actions {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@media (max-width: 35.99em) {
+  .intake {
+    width: 100%;
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .intakeIcon {
+    width: 42px;
+    height: 42px;
   }
 }
