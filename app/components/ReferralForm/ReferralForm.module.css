@@ -16,7 +16,7 @@
   margin-top: 12px;
   padding: 26px 30px;
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 .noteText {
@@ -29,7 +29,7 @@
 .card {
   padding: clamp(24px, 3vw, 40px);
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 0;
   box-shadow: var(--pg-shadow-media);
 }
 

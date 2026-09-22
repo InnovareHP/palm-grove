@@ -92,7 +92,7 @@
   max-width: min(431px, 100%);
   padding: 25px 26px;
   border: 1px solid var(--pg-hero-on-dark);
-  border-radius: 20px;
+  border-radius: 0;
   background: var(--pg-gradient-glass);
 }
 
