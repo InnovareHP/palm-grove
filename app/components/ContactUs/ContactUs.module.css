@@ -21,7 +21,7 @@
 .map {
   margin-top: 8px;
   border: 10px solid #ffffff;
-  border-radius: 30px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
   aspect-ratio: 487 / 378;
@@ -84,7 +84,7 @@
 .card {
   padding: clamp(24px, 3vw, 40px);
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 0;
   box-shadow: var(--pg-shadow-media);
 }
 

@@ -10,7 +10,7 @@
   gap: 16px;
   padding: 24px 20px;
   background: var(--pg-offwhite);
-  border-radius: 30px;
+  border-radius: 0;
 }
 
 .pill {
@@ -22,7 +22,7 @@
   padding: 15px;
   background: #ffffff;
   border: 1.5px solid var(--pg-border-input);
-  border-radius: 20px;
+  border-radius: 0;
   font-size: 16px;
   font-weight: 600;
   line-height: 25px;
@@ -45,7 +45,7 @@
 
 @media (max-width: 47.99em) {
   .bar {
-    border-radius: 20px;
+    border-radius: 0;
     gap: 10px;
     padding: 16px 12px;
   }

@@ -40,7 +40,7 @@
 
 .introBox {
   background: var(--pg-border-medium);
-  border-radius: 10px;
+  border-radius: 0;
   padding: clamp(28px, 4vw, 44px) clamp(24px, 5vw, 64px);
 }
 
