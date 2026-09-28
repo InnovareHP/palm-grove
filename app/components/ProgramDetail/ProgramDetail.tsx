@@ -16,7 +16,7 @@ export function ProgramDetail({ title, intro, sections }: ProgramDetailProps) {
   return (
     <section className={classes.section}>
       <Link href="/treatment-services" className={classes.backLink}>
-        ← Back to Treatment &amp; Services
+        <span aria-hidden="true">← </span>Back to Treatment &amp; Services
       </Link>
       <div className={classes.detail}>
         <h1 className={classes.detailTitle}>{title}</h1>

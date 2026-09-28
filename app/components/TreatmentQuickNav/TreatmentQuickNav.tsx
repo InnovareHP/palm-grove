@@ -29,13 +29,22 @@ export function TreatmentQuickNav() {
   return (
     <div className={classes.wrap}>
       <div className="pgContainer">
-        <nav className={classes.bar} aria-label="Programs">
-          {items.map(({ label, href, Icon }) => (
-            <a key={href} href={href} className={classes.pill}>
-              <Icon size={24} stroke={1.6} className={classes.icon} />
-              {label}
-            </a>
-          ))}
+        <nav aria-label="Programs">
+          <ul className={`pgPlainList ${classes.bar}`}>
+            {items.map(({ label, href, Icon }) => (
+              <li key={href} className={classes.item}>
+                <a href={href} className={classes.pill}>
+                  <Icon
+                    aria-hidden
+                    size={24}
+                    stroke={1.6}
+                    className={classes.icon}
+                  />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
     </div>

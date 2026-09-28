@@ -75,7 +75,7 @@ export function OpeningPopup() {
         aria-label="Close announcement"
         onClick={close}
       >
-        <IconX size={22} stroke={2} />
+        <IconX aria-hidden size={22} stroke={2} />
       </button>
 
       <div className={classes.panel}>

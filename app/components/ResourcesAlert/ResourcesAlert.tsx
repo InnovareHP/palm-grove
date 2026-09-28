@@ -7,10 +7,12 @@ export function ResourcesAlert() {
       <div className="pgContainer">
         <div className={classes.bar}>
           <span className={classes.icon}>
-            <IconAlertTriangle size={26} stroke={1.8} />
+            <IconAlertTriangle aria-hidden size={26} stroke={1.8} />
           </span>
           <p className={classes.text}>
-            <span className={classes.strong}>In an emergency, call 911.</span>{" "}
+            <strong className={classes.strong}>
+              In an emergency, call 911.
+            </strong>{" "}
             If you or someone you love is in crisis, call or text the 988
             Suicide &amp; Crisis Lifeline — free, confidential, and available
             24/7.

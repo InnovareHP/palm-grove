@@ -3,20 +3,22 @@ import { Footer } from "@/app/components/Footer/Footer";
 import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { ReferralIntake } from "@/app/components/ReferralIntake/ReferralIntake";
 import { ReferralSteps } from "@/app/components/ReferralSteps/ReferralSteps";
-import { ReferralForm } from "@/app/components/ReferralForm/ReferralForm";
+import { ReferralPartners } from "@/app/components/ReferralPartners/ReferralPartners";
 import heroImg from "@/public/figma/referral/hero.png";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Referral Process — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "Referral Process",
   description:
     "Referring a patient to Palm Grove is simple, and our admissions team is here to help every step of the way — 24 hours a day, 7 days a week.",
-};
+  path: "/referral-process",
+});
 
 export default function ReferralProcessPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           title="Referral Process"
           subtitle="Referring a patient to Palm Grove is simple, and our admissions team is here to help every step of the way — 24 hours a day, 7 days a week."
@@ -26,7 +28,7 @@ export default function ReferralProcessPage() {
         />
         <ReferralIntake />
         <ReferralSteps />
-        <ReferralForm />
+        <ReferralPartners />
       </main>
       <Footer />
     </>

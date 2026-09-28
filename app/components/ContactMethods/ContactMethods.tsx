@@ -9,7 +9,7 @@ export function ContactMethods() {
           {contactMethods.map(({ label, value, href, hint, Icon }) => (
             <li key={label} className={classes.item}>
               <span className={classes.icon}>
-                <Icon size={26} stroke={1.6} />
+                <Icon aria-hidden size={26} stroke={1.6} />
               </span>
               <div>
                 <h2 className={classes.label}>{label}</h2>

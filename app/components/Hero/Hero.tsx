@@ -39,14 +39,14 @@ export function Hero() {
             <Button
               href="/referral-process"
               variant="outline"
-              leftIcon={<IconUserCheck size={20} stroke={1.8} />}
+              leftIcon={<IconUserCheck aria-hidden size={20} stroke={1.8} />}
             >
               Refer a Patient
             </Button>
             <Button
               href="/treatment-services"
               variant="ghostLight"
-              rightIcon={<IconArrowRight size={20} stroke={1.8} />}
+              rightIcon={<IconArrowRight aria-hidden size={20} stroke={1.8} />}
             >
               Explore Our Services
             </Button>
@@ -54,7 +54,7 @@ export function Hero() {
 
           <a className={classes.intake} href={siteConfig.phones.intake.href}>
             <span className={classes.intakeIcon}>
-              <IconPhone size={25} stroke={1.6} />
+              <IconPhone aria-hidden size={25} stroke={1.6} />
             </span>
             <span>
               <span className={classes.intakeLabel}>

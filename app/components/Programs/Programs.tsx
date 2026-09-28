@@ -20,31 +20,29 @@ export function Programs() {
           </p>
         </div>
 
-        <div className={classes.grid}>
+        <ul className={`pgPlainList ${classes.grid}`}>
           {programs.map((program) => (
-            <Link
-              key={program.title}
-              href={program.href}
-              className={`pgCard ${classes.card}`}
-            >
-              <div className={classes.media}>
-                <Image
-                  src={program.image}
-                  alt={program.alt}
-                  className={classes.image}
-                  fill
-                  sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, (max-width: 1280px) 25vw, 270px"
-                />
-              </div>
-              <div className={classes.body}>
-                <h3 className={`pgCardTitle ${classes.title}`}>
-                  {program.title}
-                </h3>
-                <p className={classes.text}>{program.description}</p>
-              </div>
-            </Link>
+            <li key={program.title}>
+              <Link href={program.href} className={`pgCard ${classes.card}`}>
+                <div className={classes.media}>
+                  <Image
+                    src={program.image}
+                    alt={program.alt}
+                    className={classes.image}
+                    fill
+                    sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, (max-width: 1280px) 25vw, 270px"
+                  />
+                </div>
+                <div className={classes.body}>
+                  <h3 className={`pgCardTitle ${classes.title}`}>
+                    {program.title}
+                  </h3>
+                  <p className={classes.text}>{program.description}</p>
+                </div>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <div className={classes.actions}>
           <Button href="/treatment-services">Learn More</Button>

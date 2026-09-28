@@ -7,12 +7,14 @@ import type { CrisisResource } from "@/app/components/MentalHealthResources/Ment
 import { ResourcesCaregivers } from "@/app/components/ResourcesCaregivers/ResourcesCaregivers";
 import { ResourcesPromo } from "@/app/components/ResourcesPromo/ResourcesPromo";
 import heroImg from "@/public/figma/treatment/continuum.png";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Mental Health Resources — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "Mental Health Resources",
   description:
     "Support and information for patients, families, and caregivers — including crisis lines available around the clock.",
-};
+  path: "/resources",
+});
 
 const crisisLines: CrisisResource[] = [
   {
@@ -57,7 +59,7 @@ export default function ResourcesPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           title="Mental Health Resources"
           subtitle="Support and information for patients, families, and caregivers — including crisis lines available around the clock."

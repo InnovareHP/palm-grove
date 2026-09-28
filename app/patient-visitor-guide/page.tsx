@@ -9,18 +9,20 @@ import { PatientGuideVisiting } from "@/app/components/PatientGuideVisiting/Pati
 import { PatientGuideFaq } from "@/app/components/PatientGuideFaq/PatientGuideFaq";
 import heroImg from "@/public/figma/patient-guide/hero.png";
 import expectImg from "@/public/figma/patient-guide/what-to-expect.png";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Patient & Visitor Guide — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "Patient & Visitor Guide",
   description:
     "Everything patients and families need to know about admission, visiting, and what to expect during a stay at Palm Grove.",
-};
+  path: "/patient-visitor-guide",
+});
 
 export default function PatientVisitorGuidePage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           title="Patient & Visitor Guide"
           subtitle="Everything patients and families need to know about admission, visiting, and what to expect during a stay at Palm Grove."

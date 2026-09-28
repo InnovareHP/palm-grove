@@ -1,12 +1,14 @@
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
 import { ProgramDetail } from "@/app/components/ProgramDetail/ProgramDetail";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Inpatient Psychiatric Program — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "Inpatient Psychiatric Program",
   description:
     "Specialized, short-term psychiatric care for older adults who require stabilization in a safe, structured, and supportive environment.",
-};
+  path: "/treatment-services/inpatient-psychiatric-program",
+});
 
 const INTRO = [
   "Palm Grove's Inpatient Psychiatric Program provides specialized, short-term psychiatric care for older adults who require stabilization in a safe, structured, and supportive environment. Our program is designed to help patients experiencing behavioral health challenges receive the focused care they need while preserving dignity, comfort, and quality of life.",
@@ -29,7 +31,7 @@ export default function InpatientPsychiatricProgramPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <ProgramDetail
           title="Inpatient Psychiatric Program"
           intro={INTRO}

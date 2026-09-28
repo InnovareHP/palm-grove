@@ -3,7 +3,7 @@ import { StepCards, type Step } from "../ui/StepCards/StepCards";
 const steps: Step[] = [
   {
     title: "Reach Out",
-    text: "Call our 24/7 intake line, fax, or complete the referral form to start the conversation.",
+    text: "Call our 24/7 intake & referral line or fax us to start the conversation.",
   },
   {
     title: "Assessment",

@@ -97,11 +97,49 @@
   color: var(--pg-heading);
 }
 
-.cardLead {
-  margin: 0 0 22px;
+.numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.numberIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--pg-green);
+  color: #ffffff;
+}
+
+.numberLabel {
+  margin: 0;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   color: var(--pg-text);
+}
+
+.numberValue {
+  display: block;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--pg-text);
+}
+
+.numberValue:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 61.99em) {
