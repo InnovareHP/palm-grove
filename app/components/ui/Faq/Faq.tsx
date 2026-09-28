@@ -22,7 +22,12 @@ export function Faq({ items, defaultOpen = 0 }: FaqProps) {
         >
           <summary className={classes.summary}>
             {item.question}
-            <IconChevronDown size={16} stroke={2} className={classes.chevron} />
+            <IconChevronDown
+              aria-hidden
+              size={16}
+              stroke={2}
+              className={classes.chevron}
+            />
           </summary>
           <p className={classes.answer}>{item.answer}</p>
         </details>

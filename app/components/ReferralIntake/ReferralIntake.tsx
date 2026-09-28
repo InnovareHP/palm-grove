@@ -11,7 +11,7 @@ export function ReferralIntake() {
         <div className={classes.bar}>
           <div className={classes.item}>
             <span className={classes.icon}>
-              <IconPhone size={24} stroke={1.6} />
+              <IconPhone aria-hidden size={24} stroke={1.6} />
             </span>
             <div>
               <p className={classes.label}>24/7 Intake &amp; Referral Line</p>
@@ -23,7 +23,7 @@ export function ReferralIntake() {
 
           <div className={classes.item}>
             <span className={classes.icon}>
-              <IconMail size={24} stroke={1.6} />
+              <IconMail aria-hidden size={24} stroke={1.6} />
             </span>
             <p className={classes.text}>
               Fax referrals to{" "}

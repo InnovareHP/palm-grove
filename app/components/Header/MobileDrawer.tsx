@@ -33,7 +33,31 @@ export function MobileDrawer({
     if (!opened) return;
 
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (event.key !== "Tab" || !drawerRef.current) return;
+
+      // Keep keyboard focus inside the open drawer.
+      const focusable = drawerRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+
+      if (
+        event.shiftKey &&
+        (active === first || active === drawerRef.current)
+      ) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && active === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
 
     const previousOverflow = document.body.style.overflow;
@@ -73,7 +97,7 @@ export function MobileDrawer({
             aria-label="Close navigation"
             onClick={onClose}
           >
-            ×
+            <span aria-hidden="true">×</span>
           </button>
         </div>
 

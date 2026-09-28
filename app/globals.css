@@ -1,17 +1,17 @@
 :root {
-  --pg-green: #4e7a5a;
+  --pg-green: #476f52;
   --pg-green-hover: #3f6b4d;
   --pg-green-mid: #446b52;
   --pg-green-deep: #35513e;
   --pg-green-darkest: #2c4535;
   --pg-green-muted: #6f9a78;
   --pg-green-muted-soft: #8bab90;
-  --pg-green-dark: #4e7a5a;
+  --pg-green-dark: #476f52;
 
   --pg-hero-scrim: #465a48;
   --pg-hero-on-dark: #e3e7da;
 
-  --pg-on-dark-label: #8ba691;
+  --pg-on-dark-label: #a3b9a8;
   --pg-on-dark-body: #aebfb1;
   --pg-on-dark-soft: #c3d3c6;
   --pg-on-dark-eyebrow: #b9d0bf;
@@ -257,7 +257,65 @@ section[id] {
   }
 }
 
-:where(a, button):focus-visible {
+:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
   outline: 2px solid var(--pg-green);
   outline-offset: 3px;
+}
+
+:where(.pgSectionDark, footer) :where(a, button):focus-visible {
+  outline-color: #ffffff;
+}
+
+main:focus {
+  outline: none;
+}
+
+.pgSkipLink {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 12px 20px;
+  background: var(--pg-green-darkest);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  transform: translateY(-200%);
+}
+
+.pgSkipLink:focus {
+  transform: none;
+  outline: 3px solid #ffffff;
+  outline-offset: 0;
+}
+
+:where(.pgPlainList) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pgPlainList > li {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pgPlainList > li > * {
+  flex: 1 1 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: reduced motion must beat component styles */
+    animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced motion must beat component styles */
+    animation-iteration-count: 1 !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced motion must beat component styles */
+    transition-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced motion must beat component styles */
+    scroll-behavior: auto !important;
+  }
 }

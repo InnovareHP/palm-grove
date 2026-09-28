@@ -30,7 +30,7 @@ export function MentalHealthResources({
           {lead ? <p className="pgLead">{lead}</p> : null}
         </div>
 
-        <div className={classes.grid}>
+        <ul className={`pgPlainList ${classes.grid}`}>
           {items.map((resource) => {
             const content = (
               <>
@@ -39,33 +39,37 @@ export function MentalHealthResources({
                 {resource.note ? (
                   <span className={classes.note}>{resource.note}</span>
                 ) : null}
+                {resource.href?.startsWith("http") ? (
+                  <span className="pgSrOnly"> (opens in a new tab)</span>
+                ) : null}
               </>
             );
 
             if (!resource.href) {
               return (
-                <div key={resource.title} className={classes.card}>
-                  {content}
-                </div>
+                <li key={resource.title}>
+                  <div className={classes.card}>{content}</div>
+                </li>
               );
             }
 
             const isExternal = resource.href.startsWith("http");
 
             return (
-              <a
-                key={resource.title}
-                href={resource.href}
-                className={classes.card}
-                {...(isExternal
-                  ? { target: "_blank", rel: "noreferrer noopener" }
-                  : {})}
-              >
-                {content}
-              </a>
+              <li key={resource.title}>
+                <a
+                  href={resource.href}
+                  className={classes.card}
+                  {...(isExternal
+                    ? { target: "_blank", rel: "noreferrer noopener" }
+                    : {})}
+                >
+                  {content}
+                </a>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -1,43 +1,25 @@
-"use client";
-
-import { useState, type FormEvent } from "react";
-import { siteConfig } from "@/app/lib/site";
 import {
-  FieldGrid,
-  FormStatus,
-  SubmitButton,
-  TextAreaField,
-  TextField,
-} from "../ui/FormFields/FormFields";
-import { EmailText } from "../ui/EmailText/EmailText";
+  IconClock24,
+  IconPhone,
+  IconPrinter,
+  type IconProps,
+} from "@tabler/icons-react";
+import type { ComponentType } from "react";
+import { siteConfig, type PhoneNumber } from "@/app/lib/site";
 import classes from "./ContactUs.module.css";
 
 const MAP_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6110.260822666423!2d-81.36018602287344!3d29.91820392453811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e428617387a88b%3A0x2146425e367e82fe!2s150%20Village%20Crossing%20Ct%2C%20St.%20Augustine%2C%20FL%2032084%2C%20USA!5e1!3m2!1sen!2sph!4v1783341279084!5m2!1sen!2sph";
 
-const CONTACT_EMAIL = siteConfig.emails.info;
+const { phones } = siteConfig;
+
+const numbers: (PhoneNumber & { Icon: ComponentType<IconProps> })[] = [
+  { ...phones.intake, Icon: IconClock24 },
+  { ...phones.main, Icon: IconPhone },
+  { ...phones.fax, Icon: IconPrinter },
+];
 
 export function ContactUs() {
-  const [sent, setSent] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const body = [
-      `Name: ${data.get("name")}`,
-      `Contact number: ${data.get("phone")}`,
-      `Email: ${data.get("email") || "—"}`,
-      "",
-      "How we can help:",
-      `${data.get("message") || "—"}`,
-    ].join("\n");
-
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      "Website enquiry",
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-  }
-
   return (
     <section className="pgSection pgSectionMist">
       <div className={`pgContainer ${classes.inner}`}>
@@ -70,55 +52,22 @@ export function ContactUs() {
         </div>
 
         <div className={classes.card}>
-          <h2 className={classes.cardTitle}>Send us a message</h2>
-          <p className={classes.cardLead}>
-            We&apos;ll respond as soon as possible. For urgent needs, please
-            call our 24/7 line.
-          </p>
-
-          <form onSubmit={handleSubmit}>
-            <FieldGrid single>
-              <TextField
-                id="contact-name"
-                name="name"
-                label="Name"
-                placeholder="Full Name"
-                required
-              />
-              <TextField
-                id="contact-phone"
-                name="phone"
-                type="tel"
-                label="Contact Number"
-                placeholder="+1 (000) 000-0000"
-                required
-              />
-              <TextField
-                id="contact-email"
-                name="email"
-                type="email"
-                label="Email"
-                placeholder="you@organization.com"
-              />
-              <TextAreaField
-                id="contact-message"
-                name="message"
-                label="How We Can Help"
-                placeholder="Tell us a little about what you need."
-                tall
-              />
-            </FieldGrid>
-
-            <SubmitButton>Send Message</SubmitButton>
-
-            {sent ? (
-              <FormStatus>
-                Your email client should now be open with your message. If it
-                did not open, email <EmailText address={CONTACT_EMAIL} />{" "}
-                directly.
-              </FormStatus>
-            ) : null}
-          </form>
+          <h2 className={classes.cardTitle}>Connect With Us</h2>
+          <ul className={classes.numbers}>
+            {numbers.map(({ label, display, href, Icon }) => (
+              <li key={label} className={classes.number}>
+                <span className={classes.numberIcon}>
+                  <Icon aria-hidden size={24} stroke={1.6} />
+                </span>
+                <div>
+                  <p className={classes.numberLabel}>{label}</p>
+                  <a className={classes.numberValue} href={href}>
+                    {display}
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

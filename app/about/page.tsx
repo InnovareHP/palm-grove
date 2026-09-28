@@ -8,18 +8,20 @@ import { AboutCareTeam } from "@/app/components/AboutCareTeam/AboutCareTeam";
 import { AboutCommitment } from "@/app/components/AboutCommitment/AboutCommitment";
 import whoWeAreImg from "@/public/figma/about/who-we-are.png";
 import heroImg from "@/public/figma/home/care-team.png";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "About Us — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "About Us",
   description:
     "Palm Grove Health Center brings specialized, compassionate psychiatric care to the older adults of St. Augustine and the surrounding communities.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           title="About Us"
           subtitle="Palm Grove Health Center brings specialized, compassionate psychiatric care to the older adults of St. Augustine and the surrounding communities."

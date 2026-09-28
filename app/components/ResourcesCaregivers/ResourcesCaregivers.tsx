@@ -38,27 +38,30 @@ export function ResourcesCaregivers() {
           </p>
         </div>
 
-        <div className={classes.grid}>
+        <ul className={`pgPlainList ${classes.grid}`}>
           {organizations.map((org) => (
-            <a
-              key={org.title}
-              href={org.href}
-              target="_blank"
-              rel="noreferrer noopener"
-              className={`pgCard ${classes.card}`}
-            >
-              <span>
-                <h3 className={classes.title}>{org.title}</h3>
-                <p className={classes.text}>{org.text}</p>
-              </span>
-              <IconArrowUpRight
-                size={40}
-                stroke={1.5}
-                className={classes.arrow}
-              />
-            </a>
+            <li key={org.title}>
+              <a
+                href={org.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={`pgCard ${classes.card}`}
+              >
+                <div>
+                  <h3 className={classes.title}>{org.title}</h3>
+                  <p className={classes.text}>{org.text}</p>
+                  <span className="pgSrOnly"> (opens in a new tab)</span>
+                </div>
+                <IconArrowUpRight
+                  aria-hidden
+                  size={40}
+                  stroke={1.5}
+                  className={classes.arrow}
+                />
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

@@ -11,18 +11,20 @@ import { OurFocusConditions } from "@/app/components/OurFocusConditions/OurFocus
 import { OurFocusValues } from "@/app/components/OurFocusValues/OurFocusValues";
 import heroImg from "@/public/figma/our-focus/hero.png";
 import whoWeServeImg from "@/public/figma/our-focus/who-we-serve.png";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Our Focus — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "Our Focus",
   description:
     "Dedicated exclusively to the mental and behavioral health of older adults — because the needs of seniors deserve specialized, thoughtful care.",
-};
+  path: "/our-focus",
+});
 
 export default function OurFocusPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           title="Our Focus"
           subtitle="Dedicated exclusively to the mental and behavioral health of older adults — because the needs of seniors deserve specialized, thoughtful care."

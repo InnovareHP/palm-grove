@@ -1,12 +1,14 @@
 import { Header } from "@/app/components/Header/Header";
 import { Footer } from "@/app/components/Footer/Footer";
 import { ProgramDetail } from "@/app/components/ProgramDetail/ProgramDetail";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Intensive Outpatient Program (IOP) — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "Intensive Outpatient Program (IOP)",
   description:
     "Structured psychiatric treatment for older adults who need continued support while maintaining their daily routines at home.",
-};
+  path: "/treatment-services/intensive-outpatient-program",
+});
 
 const INTRO = [
   "Palm Grove's Intensive Outpatient Program (IOP) provides structured psychiatric treatment for older adults who need continued support while maintaining their daily routines at home. The program offers a flexible level of care for individuals who no longer require inpatient hospitalization but continue to benefit from ongoing therapeutic services.",
@@ -29,7 +31,7 @@ export default function IntensiveOutpatientProgramPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <ProgramDetail
           title="Intensive Outpatient Program (IOP)"
           intro={INTRO}

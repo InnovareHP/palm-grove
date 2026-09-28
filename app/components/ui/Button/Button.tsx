@@ -43,16 +43,29 @@ export function Button({
     .filter(Boolean)
     .join(" ");
 
-  const content = (
-    <>
-      {leftIcon ? <span className={classes.icon}>{leftIcon}</span> : null}
-      <span>{children}</span>
-      {rightIcon ? <span className={classes.icon}>{rightIcon}</span> : null}
-    </>
-  );
-
   const isInternal = href.startsWith("/") || href.startsWith("#");
   const opensNewTab = newTab || href.startsWith("http");
+
+  const content = (
+    <>
+      {leftIcon ? (
+        <span className={classes.icon} aria-hidden="true">
+          {leftIcon}
+        </span>
+      ) : null}
+      <span>
+        {children}
+        {opensNewTab ? (
+          <span className="pgSrOnly"> (opens in a new tab)</span>
+        ) : null}
+      </span>
+      {rightIcon ? (
+        <span className={classes.icon} aria-hidden="true">
+          {rightIcon}
+        </span>
+      ) : null}
+    </>
+  );
 
   if (isInternal && !opensNewTab && download === undefined) {
     return (

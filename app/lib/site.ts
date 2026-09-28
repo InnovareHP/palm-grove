@@ -1,4 +1,3 @@
-
 export type PhoneNumber = {
   label: string;
   display: string;
@@ -12,6 +11,7 @@ export type NavLink = {
 
 export const siteConfig = {
   name: "Palm Grove Health Center",
+  url: "https://palmghc.com",
   tagline:
     "Compassionate psychiatric and behavioral health care for older adults and their families in St. Augustine, Florida",
 
@@ -27,19 +27,19 @@ export const siteConfig = {
 
   phones: {
     main: {
-      label: "Main",
-      display: "(904) 000-0000",
-      href: "tel:+19040000000",
+      label: "Main Number",
+      display: "(904) 617-0500",
+      href: "tel:+19046170500",
     },
     intake: {
       label: "24/7 Intake & Referral",
-      display: "(800) 000-0000",
-      href: "tel:+18000000000",
+      display: "(888) 545-2313",
+      href: "tel:+18885452313",
     },
     fax: {
-      label: "Fax",
-      display: "(904) 000-0001",
-      href: "tel:+19040000001",
+      label: "Fax Number",
+      display: "(904) 617-0501",
+      href: "tel:+19046170501",
     },
   } satisfies Record<string, PhoneNumber>,
 

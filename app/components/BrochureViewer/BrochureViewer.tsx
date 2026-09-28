@@ -50,10 +50,14 @@ export function BrochureViewer() {
                   priority={index === 0}
                   sizes="(max-width: 1280px) 100vw, 1088px"
                 />
+                <span className="pgSrOnly">
+                  {" "}
+                  (opens full size in a new tab)
+                </span>
               </a>
               <figcaption className={classes.caption}>
                 <span className={classes.captionLabel}>{page.label}</span>
-                <span className={classes.captionHint}>
+                <span className={classes.captionHint} aria-hidden="true">
                   Tap to open full size in a new tab
                 </span>
               </figcaption>

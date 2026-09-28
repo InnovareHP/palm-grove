@@ -13,12 +13,14 @@ import inpatientImg from "@/public/figma/treatment/inpatient.png";
 import iopImg from "@/public/figma/treatment/iop.png";
 import familySupportImg from "@/public/figma/treatment/family-support.png";
 import continuumImg from "@/public/figma/treatment/continuum.png";
+import { pageMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Treatment & Services — Palm Grove Health Center",
+export const metadata = pageMetadata({
+  title: "Treatment & Services",
   description:
     "A full continuum of behavioral health care for older adults — from around-the-clock inpatient stabilization to structured outpatient support and long-term coordination.",
-};
+  path: "/treatment-services",
+});
 
 const PROGRAM_ASPECT = "478 / 539";
 
@@ -26,7 +28,7 @@ export default function TreatmentServicesPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           title="Treatment & Services"
           subtitle="A full continuum of behavioral health care for older adults — from around-the-clock inpatient stabilization to structured outpatient support and long-term coordination."

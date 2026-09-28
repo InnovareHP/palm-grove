@@ -49,6 +49,46 @@
   color: var(--pg-text);
 }
 
+.intake {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+  padding: 20px 22px;
+  background: var(--pg-tint);
+  color: var(--pg-text);
+}
+
+.intakeIcon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--pg-green);
+  color: #ffffff;
+}
+
+.intakeLabel {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--pg-text);
+}
+
+.intakeNumber {
+  display: block;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 600;
+  line-height: 30px;
+  color: var(--pg-text);
+}
+
+.intake:hover .intakeNumber {
+  text-decoration: underline;
+}
+
 @media (max-width: 61.99em) {
   .inner {
     grid-template-columns: minmax(0, 1fr);
