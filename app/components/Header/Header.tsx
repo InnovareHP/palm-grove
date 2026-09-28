@@ -28,14 +28,10 @@ export function Header() {
 
       <header className={classes.header}>
         <div className={`pgContainer ${classes.inner}`}>
-          <Link
-            href="/"
-            className={classes.logoLink}
-            aria-label={`${siteConfig.name} home`}
-          >
+          <Link href="/" className={classes.logoLink}>
             <Image
               src={logo}
-              alt={siteConfig.name}
+              alt={`${siteConfig.name} home`}
               className={classes.logo}
               sizes="116px"
               priority

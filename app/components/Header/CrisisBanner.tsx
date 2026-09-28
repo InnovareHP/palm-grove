@@ -5,23 +5,22 @@ export function CrisisBanner() {
   const { crisis, phones } = siteConfig;
 
   return (
-    <aside className={classes.banner} aria-label="Crisis and contact numbers">
+    <nav className={classes.banner} aria-label="Crisis and contact numbers">
       <ul className={`pgContainer ${classes.inner}`}>
         <li>
           <span>In a crisis?</span>{" "}
           <a
             className={classes.link}
             href={crisis.lifeline.href}
-            aria-label={`Call or text ${crisis.lifeline.label}, Suicide & Crisis Lifeline`}
           >
             Call or text{" "}
             <strong className={classes.strong}>{crisis.lifeline.label}</strong>
+            <span className="pgSrOnly">, Suicide &amp; Crisis Lifeline</span>
           </a>{" "}
           or{" "}
           <a
             className={classes.link}
             href={crisis.emergency.href}
-            aria-label={`Call ${crisis.emergency.label} for emergencies`}
           >
             dial{" "}
             <strong className={classes.strong}>{crisis.emergency.label}</strong>
@@ -48,6 +47,6 @@ export function CrisisBanner() {
           </ul>
         </li>
       </ul>
-    </aside>
+    </nav>
   );
 }
