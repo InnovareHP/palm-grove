@@ -3,7 +3,9 @@ import Link from "next/link";
 import {
   footerExploreLinks,
   footerResourceLinks,
+  isMailto,
   mailto,
+  mailtoHint,
   siteConfig,
 } from "@/app/lib/site";
 import logo from "@/public/figma/home/logo-footer.png";
@@ -79,8 +81,15 @@ export function Footer() {
               <li key={contact.label}>
                 <span className={classes.contactLabel}>{contact.label}</span>
                 {contact.href ? (
-                  <a className={classes.contactValue} href={contact.href}>
+                  <a
+                    className={classes.contactValue}
+                    href={contact.href}
+                    title={isMailto(contact.href) ? mailtoHint : undefined}
+                  >
                     {contact.value}
+                    {isMailto(contact.href) ? (
+                      <span className="pgSrOnly"> ({mailtoHint.toLowerCase()})</span>
+                    ) : null}
                   </a>
                 ) : (
                   <span className={classes.contactValue}>{contact.value}</span>

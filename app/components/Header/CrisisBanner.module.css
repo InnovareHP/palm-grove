@@ -16,14 +16,17 @@
   line-height: 1.4;
 }
 
-.inner p {
-  margin: 0;
+.inner,
+.contactList {
+  margin-block: 0;
+  list-style: none;
 }
 
-.contacts {
+.contactList {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 28px;
+  padding: 0;
 }
 
 .strong {
@@ -52,7 +55,7 @@
     row-gap: 10px;
   }
 
-  .contacts {
+  .contactList {
     gap: 4px 16px;
     justify-content: center;
   }

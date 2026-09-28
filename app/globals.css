@@ -239,13 +239,15 @@ h4 {
   border: 0;
 }
 
-section[id] {
-  scroll-margin-top: 130px;
+/* Keep focused and anchored elements clear of the sticky header. */
+html {
+  --pg-sticky-offset: 176px;
+  scroll-padding-top: var(--pg-sticky-offset);
 }
 
 @media (max-width: 74.99em) {
-  section[id] {
-    scroll-margin-top: 104px;
+  html {
+    --pg-sticky-offset: 136px;
   }
 }
 
