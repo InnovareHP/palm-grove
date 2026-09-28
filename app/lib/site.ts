@@ -91,6 +91,12 @@ export const footerResourceLinks: NavLink[] = [
   { label: "Admissions", href: "/referral-process" },
 ];
 
+export const mailtoHint = "Opens your email app";
+
+export function isMailto(href: string) {
+  return href.startsWith("mailto:");
+}
+
 export function mailto(address: string, subject?: string) {
   return subject
     ? `mailto:${address}?subject=${encodeURIComponent(subject)}`

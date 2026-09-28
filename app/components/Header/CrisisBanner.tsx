@@ -6,42 +6,48 @@ export function CrisisBanner() {
 
   return (
     <aside className={classes.banner} aria-label="Crisis and contact numbers">
-      <div className={`pgContainer ${classes.inner}`}>
-        <p>
-          In a crisis? Call or text{" "}
+      <ul className={`pgContainer ${classes.inner}`}>
+        <li>
+          <span>In a crisis?</span>{" "}
           <a
             className={classes.link}
             href={crisis.lifeline.href}
             aria-label={`Call or text ${crisis.lifeline.label}, Suicide & Crisis Lifeline`}
           >
+            Call or text{" "}
             <strong className={classes.strong}>{crisis.lifeline.label}</strong>
           </a>{" "}
-          or dial{" "}
+          or{" "}
           <a
             className={classes.link}
             href={crisis.emergency.href}
-            aria-label={`Call ${crisis.emergency.label}`}
+            aria-label={`Call ${crisis.emergency.label} for emergencies`}
           >
+            dial{" "}
             <strong className={classes.strong}>{crisis.emergency.label}</strong>
           </a>
-        </p>
-        <div className={classes.contacts}>
-          <p>
-            {phones.main.label}:{" "}
-            <a className={classes.link} href={phones.main.href}>
-              <strong className={classes.strong}>{phones.main.display}</strong>
-            </a>
-          </p>
-          <p>
-            24/7 Intake:{" "}
-            <a className={classes.link} href={phones.intake.href}>
-              <strong className={classes.strong}>
-                {phones.intake.display}
-              </strong>
-            </a>
-          </p>
-        </div>
-      </div>
+        </li>
+        <li className={classes.contacts}>
+          <ul className={classes.contactList}>
+            <li>
+              {phones.main.label}:{" "}
+              <a className={classes.link} href={phones.main.href}>
+                <strong className={classes.strong}>
+                  {phones.main.display}
+                </strong>
+              </a>
+            </li>
+            <li>
+              24/7 Intake:{" "}
+              <a className={classes.link} href={phones.intake.href}>
+                <strong className={classes.strong}>
+                  {phones.intake.display}
+                </strong>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </aside>
   );
 }

@@ -1,3 +1,4 @@
+import { isMailto, mailtoHint } from "@/app/lib/site";
 import { contactMethods } from "./ContactMethods.data";
 import classes from "./ContactMethods.module.css";
 
@@ -14,8 +15,15 @@ export function ContactMethods() {
               <div>
                 <h2 className={classes.label}>{label}</h2>
                 {href ? (
-                  <a className={classes.value} href={href}>
+                  <a
+                    className={classes.value}
+                    href={href}
+                    title={isMailto(href) ? mailtoHint : undefined}
+                  >
                     {value}
+                    {isMailto(href) ? (
+                      <span className="pgSrOnly"> ({mailtoHint.toLowerCase()})</span>
+                    ) : null}
                   </a>
                 ) : (
                   <span className={classes.value}>{value}</span>

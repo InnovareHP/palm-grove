@@ -1,5 +1,5 @@
 import { IconMail, IconPhone } from "@tabler/icons-react";
-import { mailto, siteConfig } from "@/app/lib/site";
+import { mailto, mailtoHint, siteConfig } from "@/app/lib/site";
 import classes from "./ReferralIntake.module.css";
 
 const { phones, emails } = siteConfig;
@@ -34,8 +34,10 @@ export function ReferralIntake() {
               <a
                 className={`${classes.strong} ${classes.email}`}
                 href={mailto(emails.referrals)}
+                title={mailtoHint}
               >
                 {emails.referrals}
+                <span className="pgSrOnly"> ({mailtoHint.toLowerCase()})</span>
               </a>
             </p>
           </div>
