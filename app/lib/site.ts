@@ -49,8 +49,8 @@ export const siteConfig = {
   },
 
   emails: {
-    info: "info@palmgrovehealthcenter.com",
-    referrals: "referrals@palmgrovehealthcenter.com",
+    info: "contact@palmghc.com",
+    referrals: "contact@palmghc.com",
   },
 
   brochure: {
