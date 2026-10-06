@@ -10,36 +10,42 @@ export type NavLink = {
 };
 
 export const siteConfig = {
-  name: "Palm Grove Health Center",
-  url: "https://palmghc.com",
+  name: "Magnolia Behavioral Health Pasadena",
+  shortName: "Magnolia Behavioral Health",
+  url: "https://magnoliabhp.com",
   tagline:
-    "Compassionate psychiatric and behavioral health care for older adults and their families in St. Augustine, Florida",
+    "Compassionate psychiatric and behavioral health care for older adults and their families in Pasadena, California.",
 
   address: {
-    street: "150 Village Crossing Court",
-    city: "St. Augustine",
-    state: "Florida",
-    stateAbbr: "FL",
-    zip: "32084",
-    full: "150 Village Crossing Court, St. Augustine, Florida 32084",
-    short: "150 Village Crossing Ct. St. Augustine, FL 32084",
+    street: "4900 E Sam Houston Pkwy S",
+    city: "Pasadena",
+    state: "Texas",
+    stateAbbr: "TX",
+    zip: "77505",
+    full: "4900 E Sam Houston Pkwy S, Pasadena, Texas 77505",
+    short: "4900 E Sam Houston Pkwy S. Pasadena, TX 77505",
   },
 
   phones: {
     main: {
-      label: "Main Number",
-      display: "(904) 617-0500",
-      href: "tel:+19046170500",
+      label: "Local Main",
+      display: "(346) 344-6400",
+      href: "tel:+13463446400",
+    },
+    tollFree: {
+      label: "Toll Free Main",
+      display: "(888) 545-0005",
+      href: "tel:+18885450005",
     },
     intake: {
-      label: "24/7 Intake & Referral",
-      display: "(888) 545-2313",
-      href: "tel:+18885452313",
+      label: "Toll Free Intake",
+      display: "(888) 545-0007",
+      href: "tel:+18885450007",
     },
     fax: {
-      label: "Fax Number",
-      display: "(904) 617-0501",
-      href: "tel:+19046170501",
+      label: "Fax",
+      display: "(346) 344-6401",
+      href: "tel:+13463446401",
     },
   } satisfies Record<string, PhoneNumber>,
 
@@ -49,8 +55,8 @@ export const siteConfig = {
   },
 
   emails: {
-    info: "contact@palmghc.com",
-    referrals: "contact@palmghc.com",
+    info: "contact@magnoliabhp.com",
+    referrals: "contact@magnoliabhp.com",
   },
 
   brochure: {

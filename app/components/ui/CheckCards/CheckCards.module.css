@@ -18,7 +18,7 @@
   min-height: 102px;
   padding: 25px;
   background: var(--pg-offwhite);
-  border: 1px solid var(--pg-border);
+  border: 1px solid var(--pg-border-input);
   border-radius: var(--pg-radius);
 }
 

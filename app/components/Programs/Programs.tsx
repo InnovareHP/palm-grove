@@ -9,14 +9,14 @@ export function Programs() {
     <section className={`pgSection ${classes.section}`}>
       <div className="pgContainer">
         <div className="pgIntro">
-          <p className="pgEyebrow pgEyebrowMuted">Programs &amp; Services</p>
+          <p className="pgEyebrow">Programs &amp; Services</p>
           <h2 className="pgTitle">
-            Care built around the needs of older adults
+            Psychiatric treatment for older adults, at every level of need
           </h2>
           <p className="pgLead">
-            A full continuum of specialized behavioral health services — from
-            acute stabilization to structured outpatient support — delivered
-            with dignity and respect.
+            We offer a connected range of behavioral health services, from
+            short-term crisis stabilization to flexible outpatient programs, all
+            built on respect, dignity, and clinical expertise.
           </p>
         </div>
 
@@ -30,7 +30,7 @@ export function Programs() {
                     alt={program.alt}
                     className={classes.image}
                     fill
-                    sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, (max-width: 1280px) 25vw, 270px"
+                    sizes="(max-width: 576px) 100vw, (max-width: 992px) 50vw, (max-width: 1280px) 33vw, 348px"
                   />
                 </div>
                 <div className={classes.body}>
@@ -45,7 +45,7 @@ export function Programs() {
         </ul>
 
         <div className={classes.actions}>
-          <Button href="/treatment-services">Learn More</Button>
+          <Button href="/treatment-services">See All Programs</Button>
         </div>
       </div>
     </section>

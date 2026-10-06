@@ -15,6 +15,7 @@ type MediaSplitProps = {
   id?: string;
   mediaAspect?: string;
   imagePosition?: string;
+  titleSize?: "md" | "lg";
 };
 
 export function MediaSplit({
@@ -30,6 +31,7 @@ export function MediaSplit({
   id,
   mediaAspect,
   imagePosition,
+  titleSize = "md",
 }: MediaSplitProps) {
   const dark = background === "dark";
 
@@ -68,7 +70,11 @@ export function MediaSplit({
               {eyebrow}
             </p>
           ) : null}
-          <h2 className={`pgTitle ${dark ? "pgTitleLight" : ""}`}>{title}</h2>
+          <h2
+            className={`pgTitle ${titleSize === "lg" ? "pgTitleLg" : ""} ${dark ? "pgTitleLight" : ""}`}
+          >
+            {title}
+          </h2>
           {paragraphs.map((paragraph) => (
             <p
               key={paragraph}

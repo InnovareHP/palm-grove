@@ -1,20 +1,14 @@
 .hero {
-  position: relative;
-  background: linear-gradient(
-    -53.33deg,
-    #35513e 1.59%,
-    #446b52 33.91%,
-    #2c4535 66.23%
-  );
-  color: #ffffff;
-  overflow: hidden;
+  --pg-glow-x: 43.2%;
+  --pg-glow-y: -26px;
+  background: var(--pg-gradient-hero);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  grid-template-columns: minmax(0, 43.2%) minmax(0, 56.8%);
   align-items: stretch;
-  min-height: 333px;
+  min-height: 357px;
 }
 
 .media {
@@ -23,7 +17,7 @@
 }
 
 .imageRight {
-  grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+  grid-template-columns: minmax(0, 56.8%) minmax(0, 43.2%);
 }
 
 .imageRight .media {
@@ -67,7 +61,7 @@
 .eyebrow {
   margin: 0;
   font-size: clamp(13px, 1.2vw, 16px);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: var(--pg-on-dark-pale);
@@ -107,7 +101,7 @@
   justify-content: center;
   text-align: center;
   gap: 12px;
-  min-height: 333px;
+  min-height: 357px;
   padding-block: clamp(40px, 5vw, 56px);
 }
 

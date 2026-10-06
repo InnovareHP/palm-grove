@@ -1,10 +1,10 @@
 import classes from "./WhyChoose.module.css";
 
 const reasons = [
-  "Specialized in geriatric psychiatry — not just general mental health.",
-  "An expert interdisciplinary team trained specifically in senior care.",
-  "Families are involved at every step of the treatment journey.",
-  "A full continuum of care that supports patients well beyond discharge.",
+  "Every program is designed around the mental health needs of older adults.",
+  "Our psychiatrists, nurses, and therapists all specialize in older adults.",
+  "Families take part in treatment planning, family meetings, and discharge.",
+  "Every discharge plan includes outpatient follow-up and care coordination.",
 ];
 
 export function WhyChoose() {
@@ -12,8 +12,8 @@ export function WhyChoose() {
     <section className={`pgSection ${classes.section}`}>
       <div className="pgContainer">
         <div className="pgIntro">
-          <p className="pgEyebrow">Why Palm Grove</p>
-          <h2 className="pgTitle">Specialized care you can trust</h2>
+          <p className="pgEyebrow">Why Magnolia</p>
+          <h2 className="pgTitle">Care built on experience</h2>
         </div>
 
         <ul className={classes.grid}>

@@ -6,6 +6,7 @@ export type ButtonVariant =
   | "solid"
   | "solidBordered"
   | "outline"
+  | "ghost"
   | "ghostLight"
   | "glass";
 

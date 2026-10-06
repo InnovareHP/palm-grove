@@ -33,7 +33,7 @@ export function Header() {
               src={logo}
               alt={`${siteConfig.name} home`}
               className={classes.logo}
-              sizes="116px"
+              sizes="215px"
               priority
             />
           </Link>

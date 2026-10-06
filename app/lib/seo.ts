@@ -3,11 +3,11 @@ import { siteConfig } from "./site";
 
 export const siteUrl = siteConfig.url;
 
-const defaultOgImage = {
-  url: "/figma/home/hero.png",
-  width: 2560,
-  height: 1218,
-  alt: "Palm Grove Health Center in St. Augustine, Florida",
+export const defaultOgImage = {
+  url: "/figma/home/og.jpg",
+  width: 1200,
+  height: 630,
+  alt: `${siteConfig.name} in ${siteConfig.address.city}, ${siteConfig.address.state}`,
 };
 
 type PageMetadataInput = {
@@ -69,7 +69,7 @@ export const organizationJsonLd = {
   },
   areaServed: {
     "@type": "City",
-    name: "St. Augustine, Florida",
+    name: `${siteConfig.address.city}, ${siteConfig.address.state}`,
   },
   contactPoint: [
     {

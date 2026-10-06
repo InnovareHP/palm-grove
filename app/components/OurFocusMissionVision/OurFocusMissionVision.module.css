@@ -1,3 +1,7 @@
+.title {
+  font-weight: 400;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -12,23 +16,25 @@
   justify-content: center;
   gap: 6px;
   padding: 30px;
-  border: 1px solid var(--pg-border);
+  min-height: 166px;
+  border: 1px solid var(--pg-offwhite);
   border-radius: var(--pg-radius);
-  background: var(--pg-offwhite);
+  background: var(--pg-blush);
 }
 
 .cardDark {
-  background: var(--pg-green-darkest);
+  background: var(--pg-primary);
+  border-color: var(--pg-border);
 }
 
 .label {
   margin: 0;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 30px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--pg-green-darkest);
+  color: var(--pg-deep);
 }
 
 .cardDark .label {

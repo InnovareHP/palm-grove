@@ -6,7 +6,6 @@ import { WhyChoose } from "./components/WhyChoose/WhyChoose";
 import { Partnering } from "./components/Partnering/Partnering";
 import { MentalHealthResources } from "./components/MentalHealthResources/MentalHealthResources";
 import { Footer } from "./components/Footer/Footer";
-import { OpeningPopup } from "./components/OpeningPopup/OpeningPopup";
 
 export default function Home() {
   return (
@@ -18,10 +17,9 @@ export default function Home() {
         <CareTeam />
         <WhyChoose />
         <Partnering />
-        <MentalHealthResources />
+        <MentalHealthResources tinted />
       </main>
       <Footer />
-      <OpeningPopup />
     </>
   );
 }

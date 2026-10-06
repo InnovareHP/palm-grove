@@ -1,3 +1,28 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.mark {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 352px;
+  height: 303px;
+  overflow: hidden;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.markImage {
+  display: block;
+  width: 464px;
+  max-width: none;
+  height: 464px;
+}
+
 .inner {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -7,7 +32,7 @@
 
 .media {
   position: relative;
-  aspect-ratio: 500 / 615;
+  aspect-ratio: 500 / 567;
   overflow: hidden;
   box-shadow: var(--pg-shadow-media);
 }

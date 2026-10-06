@@ -20,12 +20,17 @@ const contacts = [
     value: phones.main.display,
     href: phones.main.href,
   },
+  { label: phones.fax.label, value: phones.fax.display },
+  {
+    label: phones.tollFree.label,
+    value: phones.tollFree.display,
+    href: phones.tollFree.href,
+  },
   {
     label: phones.intake.label,
     value: phones.intake.display,
     href: phones.intake.href,
   },
-  { label: phones.fax.label, value: phones.fax.display },
   {
     label: "Email",
     value: <EmailText address={emails.info} />,
@@ -42,10 +47,10 @@ export function Footer() {
             src={logo}
             alt={siteConfig.name}
             className={classes.logo}
-            sizes="144px"
+            sizes="202px"
           />
           <p className={classes.tagline}>{siteConfig.tagline}</p>
-          <p className={classes.address}>{address.full}</p>
+          <p className={classes.address}>{address.short}</p>
         </div>
 
         <nav aria-label="Explore">
@@ -88,7 +93,10 @@ export function Footer() {
                   >
                     {contact.value}
                     {isMailto(contact.href) ? (
-                      <span className="pgSrOnly"> ({mailtoHint.toLowerCase()})</span>
+                      <span className="pgSrOnly">
+                        {" "}
+                        ({mailtoHint.toLowerCase()})
+                      </span>
                     ) : null}
                   </a>
                 ) : (

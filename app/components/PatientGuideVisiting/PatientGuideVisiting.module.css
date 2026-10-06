@@ -68,7 +68,7 @@
   font-size: 12px;
   font-style: italic;
   line-height: 20px;
-  color: var(--pg-green);
+  color: var(--pg-primary);
 }
 
 @media (max-width: 61.99em) {

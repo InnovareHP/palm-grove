@@ -1,5 +1,5 @@
 .banner {
-  background: var(--pg-green-deep);
+  background: var(--pg-primary);
   color: #ffffff;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .link {

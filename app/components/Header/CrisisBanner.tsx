@@ -9,19 +9,13 @@ export function CrisisBanner() {
       <ul className={`pgContainer ${classes.inner}`}>
         <li>
           <span>In a crisis?</span>{" "}
-          <a
-            className={classes.link}
-            href={crisis.lifeline.href}
-          >
+          <a className={classes.link} href={crisis.lifeline.href}>
             Call or text{" "}
             <strong className={classes.strong}>{crisis.lifeline.label}</strong>
             <span className="pgSrOnly">, Suicide &amp; Crisis Lifeline</span>
           </a>{" "}
           or{" "}
-          <a
-            className={classes.link}
-            href={crisis.emergency.href}
-          >
+          <a className={classes.link} href={crisis.emergency.href}>
             dial{" "}
             <strong className={classes.strong}>{crisis.emergency.label}</strong>
           </a>
@@ -29,7 +23,7 @@ export function CrisisBanner() {
         <li className={classes.contacts}>
           <ul className={classes.contactList}>
             <li>
-              {phones.main.label}:{" "}
+              Main:{" "}
               <a className={classes.link} href={phones.main.href}>
                 <strong className={classes.strong}>
                   {phones.main.display}

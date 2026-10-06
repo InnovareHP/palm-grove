@@ -7,25 +7,25 @@ const values = [
   },
   {
     title: "Dignity",
-    text: "Older adults deserve respect. We protect the dignity of every person in our care at every moment.",
+    text: "We treat every patient as a whole person, with a history, preferences, and a voice in their own care.",
   },
   {
     title: "Family Partnership",
-    text: "Families are essential partners. We keep them informed and involved throughout treatment.",
+    text: "Families are part of the treatment process, from admission through discharge.",
   },
   {
     title: "Excellence",
-    text: "We hold ourselves to the highest clinical standards, grounded in evidence-based geriatric psychiatry.",
+    text: "Our psychiatrists, nurses, and therapists specialize in the mental health needs of older adults.",
   },
 ];
 
 export function OurFocusValues() {
   return (
-    <section className={`pgSection ${classes.section}`}>
+    <section className={`pgSection pgBrand ${classes.section}`}>
       <div className="pgContainer">
         <div className="pgIntro">
-          <p className="pgEyebrow">What guides us</p>
-          <h2 className="pgTitle">Our Values</h2>
+          <p className="pgEyebrow pgEyebrowLight">What guides us</p>
+          <h2 className="pgTitle pgTitleLg pgTitleLight">Our Values</h2>
         </div>
 
         <ul className={classes.grid}>

@@ -9,14 +9,14 @@ import { PageHero } from "@/app/components/ui/PageHero/PageHero";
 import { OurFocusMissionVision } from "@/app/components/OurFocusMissionVision/OurFocusMissionVision";
 import { OurFocusConditions } from "@/app/components/OurFocusConditions/OurFocusConditions";
 import { OurFocusValues } from "@/app/components/OurFocusValues/OurFocusValues";
-import heroImg from "@/public/figma/our-focus/hero.png";
-import whoWeServeImg from "@/public/figma/our-focus/who-we-serve.png";
+import heroImg from "@/public/figma/our-focus/hero.jpg";
+import whoWeServeImg from "@/public/figma/our-focus/who-we-serve.jpg";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Our Focus",
   description:
-    "Dedicated exclusively to the mental and behavioral health of older adults — because the needs of seniors deserve specialized, thoughtful care.",
+    "Older adults have different mental health needs. At Magnolia Behavioral Health, we've built our programs and care team around them.",
   path: "/our-focus",
 });
 
@@ -27,39 +27,39 @@ export default function OurFocusPage() {
       <main id="main-content" tabIndex={-1}>
         <PageHero
           title="Our Focus"
-          subtitle="Dedicated exclusively to the mental and behavioral health of older adults — because the needs of seniors deserve specialized, thoughtful care."
+          subtitle={`Older adults have different mental health needs. At ${siteConfig.shortName}, we've built our programs and care team around them.`}
           image={heroImg}
-          alt="A caregiver walking outdoors with an older adult"
-          imagePosition="center top"
+          alt="A caregiver hugging a smiling older woman"
+          imagePosition="center"
         />
         <OurFocusMissionVision />
         <MediaSplit
           eyebrow="Who we serve"
           title="Care designed for older adults"
           paragraphs={[
-            "We care for adults, typically age 55 and older, who are experiencing acute psychiatric symptoms or behavioral changes that affect their safety, independence, or quality of life. Aging can bring complex, overlapping medical and emotional challenges — and general mental health settings are not always equipped to address them.",
-            "Our clinicians understand how psychiatric conditions present differently in later life, how they interact with physical health and medications, and how to involve families in the healing process.",
+            "We treat older adults, typically age 45 and up, who are experiencing acute psychiatric symptoms or behavioral changes that affect their safety, independence, or daily life. At this stage of life, mental health conditions are often tied to medical illness, medication changes, or major life events, and general psychiatric programs are not always set up to manage both.",
+            "Our clinicians are experienced in how psychiatric conditions present in older adults, how they interact with physical health and medications, and how to involve families in treatment.",
           ]}
           image={whoWeServeImg}
-          alt="Two older adults walking together outdoors"
-          imagePosition="center top"
+          alt="A nurse with her arm around an older woman on a sofa"
           reverse
           background="tinted"
+          titleSize="lg"
         />
         <OurFocusConditions />
         <OurFocusValues />
         <CtaBand
           title="Have questions about whether we can help?"
           lead="Our admissions team is available 24/7 to talk through your situation."
+          variant="light"
         >
           <Button
             href={siteConfig.phones.intake.href}
-            variant="outline"
-            leftIcon={<IconPhone size={20} stroke={1.8} />}
+            leftIcon={<IconPhone size={20} stroke={1.75} />}
           >
             Call {siteConfig.phones.intake.display}
           </Button>
-          <Button href="/treatment-services" variant="glass">
+          <Button href="/treatment-services" variant="ghost">
             See Our Programs
           </Button>
         </CtaBand>

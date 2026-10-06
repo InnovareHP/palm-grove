@@ -39,13 +39,13 @@
 }
 
 .pill:hover {
-  border-color: var(--pg-green-hover);
-  color: var(--pg-green-hover);
+  border-color: var(--pg-primary-hover);
+  color: var(--pg-primary-hover);
 }
 
 .icon {
   flex: none;
-  color: var(--pg-green);
+  color: var(--pg-primary);
 }
 
 @media (max-width: 47.99em) {

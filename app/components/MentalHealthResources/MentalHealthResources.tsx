@@ -10,6 +10,7 @@ type Props = {
   lead?: string;
   items?: CrisisResource[];
   eyebrowMuted?: boolean;
+  tinted?: boolean;
 };
 
 export function MentalHealthResources({
@@ -18,9 +19,10 @@ export function MentalHealthResources({
   lead = "If you or a loved one needs immediate help, these national resources are available around the clock.",
   items = crisisResources,
   eyebrowMuted = false,
+  tinted = false,
 }: Props) {
   return (
-    <section className="pgSection">
+    <section className={`pgSection ${tinted ? "pgSectionTinted" : ""}`}>
       <div className="pgContainer">
         <div className="pgIntro">
           <p className={`pgEyebrow ${eyebrowMuted ? "pgEyebrowMuted" : ""}`}>

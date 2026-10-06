@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
-import { Castoro, Montserrat } from "next/font/google";
+import { Castoro, Lato, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "./lib/site";
-import { organizationJsonLd, siteUrl } from "./lib/seo";
+import { defaultOgImage, organizationJsonLd, siteUrl } from "./lib/seo";
 
-const montserrat = Montserrat({
+const lato = Lato({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-montserrat",
+  weight: ["400", "700", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-lato",
+  display: "swap",
+});
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-libre-baskerville",
   display: "swap",
 });
 
@@ -19,9 +27,9 @@ const castoro = Castoro({
 });
 
 const homeTitle =
-  "Palm Grove Health Center — Psychiatric Care for Older Adults";
+  "Magnolia Behavioral Health Pasadena — Psychiatric Care for Older Adults";
 const homeDescription =
-  "Compassionate psychiatric and behavioral health care for older adults and their families in St. Augustine, Florida.";
+  "Magnolia Behavioral Health offers inpatient and intensive outpatient psychiatric care that helps older adults and their families find stability and renewed hope.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -32,14 +40,13 @@ export const metadata: Metadata = {
   description: homeDescription,
   applicationName: siteConfig.name,
   keywords: [
-    "geriatric psychiatry",
+    "older adult psychiatry",
     "senior behavioral health",
     "older adult mental health",
     "inpatient psychiatric care",
     "intensive outpatient program",
-    "St. Augustine psychiatric hospital",
-    "St. Johns County mental health",
-    "Palm Grove Health Center",
+    "Pasadena psychiatric hospital",
+    "Magnolia Behavioral Health",
   ],
   alternates: { canonical: "/" },
   openGraph: {
@@ -49,20 +56,13 @@ export const metadata: Metadata = {
     url: "/",
     title: homeTitle,
     description: homeDescription,
-    images: [
-      {
-        url: "/figma/home/hero.png",
-        width: 2560,
-        height: 1218,
-        alt: "Palm Grove Health Center in St. Augustine, Florida",
-      },
-    ],
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: homeTitle,
     description: homeDescription,
-    images: ["/figma/home/hero.png"],
+    images: [defaultOgImage.url],
   },
   robots: {
     index: true,
@@ -83,7 +83,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${castoro.variable}`}>
+    <html
+      lang="en"
+      className={`${lato.variable} ${libreBaskerville.variable} ${castoro.variable}`}
+    >
       <body>
         <script
           type="application/ld+json"

@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: rgba(44, 69, 53, 0.45);
+  background: rgba(56, 0, 22, 0.45);
   opacity: 0;
   pointer-events: none;
   transition: opacity 200ms ease;
@@ -71,7 +71,7 @@
 }
 
 .close:hover {
-  color: var(--pg-green-hover);
+  color: var(--pg-primary-hover);
 }
 
 .nav {
@@ -90,13 +90,13 @@
 }
 
 .link:hover {
-  color: var(--pg-green-hover);
+  color: var(--pg-primary-hover);
 }
 
 .link[aria-current="page"] {
-  color: var(--pg-green);
+  color: var(--pg-primary);
   background: var(--pg-tint);
-  box-shadow: inset 4px 0 0 var(--pg-green);
+  box-shadow: inset 4px 0 0 var(--pg-primary);
 }
 
 .cta {

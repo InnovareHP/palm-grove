@@ -27,7 +27,7 @@ export function PageHero({
 }: PageHeroProps) {
   if (!image) {
     return (
-      <section className={classes.hero}>
+      <section className={`pgBrand ${classes.hero}`}>
         <div className={`pgContainer ${classes.centered}`}>
           {eyebrow ? <p className={classes.eyebrow}>{eyebrow}</p> : null}
           <h1 className={classes.title}>{title}</h1>
@@ -39,7 +39,7 @@ export function PageHero({
   }
 
   return (
-    <section className={classes.hero}>
+    <section className={`pgBrand ${classes.hero}`}>
       <div
         className={[
           classes.grid,
@@ -63,7 +63,7 @@ export function PageHero({
             sizes={
               imageVariant === "card"
                 ? "(max-width: 640px) 100vw, (max-width: 992px) 620px, 460px"
-                : "(max-width: 640px) 100vw, (max-width: 992px) 620px, 40vw"
+                : "(max-width: 640px) 100vw, (max-width: 992px) 620px, 44vw"
             }
           />
         </div>

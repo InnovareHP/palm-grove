@@ -1,5 +1,5 @@
 .section {
-  background: var(--pg-gradient-mist);
+  --pg-glow-x: calc(50% - 128px);
 }
 
 .grid {
@@ -22,10 +22,10 @@
 .title {
   margin: 0;
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 700;
   font-size: clamp(20px, 2vw, 24px);
   line-height: 30px;
-  color: var(--pg-green);
+  color: var(--pg-heading);
 }
 
 .text {

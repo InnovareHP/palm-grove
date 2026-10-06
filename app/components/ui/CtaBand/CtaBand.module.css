@@ -3,6 +3,33 @@
   color: #ffffff;
 }
 
+.light {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--pg-gradient-mist);
+  color: var(--pg-text);
+}
+
+.mark {
+  position: absolute;
+  left: -180px;
+  bottom: 0;
+  z-index: -1;
+  width: 431px;
+  height: 330px;
+  overflow: hidden;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.markImage {
+  display: block;
+  width: 464px;
+  max-width: none;
+  height: 464px;
+}
+
 .inner {
   display: flex;
   flex-direction: column;
@@ -21,12 +48,25 @@
   color: #ffffff;
 }
 
+.light .title {
+  max-width: 648px;
+  font-weight: 700;
+  background: var(--pg-gradient-title);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .lead {
   margin: 0;
   max-width: 800px;
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.5;
   color: #ffffff;
+}
+
+.light .lead {
+  color: var(--pg-text);
 }
 
 .actions {

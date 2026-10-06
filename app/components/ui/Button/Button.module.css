@@ -8,7 +8,7 @@
   border: 1px solid transparent;
   font-family: var(--font-sans);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.55;
   white-space: nowrap;
   cursor: pointer;
@@ -34,32 +34,42 @@
 }
 
 .solid {
-  background: var(--pg-green);
+  background: var(--pg-primary);
   color: #ffffff;
 }
 
 .solid:hover {
-  background: var(--pg-green-hover);
+  background: var(--pg-primary-hover);
 }
 
 .solidBordered {
-  background: var(--pg-green);
+  background: var(--pg-primary);
   color: #ffffff;
   border-color: #ffffff;
 }
 
 .solidBordered:hover {
-  background: var(--pg-green-hover);
+  background: var(--pg-primary-hover);
 }
 
 .outline {
   background: #ffffff;
-  color: var(--pg-green);
-  border-color: var(--pg-green);
+  color: var(--pg-deep);
+  border-color: var(--pg-deep);
 }
 
 .outline:hover {
-  background: var(--pg-sage);
+  background: var(--pg-blush);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--pg-deep);
+  padding-inline: 15px;
+}
+
+.ghost:hover {
+  color: var(--pg-primary);
 }
 
 .ghostLight {
@@ -74,7 +84,7 @@
 
 .glass {
   background: var(--pg-gradient-glass);
-  border-color: var(--pg-sage);
+  border-color: var(--pg-offwhite);
   color: #ffffff;
 }
 

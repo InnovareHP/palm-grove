@@ -16,7 +16,7 @@
   border-image: linear-gradient(
       180deg,
       var(--pg-heading) 0%,
-      var(--pg-green) 100%
+      var(--pg-primary) 100%
     )
     1;
 }

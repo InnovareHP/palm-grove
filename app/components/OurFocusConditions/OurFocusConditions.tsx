@@ -1,3 +1,5 @@
+import Image from "next/image";
+import iconMark from "@/public/figma/brand/icon-mark.png";
 import { CheckCards } from "../ui/CheckCards/CheckCards";
 import classes from "./OurFocusConditions.module.css";
 
@@ -15,11 +17,19 @@ const conditions = [
 
 export function OurFocusConditions() {
   return (
-    <section className="pgSection">
+    <section className={`pgSection ${classes.section}`}>
+      <div className={classes.mark} aria-hidden="true">
+        <Image
+          src={iconMark}
+          alt=""
+          className={classes.markImage}
+          sizes="464px"
+        />
+      </div>
       <div className="pgContainer">
         <div className="pgIntro">
           <p className="pgEyebrow">Conditions we treat</p>
-          <h2 className="pgTitle">
+          <h2 className="pgTitle pgTitleLg">
             Specialized help for a range of conditions
           </h2>
           <p className="pgLead">
@@ -34,7 +44,7 @@ export function OurFocusConditions() {
 
         <p className={classes.note}>
           This list is not exhaustive. Our admissions team can help determine
-          whether Palm Grove is the right fit for a specific situation.
+          whether Magnolia is the right fit for a specific situation.
         </p>
       </div>
     </section>

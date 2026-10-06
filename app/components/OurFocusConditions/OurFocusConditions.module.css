@@ -1,3 +1,28 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.mark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 352px;
+  height: 433px;
+  overflow: hidden;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.markImage {
+  display: block;
+  width: 464px;
+  max-width: none;
+  height: 464px;
+}
+
 .grid {
   margin-top: clamp(32px, 4vw, 44px);
 }
@@ -9,5 +34,5 @@
   font-style: italic;
   line-height: 30px;
   text-align: center;
-  color: var(--pg-green);
+  color: var(--pg-deep);
 }

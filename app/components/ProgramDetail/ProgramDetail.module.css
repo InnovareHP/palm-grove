@@ -8,7 +8,7 @@
   max-width: 1100px;
   margin: 0 auto;
   padding-block: 5px;
-  color: var(--pg-green-dark);
+  color: var(--pg-primary);
   font-weight: 600;
   font-size: clamp(0.85rem, 0.95vw, 0.93rem);
   text-decoration: none;
@@ -19,7 +19,7 @@
 }
 
 .backLink:focus-visible {
-  outline: 2px solid var(--pg-green-dark);
+  outline: 2px solid var(--pg-primary);
   outline-offset: 2px;
 }
 
@@ -31,7 +31,7 @@
 .detailTitle {
   margin: 0 0 clamp(28px, 3.5vw, 44px);
   text-align: center;
-  color: var(--pg-green-dark);
+  color: var(--pg-primary);
   font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 700;
   font-size: clamp(1.5rem, 2.6vw, 2.1rem);
@@ -65,7 +65,7 @@
   align-items: center;
   gap: 24px;
   margin: 0 0 1rem;
-  color: var(--pg-green-dark);
+  color: var(--pg-primary);
   font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 700;
   font-size: clamp(1.15rem, 1.6vw, 1.4rem);
@@ -76,7 +76,7 @@
   content: "";
   flex: 1;
   height: 1.5px;
-  background: color-mix(in srgb, var(--pg-green-dark) 35%, transparent);
+  background: color-mix(in srgb, var(--pg-primary) 35%, transparent);
 }
 
 .detailText {

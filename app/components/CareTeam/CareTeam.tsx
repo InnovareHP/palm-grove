@@ -1,38 +1,47 @@
 import Image from "next/image";
-import careTeamImg from "@/public/figma/home/care-team.png";
+import iconMark from "@/public/figma/brand/icon-mark.png";
+import careImg from "@/public/figma/home/clinical-care.jpg";
 import { Button } from "../ui/Button/Button";
 import classes from "./CareTeam.module.css";
 
 export function CareTeam() {
   return (
-    <section className="pgSection">
+    <section className={`pgSection ${classes.section}`}>
+      <div className={classes.mark} aria-hidden="true">
+        <Image
+          src={iconMark}
+          alt=""
+          className={classes.markImage}
+          sizes="464px"
+        />
+      </div>
+
       <div className={`pgContainer ${classes.inner}`}>
         <div className={classes.media}>
           <Image
-            src={careTeamImg}
-            alt="A clinician comforting an older adult patient"
+            src={careImg}
+            alt="A nurse reviewing a tablet with a patient"
             className={classes.image}
             fill
-            sizes="(max-width: 640px) 100vw, (max-width: 992px) 620px, (max-width: 1280px) 47vw, 520px"
+            sizes="(max-width: 640px) 100vw, (max-width: 992px) 620px, (max-width: 1280px) 47vw, 500px"
           />
         </div>
 
         <div className={classes.content}>
-          <p className="pgEyebrow">Whole-person, family centered care</p>
+          <p className="pgEyebrow">Person-first, family-inclusive care</p>
           <h2 className="pgTitle">
-            Expert medical care, delivered with compassion and dignity
+            Clinical excellence, delivered with compassion and respect
           </h2>
           <p className="pgLead">
-            At Palm Grove Health Center, we combine specialized geriatric
-            psychiatry with genuine warmth. Our interdisciplinary team of
-            physicians, nurses, and therapists partners closely with families to
-            give every patient the best possible chance to heal, recover, and
-            return to the highest quality of life possible.
+            Older adults often face psychiatric conditions alongside medical
+            illness, medication changes, memory concerns, or major life
+            transitions. Our psychiatrists, nurses, therapists, and social
+            workers treat these together, as one team.
           </p>
           <p className="pgLead">
-            Every treatment plan is personalized — addressing the psychological,
-            behavioral, physical, and social needs of the whole person, not just
-            a diagnosis.
+            Each patient receives an individualized treatment plan, and families
+            are kept informed and involved throughout the stay. Our goal is a
+            safe return home and lasting stability.
           </p>
           <div className={classes.actions}>
             <Button href="/treatment-services/multidisciplinary-care-team">

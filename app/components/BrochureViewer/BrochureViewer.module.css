@@ -57,14 +57,14 @@
 .fallbackLink {
   display: inline-block;
   padding-block: 3px;
-  color: var(--pg-green);
+  color: var(--pg-primary);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .fallbackLink:hover {
-  color: var(--pg-green-hover);
+  color: var(--pg-primary-hover);
 }
 
 .actions {
