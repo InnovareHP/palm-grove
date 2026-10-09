@@ -1,5 +1,5 @@
 import Image from "next/image";
-import careTeamImg from "@/public/figma/home/care-team.png";
+import careTeamImg from "@/public/figma/home/Replace.png";
 import { Button } from "../ui/Button/Button";
 import classes from "./CareTeam.module.css";
 
@@ -10,7 +10,7 @@ export function CareTeam() {
         <div className={classes.media}>
           <Image
             src={careTeamImg}
-            alt="A clinician comforting an older adult patient"
+            alt="A clinician reviewing a tablet with an older adult patient"
             className={classes.image}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 992px) 620px, (max-width: 1280px) 47vw, 520px"
