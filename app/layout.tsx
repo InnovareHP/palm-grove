@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Castoro, Montserrat } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { siteConfig } from "./lib/site";
 import { defaultOgImage, organizationJsonLd, siteUrl } from "./lib/seo";
@@ -85,6 +86,7 @@ export default function RootLayout({
         </a>
         {children}
       </body>
+      <GoogleAnalytics gaId="G-LG43LHC2WN" />
     </html>
   );
 }
