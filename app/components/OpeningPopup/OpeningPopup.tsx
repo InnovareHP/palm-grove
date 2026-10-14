@@ -104,7 +104,7 @@ export function OpeningPopup() {
             className={classes.image}
             placeholder="blur"
             fill
-            sizes="(max-width: 899px) 640px, 45vw"
+            sizes="(max-width: 680px) 100vw, (max-width: 899px) 640px, 45vw"
           />
         </div>
       </div>

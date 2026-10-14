@@ -5,6 +5,7 @@ import "./globals.css";
 import { siteConfig } from "./lib/site";
 import { defaultOgImage, organizationJsonLd, siteUrl } from "./lib/seo";
 import { JsonLd } from "./components/JsonLd/JsonLd";
+import { ContactTracking } from "./components/ContactTracking/ContactTracking";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -85,6 +86,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <ContactTracking />
       </body>
       <GoogleAnalytics gaId="G-LG43LHC2WN" />
     </html>

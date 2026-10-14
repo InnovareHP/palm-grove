@@ -45,7 +45,7 @@ export function Programs() {
         </ul>
 
         <div className={classes.actions}>
-          <Button href="/treatment-services">Learn More</Button>
+          <Button href="/treatment-services">Explore Our Programs</Button>
         </div>
       </div>
     </section>
