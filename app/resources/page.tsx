@@ -10,9 +10,9 @@ import heroImg from "@/public/figma/treatment/continuum.png";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Mental Health Resources",
+  title: "Mental Health Resources for Seniors & Caregivers",
   description:
-    "Support and information for patients, families, and caregivers — including crisis lines available around the clock.",
+    "Mental health support for older adults, families, and caregivers — including 24/7 crisis lines like 988 and caregiver guidance.",
   path: "/resources",
 });
 

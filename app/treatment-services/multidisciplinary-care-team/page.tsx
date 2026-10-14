@@ -4,9 +4,9 @@ import { ProgramDetail } from "@/app/components/ProgramDetail/ProgramDetail";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Multidisciplinary Care Team",
+  title: "Geriatric Psychiatry Care Team",
   description:
-    "Our care team includes psychiatrists, nurse practitioners, physicians, nurses, social workers, psychologists, and more working together to deliver coordinated care.",
+    "Meet Palm Grove's multidisciplinary team: psychiatrists, nurse practitioners, physicians, nurses, social workers, and psychologists for older adults.",
   path: "/treatment-services/multidisciplinary-care-team",
 });
 
@@ -19,7 +19,11 @@ export default function MultidisciplinaryCareTeamPage() {
     <>
       <Header />
       <main id="main-content" tabIndex={-1}>
-        <ProgramDetail title="Multidisciplinary Care Team" intro={INTRO} />
+        <ProgramDetail
+          title="Multidisciplinary Care Team"
+          path="/treatment-services/multidisciplinary-care-team"
+          intro={INTRO}
+        />
       </main>
       <Footer />
     </>

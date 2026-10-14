@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Castoro, Montserrat } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "./lib/site";
-import { organizationJsonLd, siteUrl } from "./lib/seo";
+import { defaultOgImage, organizationJsonLd, siteUrl } from "./lib/seo";
+import { JsonLd } from "./components/JsonLd/JsonLd";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -49,20 +50,13 @@ export const metadata: Metadata = {
     url: "/",
     title: homeTitle,
     description: homeDescription,
-    images: [
-      {
-        url: "/figma/home/hero.png",
-        width: 2560,
-        height: 1218,
-        alt: "Palm Grove Health Center in St. Augustine, Florida",
-      },
-    ],
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: homeTitle,
     description: homeDescription,
-    images: ["/figma/home/hero.png"],
+    images: [defaultOgImage.url],
   },
   robots: {
     index: true,
@@ -85,12 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${castoro.variable}`}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
+        <JsonLd data={organizationJsonLd} />
         <a className="pgSkipLink" href="#main-content">
           Skip to main content
         </a>

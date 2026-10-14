@@ -3,10 +3,11 @@ import { siteConfig } from "./site";
 
 export const siteUrl = siteConfig.url;
 
-const defaultOgImage = {
-  url: "/figma/home/hero.png",
-  width: 2560,
-  height: 1218,
+// 1200×630 crop of the home hero — the size social previews expect.
+export const defaultOgImage = {
+  url: "/og-image.jpg",
+  width: 1200,
+  height: 630,
   alt: "Palm Grove Health Center in St. Augustine, Florida",
 };
 

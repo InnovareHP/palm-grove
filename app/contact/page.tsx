@@ -7,9 +7,9 @@ import heroImg from "@/public/figma/home/program-4.png";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact Us",
+  title: "Contact Us – St. Augustine, FL",
   description:
-    "We're here to help. Reach out to our team for admissions, questions, or more information about Palm Grove Health Center.",
+    "Contact Palm Grove Health Center in St. Augustine, FL for admissions, referrals, or questions about senior psychiatric care. Call our 24/7 intake line.",
   path: "/contact",
 });
 

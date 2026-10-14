@@ -4,9 +4,9 @@ import { ProgramDetail } from "@/app/components/ProgramDetail/ProgramDetail";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Inpatient Psychiatric Program",
+  title: "Inpatient Geriatric Psychiatry – St. Augustine, FL",
   description:
-    "Specialized, short-term psychiatric care for older adults who require stabilization in a safe, structured, and supportive environment.",
+    "Short-term inpatient psychiatric care for older adults in St. Augustine, FL — stabilization, medication management, and therapy in a safe setting.",
   path: "/treatment-services/inpatient-psychiatric-program",
 });
 
@@ -33,6 +33,7 @@ export default function InpatientPsychiatricProgramPage() {
       <Header />
       <main id="main-content" tabIndex={-1}>
         <ProgramDetail
+          path="/treatment-services/inpatient-psychiatric-program"
           title="Inpatient Psychiatric Program"
           intro={INTRO}
           sections={SECTIONS}

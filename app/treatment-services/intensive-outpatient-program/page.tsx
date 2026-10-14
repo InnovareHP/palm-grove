@@ -4,9 +4,9 @@ import { ProgramDetail } from "@/app/components/ProgramDetail/ProgramDetail";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Intensive Outpatient Program (IOP)",
+  title: "Intensive Outpatient Program (IOP) for Older Adults",
   description:
-    "Structured psychiatric treatment for older adults who need continued support while maintaining their daily routines at home.",
+    "A senior intensive outpatient program (IOP) in St. Augustine, FL: structured psychiatric treatment for older adults while they keep living at home.",
   path: "/treatment-services/intensive-outpatient-program",
 });
 
@@ -33,6 +33,7 @@ export default function IntensiveOutpatientProgramPage() {
       <Header />
       <main id="main-content" tabIndex={-1}>
         <ProgramDetail
+          path="/treatment-services/intensive-outpatient-program"
           title="Intensive Outpatient Program (IOP)"
           intro={INTRO}
           sections={SECTIONS}

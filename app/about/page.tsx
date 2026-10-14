@@ -11,9 +11,9 @@ import heroImg from "@/public/figma/home/care-team.png";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "About Us",
+  title: "About Our Geriatric Psychiatric Hospital",
   description:
-    "Palm Grove Health Center brings specialized, compassionate psychiatric care to the older adults of St. Augustine and the surrounding communities.",
+    "Palm Grove Health Center brings specialized, compassionate psychiatric care to older adults in St. Augustine and the surrounding communities.",
   path: "/about",
 });
 

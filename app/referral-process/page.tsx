@@ -8,9 +8,9 @@ import heroImg from "@/public/figma/referral/hero.png";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Referral Process",
+  title: "Refer a Patient – 24/7 Senior Psychiatric Admissions",
   description:
-    "Referring a patient to Palm Grove is simple, and our admissions team is here to help every step of the way — 24 hours a day, 7 days a week.",
+    "Refer an older adult to Palm Grove's inpatient or outpatient psychiatric programs in St. Augustine, FL. Our admissions team is available 24/7.",
   path: "/referral-process",
 });
 

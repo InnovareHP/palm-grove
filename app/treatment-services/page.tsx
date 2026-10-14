@@ -16,9 +16,9 @@ import continuumImg from "@/public/figma/treatment/continuum.png";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Treatment & Services",
+  title: "Senior Psychiatric Treatment & Services",
   description:
-    "A full continuum of behavioral health care for older adults — from around-the-clock inpatient stabilization to structured outpatient support and long-term coordination.",
+    "Inpatient and intensive outpatient psychiatric care for older adults in St. Augustine, FL — from 24/7 stabilization to structured outpatient support.",
   path: "/treatment-services",
 });
 

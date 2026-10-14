@@ -12,9 +12,9 @@ import expectImg from "@/public/figma/patient-guide/what-to-expect.png";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Patient & Visitor Guide",
+  title: "Patient & Visitor Guide – Admission & Visiting",
   description:
-    "Everything patients and families need to know about admission, visiting, and what to expect during a stay at Palm Grove.",
+    "What to expect at Palm Grove: admission, visiting, insurance, medications, and family involvement during a psychiatric stay for an older adult.",
   path: "/patient-visitor-guide",
 });
 

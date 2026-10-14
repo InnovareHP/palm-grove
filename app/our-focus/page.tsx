@@ -14,9 +14,9 @@ import whoWeServeImg from "@/public/figma/our-focus/who-we-serve.png";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Our Focus",
+  title: "Senior Mental Health Care & Conditions We Treat",
   description:
-    "Dedicated exclusively to the mental and behavioral health of older adults — because the needs of seniors deserve specialized, thoughtful care.",
+    "Palm Grove is dedicated exclusively to the mental and behavioral health of older adults. See the conditions we treat and the values behind our care.",
   path: "/our-focus",
 });
 

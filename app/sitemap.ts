@@ -33,10 +33,8 @@ const routes: {
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   return routes.map(({ path, priority, changeFrequency }) => ({
     url: path === "/" ? siteUrl : `${siteUrl}${path}`,
-    lastModified,
     changeFrequency,
     priority,
   }));

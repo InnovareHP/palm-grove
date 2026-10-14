@@ -1,4 +1,5 @@
 import { Faq, type FaqItem } from "../ui/Faq/Faq";
+import { JsonLd } from "../JsonLd/JsonLd";
 
 const items: FaqItem[] = [
   {
@@ -38,6 +39,17 @@ export function PatientGuideFaq() {
         </div>
 
         <Faq items={items} />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: items.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: { "@type": "Answer", text: item.answer },
+            })),
+          }}
+        />
       </div>
     </section>
   );

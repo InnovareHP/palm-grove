@@ -7,7 +7,7 @@ import { siteConfig } from "@/app/lib/site";
 import { pageMetadata } from "@/app/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Brochure",
+  title: "Brochure – Senior Psychiatric Care Overview",
   description:
     "Read the Palm Grove Health Center brochure online, or download the printable PDF to share with patients, families, and referral partners.",
   path: "/brochure",
