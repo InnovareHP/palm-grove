@@ -2,6 +2,9 @@
   "name": "palm-grove",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,18 +14,18 @@
     "brochure": "node scripts/build-brochure-assets.mjs"
   },
   "dependencies": {
-    "@next/third-parties": "^16.4.0",
+    "@next/third-parties": "^16.4.3",
     "@tabler/icons-react": "^3.44.0",
-    "next": "16.2.9",
+    "next": "16.4.3",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
-    "@types/node": "^20",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "sharp": "0.34.5",
+    "sharp": "0.35.5",
     "typescript": "^5"
   }
 }
